@@ -20,6 +20,8 @@ package HealthRecord;
  * @author jagankaartik58
  */
 
+/* Main Inheritance */
+
 class User
 {
     String username;
