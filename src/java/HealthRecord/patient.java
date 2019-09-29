@@ -30,4 +30,6 @@ public class patient
         this.DOB = dob;
     }
     
+    //void returnVal()
+    
 }

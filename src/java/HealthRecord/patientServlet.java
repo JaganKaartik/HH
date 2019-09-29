@@ -5,7 +5,8 @@
  */
 package HealthRecord;
 
-import java.io.IOException;
+
+import java.io.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +23,21 @@ import javax.servlet.http.HttpServletResponse;
 
 public class patientServlet extends HttpServlet
 {
+    @Override
     public void doGet(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
     {
+        String pid = req.getParameter("pid");
+        String pname = req.getParameter("pname");
+        String pdob = req.getParameter("pdob");
+        String pno = req.getParameter("pno");
+        String pms = req.getParameter("pms");
+        String pbg = req.getParameter("pbg");
+        String pad = req.getParameter("pad");
+        
+        /* Servlet is Working */
+        PrintWriter out = rep.getWriter();
+        out.println("Pid is : "+pid);
+        out.println("Pname is : "+pname);
         
     }
 }

@@ -10,11 +10,11 @@ and open the template in the editor.
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <servlet>
-        <servlet-name>comingsoon</servlet-name>
-        <servlet-class>mysite.server.ComingSoonServlet</servlet-class>
+        <servlet-name>RegPatient</servlet-name>
+        <servlet-class>HealthRecord.patientServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>comingsoon</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <servlet-name>RegPatient</servlet-name>
+        <url-pattern>/add</url-pattern>
     </servlet-mapping>
 </web-app>
