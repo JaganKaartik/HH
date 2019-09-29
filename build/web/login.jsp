@@ -14,16 +14,28 @@
     <body>
         <h1>Testing Control Flow</h1>
         <%
-            String url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-            String username = "postgres";
+            String checkname = request.getParameter("user");
+            String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+            String db_username = "postgres";
             String sql = "select * from public.\"User\" ";
             Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection(url,username,"qpalzmwer");
+            Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            rs.next();
+            while (rs.next()) 
+            {
+                String uname = rs.getString("username");
+               
+                if(uname.equals(checkname))
+                {
+                     String role = rs.getString("role");    
+                     out.println(role); 
+                     break;
+                }
+                
+            }
         %>
         
-            <%= rs.getString(1)%>
+          
     </body>
 </html> 
