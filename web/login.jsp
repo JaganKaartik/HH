@@ -13,51 +13,7 @@
     </head>
     <body>
         <%
-            String checkname = request.getParameter("user");
-            String checkpass = request.getParameter("password");
-            String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-            String db_username = "postgres";
-            String sql = "select * from public.\"User\" ";
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            int flag = 1;
-            while (rs.next()) 
-            {
-                String uname = rs.getString("username");
-                String psswrd = rs.getString("password");
-                if(uname.equals(checkname) && psswrd.equals(checkpass))
-                {
-                     String role = rs.getString("role");
-                     if(role.equals("Admin"))
-                     {
-                         /* Redirect to Admin Page */
-                         //out.println("Admin Login Verified");
-                         response.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Admin.jsp");
-                         
-                     }
-                     else if(role.equals("Receptionist"))
-                     {  
-                          /* Redirect to Receptionist Page */
-                         //out.println("Receptionist Login Verified"); 
-                         response.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.jsp");
-                         
-                     }
-                     else if(role.equals("Doctor"))
-                     {
-                          /* Redirect to Doctor Page */
-                         //out.println("Doctor Login Verified");
-                         response.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Doctor.jsp");
-                     }
-                     flag = 0;
-                     break;
-                }
-            }
-            if(flag==1)
-            {
-                out.println("User! Not Found");
-            }
+            
         %>
         
           

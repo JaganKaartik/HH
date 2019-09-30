@@ -17,4 +17,12 @@ and open the template in the editor.
         <servlet-name>RegPatient</servlet-name>
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>VerifyLogin</servlet-name>
+        <servlet-class>HealthRecord.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerifyLogin</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
 </web-app>
