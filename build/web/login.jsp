@@ -30,8 +30,19 @@
                 if(uname.equals(checkname)&&psswrd.equals(checkpass))
                 {
                      out.println("Login Verified");
-                     String role = rs.getString("role");    
-                     out.println(role); 
+                     String role = rs.getString("role"); 
+                     if(role=="Admin")
+                     {
+                         /* Redirect to Admin Page */
+                     }
+                     else if(role=="Receptionist")
+                     {  
+                          /* Redirect to Receptionist Page */
+                     }
+                     else if(role=="Doctor")
+                     {
+                          /* Redirect to Doctor Page */
+                     }
                      break;
                 }
                 
