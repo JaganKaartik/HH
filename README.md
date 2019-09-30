@@ -1,4 +1,6 @@
-# Electronic-Health-Record
+# HygeiaHealth - An Electronic Health Record System
+
+## Electronic-Health-Record
 
 An Electronic Health Record (EHR) is an electronic version of a patients medical history, that is maintained by the 
 provider over time, and may include all of the key administrative clinical data relevant to that persons care under
