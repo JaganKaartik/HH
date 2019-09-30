@@ -9,13 +9,62 @@ and open the template in the editor.
         <title>EHR System</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h2>Login To Your Account</h2>
+        
+        <!--Main Index Options -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">HygeaHealth</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-item nav-link active" href="http://localhost:8080/ElectronicHealthRecord/index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-item nav-link" href="">Login/Signup</a>
+                </div>
+              </div>
+        </nav>
+
+        <!-- Login Page working (Username and Password) -->
+        
         <form action="login">
-            <h3>Username : <input type="text" name="user" placeholder="username"><br></h3>
-            <h3>Password : <input type="text" name="password" placeholder="password"></h3>
-            <input type="submit">
-        </form>
+          <div class="form-group col-md-4">
+            <label for="user">Username</label>
+            <input type="text" class="form-control" name="user" aria-describedby="emailHelp" placeholder="username">
+            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+          </div>
+          <div class="form-group col-md-4">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+       </form> 
+        <h3> Sign Up/ Register User </h3>
+
+        <!-- Sign Up/Register User Page working (Username and Password) -->
+        
+        <form action="signup" method="Post">
+          <div class="form-group col-md-4">
+            <label for="user">Username</label>
+            <input type="text" class="form-control" name="user" aria-describedby="userHelp" placeholder="username">
+            <small id="userHelp" class="form-text text-muted">Please enter your username!</small>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+           <div class="form-group col-md-4">
+            <label for="role">Role</label>
+            <input type="text" class="form-control" name="role" placeholder="Role">
+            <small id="userHelp" class="form-text text-muted">Please enter your roll!</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+       </form> 
     </body>
 </html>
