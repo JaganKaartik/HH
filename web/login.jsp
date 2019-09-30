@@ -35,10 +35,13 @@
                      if(role=="Admin")
                      {
                          /* Redirect to Admin Page */
+                         
                      }
                      else if(role=="Receptionist")
                      {  
                           /* Redirect to Receptionist Page */
+                          response.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.jsp");
+                         
                      }
                      else if(role=="Doctor")
                      {
