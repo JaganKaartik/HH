@@ -27,25 +27,28 @@
             {
                 String uname = rs.getString("username");
                 String psswrd = rs.getString("password");
-               
-                if(uname.equals(checkname)&&psswrd.equals(checkpass))
+                if(uname.equals(checkname) && psswrd.equals(checkpass))
                 {
-                     out.println("Login Verified");
-                     String role = rs.getString("role"); 
-                     if(role=="Admin")
+                     String role = rs.getString("role");
+                     if(role.equals("Admin"))
                      {
                          /* Redirect to Admin Page */
+                         //out.println("Admin Login Verified");
+                         response.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Admin.jsp");
                          
                      }
-                     else if(role=="Receptionist")
+                     else if(role.equals("Receptionist"))
                      {  
                           /* Redirect to Receptionist Page */
-                          response.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.jsp");
+                         //out.println("Receptionist Login Verified"); 
+                         response.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.jsp");
                          
                      }
-                     else if(role=="Doctor")
+                     else if(role.equals("Doctor"))
                      {
                           /* Redirect to Doctor Page */
+                         //out.println("Doctor Login Verified");
+                         response.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Doctor.jsp");
                      }
                      flag = 0;
                      break;

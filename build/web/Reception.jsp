@@ -12,6 +12,8 @@
         <title>Reception Page</title>
     </head>
     <body>
-        
+        <%
+            out.println("Receptionist Login Verified");
+        %>
     </body>
 </html>

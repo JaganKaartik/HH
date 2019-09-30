@@ -12,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+       <%
+            out.println("Admin.JSP Page Admin Login Verified");
+        %>
     </body>
 </html>
