@@ -1,4 +1,4 @@
-# HygeiaHealth - An Electronic Health Record System
+# HygeaHealth - An electronic health record system
 
 ## Electronic-Health-Record
 
