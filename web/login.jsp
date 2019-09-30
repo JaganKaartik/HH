@@ -9,12 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login JSP Page</title>
+        <title>Login Redirect Page</title>
     </head>
     <body>
-        <h1>Testing Control Flow</h1>
         <%
             String checkname = request.getParameter("user");
+            String checkpass = request.getParameter("password");
             String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
             String db_username = "postgres";
             String sql = "select * from public.\"User\" ";
@@ -25,9 +25,11 @@
             while (rs.next()) 
             {
                 String uname = rs.getString("username");
+                String psswrd = rs.getString("password");
                
-                if(uname.equals(checkname))
+                if(uname.equals(checkname)&&psswrd.equals(checkpass))
                 {
+                     out.println("Login Verified");
                      String role = rs.getString("role");    
                      out.println(role); 
                      break;
