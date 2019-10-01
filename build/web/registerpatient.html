@@ -26,6 +26,14 @@ and open the template in the editor.
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/home.css" type="text/css">
+
+        <!-- External JavaScript File -->
+        <!-- <script src="js/register.js"></script> -->
+        <style>
+          .validate{
+             blue-grey-text text-darken-4
+            }
+        </style>
      
     </head>
     <body>
@@ -41,56 +49,124 @@ and open the template in the editor.
       </nav>
 
       <div class = "container">
-          <div class="card-panel cyan darken-3">
-      <div class="row">
-        <form class="col s6">
-          <div class="row">
-            <div class="input-field col s3">
-              <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-              <label for="first_name">First Name</label>
-            </div>
-            <div class="input-field col s3">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name">Last Name</label>
-            </div>
-          </div>
+        <div class="card-panel light-blue darken-4">
+            <div class="row">
+              <form class="col s6">
 
-          <!-- <div class="row">
-            <div class="input-field col s6">
-              <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-              <label for="disabled">Disabled</label>
-            </div>
-          </div> -->
+                <div class = "row">
+                  <div class="input-field col s6">
+                      <input id="pid" type="text" class="validate">
+                      <label for="pid">Patient ID</label>
+                    </div>
+                  </div>
 
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="password" type="password" class="validate">
-              <label for="password">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="email" type="email" class="validate">
-              <label for="email">Email</label>
-            </div>
-          </div>
+                  <div class="row">
+                    <div class="input-field col s3">
+                      <input id="first_Name" type="text" class="validate">
+                      <label for="first_name">First Name</label>
+                    </div>
 
-          <!-- Sample -->
-          <!-- <div class="row">
-            <div class="col s6">
-              This is an inline input field:
-              <div class="input-field inline">
-                <input id="email_inline" type="email" class="validate">
-                <label for="email_inline">Email</label>
-                <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-              </div>
-            </div>
-          </div> -->
-          <!-- End of Sample -->
-          
-      </form>
-    </div>
-    </div>
-  </div>
+                    <div class="input-field col s3">
+                      <input id="last_Name" type="text" class="validate">
+                      <label for="last_name">Last Name</label>
+                    </div>
+                  </div>
+
+                  <div class = "row">
+
+                      <!-- TRY DATEPICKER -->
+
+                      <div class="input-field col s2">
+                          <input id="dob" type="text" class="validate">
+                          <label for="dob">Date of Birth</label>
+                      </div>
+
+                      <div class="input-field col s2">
+                          <input id="age" type="text" class="validate">
+                          <label for="age">Age</label>
+                      </div>
+
+                      <div class="input-field col s2">
+                          <input id="sex" type="text" class="validate">
+                          <label for="sex">Sex</label>
+                      </div>
+
+                  </div>
+
+
+                  <!-- <div class="row">
+                    <div class="input-field col s6">
+                      <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                      <label for="disabled">Disabled</label>
+                    </div>
+                  </div> -->
+
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="password" type="password" class="validate">
+                      <label for="password">Password</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="address" type="text" class="validate">
+                      <label for="address">Address</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="pincode" type="text" class="validate">
+                      <label for="pincode">Pincode</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input id="address" type="text" class="validate">
+                      <label for="address">Address</label>
+                    </div>
+                  </div>
+
+                  <div class = "row">
+
+                      <div class="input-field col s2">
+                          <input id="bloodgroup" type="text" class="validate">
+                          <label for="bloodgroup">Blood Group</label>
+                      </div>
+
+                      <div class="input-field col s2">
+                          <input id="pno" type="text" class="validate">
+                          <label for="pno">Phone Number</label>
+                      </div>
+
+                      <div class="input-field col s2">
+                          <input id="marital_status" type="text" class="validate">
+                          <label for="marital_status">Marital Status</label>
+                      </div>
+
+                  </div>
+
+
+                  <!-- Sample -->
+                  <!-- <div class="row">
+                    <div class="col s6">
+                      This is an inline input field:
+                      <div class="input-field inline">
+                        <input id="email_inline" type="email" class="validate">
+                        <label for="email_inline">Email</label>
+                        <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- End of Sample -->
+
+              </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- <script>
+         $(document).ready(function(){$('.datepicker').datepicker();});
+      </script> -->
+
     </body>
 </html>
