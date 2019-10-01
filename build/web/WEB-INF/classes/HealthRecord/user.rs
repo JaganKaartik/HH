@@ -1,0 +1,4 @@
+HealthRecord.Doctor
+HealthRecord.Admin
+HealthRecord.Receptionist
+HealthRecord.User
