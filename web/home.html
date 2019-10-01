@@ -40,47 +40,39 @@ and open the template in the editor.
 
     <body>
 
-      <!-- Login Menu -->
-       <div class="container center-align">
-           <span class="light-blue-text text-lighten-2"><h1> HygeaHealth </h1></span>
-      </div>
-      <div class="container">
-          <div class="login-page">
+    	<!-- Login Menu -->
 
-        <div class="form">
+    <div class="container">
+        <div class="login-page">
 
-          <!-- Registration Form (Send to Registration Servelt) -->
+			<div class="form">
 
-          <form class ="register-form" onSubmit = "return checkPassword(this)" method="post" action="signup">
-            <input type="text" name="user" placeholder="Username"/>
-            <input type="text" name="role" placeholder="Role"/>
-            <input type="password" name="p1" placeholder="Password"/>
-            <input type="password" name="p2" placeholder="Confirm Password"/>
-            <button>Sign Up</button>
-            <p class="message">Already Registered? <a href="#"> Login</a> </p>
-          </form>
+				<!-- Registration Form (Send to Registration Servelt) -->
 
-          <!-- Login Form -->
+				<form class ="register-form" onSubmit = "return checkPassword(this)" method="post" action="signup">
+					<input type="text" name="user" placeholder="Username"/>
+					<input type="text" name="role" placeholder="Role"/>
+					<input type="password" name="p1" placeholder="Password"/>
+					<input type="password" name="p2" placeholder="Confirm Password"/>
+					<button>Sign Up</button>
+					<p class="message">Already Registered? <a href="#">	Login</a> </p>
+				</form>
 
-          <form class="login-form" method="post" action="login">
-            <input type="text" name="user" placeholder="Username"/>
-            <input type="password" name="password" placeholder="Password"/>
-            <button>login</button>
-            <p class="message">Not Registered? <a href="#">Register</a></p>
-          </form>
-        </div>
+				<!-- Login Form -->
 
-      </div>
-    </div>
+				<form class="login-form" method="post" action="login">
+					<input type="text" name="user" placeholder="Username"/>
+					<input type="password" name="password" placeholder="Password"/>
+					<button>login</button>
+					<p class="message">Not Registered? <a href="#">Register</a></p>
+				</form>
+			</div>
 
- <!--  <div class="container">
-    <blockquote>
-      This is an example quotation that uses the blockquote tag.
-    </blockquote>
-  </div> -->
+		</div>
+	</div>
 
-    <script>
-      $('.message a').click(function(){$('form').animate({height: "toggle",opacity: "toggle"},"slow");});   
-    </script>
+		<script>
+			$('.message a').click(function(){$('form').animate({height: "toggle",opacity: "toggle"},"slow");});		
+		</script>
     </body>
 </html>

@@ -12,6 +12,8 @@ JDBC Prepared Statement : https://www.studytonight.com/servlet/registration-form
 
 */
 
+/* Signup Servlet is working */
+
 package HealthRecord;
 
 import java.sql.*;
@@ -33,7 +35,7 @@ public class SignupServlet extends HttpServlet
              PrintWriter out = rep.getWriter();
             try {
                 String username = req.getParameter("user");
-                String password = req.getParameter("password");
+                String password = req.getParameter("p1");
                 String role = req.getParameter("role");
                 String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
                 String db_username = "postgres";

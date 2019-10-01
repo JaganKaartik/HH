@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package HealthRecord;
 
 import java.sql.*;
@@ -11,14 +12,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
+
+/* Login-Servlet is working */
+
 /**
  *
  * @author jagankaartik58
  */
+
 public class LoginServlet extends HttpServlet
 {
     @Override
-    public void doGet(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
+    public void doPost(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
     {
             try {
                 String checkname = req.getParameter("user");
