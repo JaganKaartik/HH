@@ -47,28 +47,27 @@ and open the template in the editor.
               <a href="#" class="brand-logo right">HygeaHealth+</a>
             </div>
       </nav>
-
       <div class = "container">
         <div class="card-panel light-blue darken-4">
             <div class="row">
-              <form class="col s6">
+              <form class="col s6" method="post" action="regpat">
 
                 <div class = "row">
                   <div class="input-field col s6">
-                      <input id="pid" type="text" class="validate">
+                      <input name="pid" type="text" class="validate">
                       <label for="pid">Patient ID</label>
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="input-field col s3">
-                      <input id="first_Name" type="text" class="validate">
-                      <label for="first_name">First Name</label>
+                      <input name="first_Name" type="text" class="validate">
+                      <label for="first_Name">First Name</label>
                     </div>
 
                     <div class="input-field col s3">
-                      <input id="last_Name" type="text" class="validate">
-                      <label for="last_name">Last Name</label>
+                      <input name="last_Name" type="text" class="validate">
+                      <label for="last_Name">Last Name</label>
                     </div>
                   </div>
 
@@ -77,17 +76,17 @@ and open the template in the editor.
                       <!-- TRY DATEPICKER -->
 
                       <div class="input-field col s2">
-                          <input id="dob" type="text" class="validate">
+                          <input name="dob" type="text" class="validate">
                           <label for="dob">Date of Birth</label>
                       </div>
 
                       <div class="input-field col s2">
-                          <input id="age" type="text" class="validate">
+                          <input name="age" type="text" class="validate">
                           <label for="age">Age</label>
                       </div>
 
                       <div class="input-field col s2">
-                          <input id="sex" type="text" class="validate">
+                          <input name="sex" type="text" class="validate">
                           <label for="sex">Sex</label>
                       </div>
 
@@ -96,50 +95,39 @@ and open the template in the editor.
 
                   <!-- <div class="row">
                     <div class="input-field col s6">
-                      <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                      <input disabled value="I am not editable" name="disabled" type="text" class="validate">
                       <label for="disabled">Disabled</label>
                     </div>
                   </div> -->
 
                   <div class="row">
-                    <div class="input-field col s6">
-                      <input id="password" type="password" class="validate">
-                      <label for="password">Password</label>
-                    </div>
-                  </div>
 
-                  <div class="row">
                     <div class="input-field col s6">
-                      <input id="address" type="text" class="validate">
+                      <input name="address" type="text" class="validate">
                       <label for="address">Address</label>
                     </div>
-                  </div>
 
-                  <div class="row">
                     <div class="input-field col s6">
-                      <input id="pincode" type="text" class="validate">
+                      <input name="pincode" type="text" class="validate">
                       <label for="pincode">Pincode</label>
                     </div>
-                    <div class="input-field col s6">
-                      <input id="address" type="text" class="validate">
-                      <label for="address">Address</label>
-                    </div>
+                  
                   </div>
 
                   <div class = "row">
 
                       <div class="input-field col s2">
-                          <input id="bloodgroup" type="text" class="validate">
+                          <input name="bloodgroup" type="text" class="validate">
                           <label for="bloodgroup">Blood Group</label>
                       </div>
 
                       <div class="input-field col s2">
-                          <input id="pno" type="text" class="validate">
+                          <input name="pno" type="text" class="validate">
                           <label for="pno">Phone Number</label>
                       </div>
 
                       <div class="input-field col s2">
-                          <input id="marital_status" type="text" class="validate">
+                          <input name="marital_status" type="text" class="validate">
                           <label for="marital_status">Marital Status</label>
                       </div>
 
@@ -151,14 +139,14 @@ and open the template in the editor.
                     <div class="col s6">
                       This is an inline input field:
                       <div class="input-field inline">
-                        <input id="email_inline" type="email" class="validate">
+                        <input name="email_inline" type="email" class="validate">
                         <label for="email_inline">Email</label>
                         <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
                       </div>
                     </div>
                   </div> -->
                   <!-- End of Sample -->
-
+                  <button>Register</button>
               </form>
           </div>
         </div>

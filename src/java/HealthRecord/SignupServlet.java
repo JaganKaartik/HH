@@ -62,6 +62,11 @@ public class SignupServlet extends HttpServlet
                     out.println("Failed!");
                     //fail
                 }
+                    
+                /* Close Statement and Connection in JDBC */
+                
+                ps.close();
+                conn.close();
             }
             catch (SQLException ex) 
                 {

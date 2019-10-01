@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet
                             case "Receptionist":
                                 /* Redirect to Receptionist Page */
                                 //out.println("Receptionist Login Verified");
-                                rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.jsp");
+                                rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.html");
                                 break;
                             case "Doctor":
                                 /* Redirect to Doctor Page */
