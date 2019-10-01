@@ -6,6 +6,8 @@
 
 /* Writing Patient Data to DB Class */
 
+/* Register Patient Servlet Working */
+
 package HealthRecord;
 
 import java.sql.*;
@@ -52,7 +54,7 @@ public class RegisterPatientServlet extends HttpServlet
             out.println(pno);
             out.println(marstat);
 
-            /* JDBC */
+            /* JDBC Steps */
             
             try {
                 Class.forName("org.postgresql.Driver");
@@ -67,7 +69,7 @@ public class RegisterPatientServlet extends HttpServlet
             String sql = "select * from public.\"User\" ";
             
             Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
-            PreparedStatement ps = conn.prepareStatement("insert into public.\"PatientInformation\" values(?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement ps = conn.prepareStatement("insert into public.\"PatientInformation\" values (?,?,?,?,?,?,?,?,?,?,?);");
             
             /* Setting the PreparedStatements */
             
@@ -82,7 +84,7 @@ public class RegisterPatientServlet extends HttpServlet
             ps.setString(9,marstat);
             ps.setString(10,age);
             ps.setString(11,sex);
-            
+
             int val = ps.executeUpdate();
 
             if(val>0)
