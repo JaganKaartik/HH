@@ -9,8 +9,9 @@ a particular provider, including demographics, progress notes, problems, medicat
 ### Tools/Dependencies
 1. HTML
 2. CSS
+    1. Bootstrap
+    2. Materialize
 3. JavaScript
-4. Bootstrap
 5. Servlets
 6. JSP
 7. JDBC
