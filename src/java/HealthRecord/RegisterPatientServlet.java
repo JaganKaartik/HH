@@ -6,7 +6,7 @@
 
 /* Writing Patient Data to DB Class */
 
-/* Register Patient Servlet Working */
+/* Register Patient Servlet is Working */
 
 package HealthRecord;
 
