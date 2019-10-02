@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/login.jsp</file>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/WEB-INF/web.xml</file>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/patient.java</file>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/index.html</file>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/patientServlet.java</file>
+            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/Reception.html</file>
+            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/ViewPatient.jsp</file>
         </group>
     </open-files>
 </project-private>

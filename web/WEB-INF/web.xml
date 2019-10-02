@@ -9,6 +9,7 @@ and open the template in the editor.
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
     <servlet>
         <servlet-name>RegPatient</servlet-name>
         <servlet-class>HealthRecord.patientServlet</servlet-class>
@@ -17,4 +18,51 @@ and open the template in the editor.
         <servlet-name>RegPatient</servlet-name>
         <url-pattern>/add</url-pattern>
     </servlet-mapping>
+    
+    <!-- Verify Login Servlet -->
+
+    <servlet>
+        <servlet-name>VerifyLogin</servlet-name>
+        <servlet-class>HealthRecord.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerifyLogin</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Sign Up (Register User) Servlet -->
+
+    <servlet>
+        <servlet-name>RegUser</servlet-name>
+        <servlet-class>HealthRecord.SignupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegUser</servlet-name>
+        <url-pattern>/signup</url-pattern>
+    </servlet-mapping>
+
+    <!-- Register Patient Servlet -->
+
+    <servlet>
+        <servlet-name>RegisterPatient</servlet-name>
+        <servlet-class>HealthRecord.RegisterPatientServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RegisterPatient</servlet-name>
+        <url-pattern>/regpat</url-pattern>
+    </servlet-mapping>
+
+    <!-- Patient Info Controller -->
+
+    <servlet>
+        <servlet-name>PatInfoController</servlet-name>
+        <servlet-class>HealthRecord.PatientInfoController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PatInfoController</servlet-name>
+        <url-pattern>/patinfocontrol</url-pattern>
+    </servlet-mapping>
+
 </web-app>
