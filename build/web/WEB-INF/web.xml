@@ -53,4 +53,16 @@ and open the template in the editor.
         <url-pattern>/regpat</url-pattern>
     </servlet-mapping>
 
+    <!-- Patient Info Controller -->
+
+    <servlet>
+        <servlet-name>PatInfoController</servlet-name>
+        <servlet-class>HealthRecord.PatientInfoController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PatInfoController</servlet-name>
+        <url-pattern>/patinfocontrol</url-pattern>
+    </servlet-mapping>
+
 </web-app>

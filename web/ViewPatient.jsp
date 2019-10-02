@@ -74,15 +74,24 @@
                 <!-- Search Bar -->
 
                  <div class="container">
+
+                    <div class="row">
+                        <h4>View Patient Record</h4>
+                    </div>
+                    
                     <nav>
                         <div class="nav-wrapper">
-                          <form>
+
+                            <!-- Patient Info Controller -->
+
+                          <form method="post" method="patinfocontrol">
                             <div class="input-field">
-                              <input id="search" type="search" required>
+                              <input name="search" type="search" placeholder="Patient ID" required>
                               <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                               <i class="material-icons">close</i>
                             </div>
                           </form>
+
                         </div>
                       </nav>
                  </div>               

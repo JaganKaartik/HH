@@ -28,9 +28,9 @@ public class PatientInfoController extends HttpServlet
     {
         // Accept Search Query for Patient ID or name
 
-        String search_query = req.getParameter("");
+        String search_query = req.getParameter("search");
 
-        
+
 
 
     }
