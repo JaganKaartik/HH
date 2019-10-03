@@ -13,7 +13,7 @@ package HealthRecord;
  * @author jagankaartik58
  */
 
-public class patient 
+public class Patient 
 { 
     String PatientID;
     String First_name;

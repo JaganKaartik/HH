@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package HealthRecord;
 
 /**
@@ -11,10 +12,8 @@ package HealthRecord;
  */
 
 /* 
-
         Patient Information Data Access Object 
         Establish JDBC Connectivity
-
 */
 
 import java.sql.*;
@@ -28,21 +27,30 @@ import javax.servlet.ServletException;
 
 public class patientDAO extends HttpServlet
 {
-    String PatientID;
-    String First_name;
-    String Last_name;
-    String DOB;
-    String BloodGroup;
-    String Address;
-    String Pincode;
-    String PhoneNumber;
-    String MaritalStatus;
-    String Age;
-    String Sex;
+    // String PatientID;
+    // String First_name;
+    // String Last_name;
+    // String DOB;
+    // String BloodGroup;
+    // String Address;
+    // String Pincode;
+    // String PhoneNumber;
+    // String MaritalStatus;
+    // String Age;
+    // String Sex;
 
     /* JDBC Steps */
 
-    public void doGet(HttpServletRequest req,HttpServletResponce rep)
+    /**
+     *
+     * @param req
+     * @param rep
+     * @throws SQLException
+     */
+
+
+    @Override
+    public void doGet(HttpServletRequest req,HttpServletResponse rep) throws ServletException
     {
 
 	    try {
@@ -65,7 +73,9 @@ public class patientDAO extends HttpServlet
 		Statement st = conn.createStatement();
 	    ResultSet rs = st.executeQuery(sql);
 
-	    Patient obj = new Patient();
+	    //Using POJO (Plain Old Java Object) to Store Information
+
+	    Patient patient_obj = new Patient();
 
 	    while(rs.next())
 	    {
@@ -79,9 +89,16 @@ public class patientDAO extends HttpServlet
 		    String PhoneNumber = rs.getString(8);
 		    String MaritalStatus = rs.getString(9);
 		    String Age = rs.getString(10);
-		    String Sex == rs.getString(11);
-	    }
+		    String Sex = rs.getString(11);
 
+		    patient_obj.setValue(PatientID,First_name,Last_name,DOB,BloodGroup,Address,Pincode,PhoneNumber,MaritalStatus,Age,Sex);
+
+		}
+
+		//Pass the Data Back 
+
+		req.setAttribute("patientDAO",patient_obj);
+		req.getRequestDispatcher("home.jsp").forward(req,rep);
 	}
 
 
