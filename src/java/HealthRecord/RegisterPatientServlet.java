@@ -28,6 +28,7 @@ public class RegisterPatientServlet extends HttpServlet
         PrintWriter out = rep.getWriter();
    
         try {
+            
             //Form object to RegisterPatient Servelt --> JDBC
             
             String pid 			= req.getParameter("pid"); 			  //Patient ID
@@ -85,7 +86,10 @@ public class RegisterPatientServlet extends HttpServlet
             ps.setString(10,age);
             ps.setString(11,sex);
 
+            out.println(ps);
+
             int val = ps.executeUpdate();
+
 
             if(val>0)
             {

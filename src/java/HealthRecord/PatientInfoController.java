@@ -11,10 +11,17 @@ package HealthRecord;
  */
 
 /*
+**
+** 		SERVLET COLLABORATION IS IMPLEMENTED HERE
+**
+*/
+
+
+/*
 
 	Controller: To View Patient Information
 
-	Use POJO or DAO for Fetching Information via JDBC
+	View Patient.JSP --> Calls PatientInfoController.java
 
 */
 
@@ -30,8 +37,14 @@ public class PatientInfoController extends HttpServlet
 
         String search_query = req.getParameter("search");
 
+        // Setting the attribute of request object so that it can be accessed in the forwarded servlet
 
+        req.setAttribute("id",search_query);
 
+        // Redirecting client request to another Servlet
+
+        RequestDispatcher rd = request.getRequestDispatcher("patientDAO"); 
+        rd.forward(req,rep);
 
     }
 }
