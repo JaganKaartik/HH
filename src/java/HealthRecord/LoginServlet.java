@@ -8,8 +8,6 @@ package HealthRecord;
 
 import java.sql.*;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
@@ -36,7 +34,7 @@ public class LoginServlet extends HttpServlet
                 }
                 catch (ClassNotFoundException ex) 
                 {
-                    Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex);
                 }
                 Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
                 Statement st = conn.createStatement();
@@ -46,8 +44,12 @@ public class LoginServlet extends HttpServlet
                 {
                     String uname = rs.getString("username");
                     String psswrd = rs.getString("password"); 
+
+                    HttpSession session = req.getSession();
+
                     if(uname.equals(checkname) && psswrd.equals(checkpass))
                     {
+                        session.setAttribute("uname",uname);
                         String role = rs.getString("role");
                         switch (role)
                         {
@@ -72,6 +74,10 @@ public class LoginServlet extends HttpServlet
                         flag = 0;
                         break;
                     }
+                    else
+                    {
+                        rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/");
+                    }
                 }
                 if(flag==1)
                 {
@@ -80,7 +86,7 @@ public class LoginServlet extends HttpServlet
             }
             catch (SQLException ex) 
                 {
-                    Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex);
                 }
     }
 }

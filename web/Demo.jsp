@@ -1,10 +1,11 @@
 <%-- 
-    Document   : Reception
-    Created on : Sep 30, 2019, 4:49:14 PM
+    Document   : Demo
+    Created on : Oct 05, 2019, 12:18:14 AM
     Author     : jagankaartik58
 --%>
 
 
+<%@page import="HealthRecord.Patient"%>
 <!-- Dynamic Web Page for Viewing Patient Information--->
 
 
@@ -42,8 +43,8 @@
         <title>Patient List</title>
         
     </head>
-    <body>
-         <nav>
+    
+         
 		    <div class="nav-wrapper light-blue darken-3">
 
 		        <!-- HREF TO ABOUT.HTML -->
@@ -97,7 +98,11 @@
 
                     <br>
                     <br>
-                
+                    <h3>Testing JDBC Values</h3>
+                    <%
+                        Patient pDAO = (Patient) request.getAttribute("pDAO");
+                    %>
+                     ${pDAO.Patient_ID}
                  </div>               
 
                 <!-- UI/UX  -->
@@ -135,6 +140,6 @@
 
             </div> -->
 
-  		</nav>
-    </body>
+  		
+    
 </html>

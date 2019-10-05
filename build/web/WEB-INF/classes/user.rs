@@ -1,4 +1,0 @@
-Receptionist
-User
-Doctor
-Admin

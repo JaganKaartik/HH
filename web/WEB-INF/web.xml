@@ -65,4 +65,16 @@ and open the template in the editor.
         <url-pattern>/patinfocontrol</url-pattern>
     </servlet-mapping>
 
+    <!-- Patient DAO Servlet -->
+
+    <servlet>
+        <servlet-name>PatientDAO</servlet-name>
+        <servlet-class>HealthRecord.patientDAO</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PatientDAO</servlet-name>
+        <url-pattern>/patientDAO</url-pattern>
+    </servlet-mapping>
+
 </web-app>

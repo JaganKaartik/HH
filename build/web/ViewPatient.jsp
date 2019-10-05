@@ -84,9 +84,9 @@
 
                             <!-- Patient Info Controller -->
 
-                          <form method="post" method="patinfocontrol">
+                          <form method="get" action="patinfocontrol">
                             <div class="input-field">
-                              <input name="search" type="search" placeholder="Patient ID" required>
+                              <input name="ser" type="search" placeholder="Patient ID" required>
                               <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                               <i class="material-icons">close</i>
                             </div>
@@ -94,6 +94,10 @@
 
                         </div>
                       </nav>
+
+                    <br>
+                    <br>
+                
                  </div>               
 
                 <!-- UI/UX  -->
