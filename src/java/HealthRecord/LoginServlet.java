@@ -45,12 +45,14 @@ public class LoginServlet extends HttpServlet
                     String uname = rs.getString("username");
                     String psswrd = rs.getString("password"); 
 
-                    HttpSession session = req.getSession();
-
                     if(uname.equals(checkname) && psswrd.equals(checkpass))
                     {
-                        session.setAttribute("uname",uname);
                         String role = rs.getString("role");
+
+                        HttpSession session = req.getSession();
+                        session.setAttribute("uname",uname);
+                        session.setAttribute("role",role);
+                        
                         switch (role)
                         {
                             case "Admin":
@@ -61,7 +63,7 @@ public class LoginServlet extends HttpServlet
                             case "Receptionist":
                                 /* Redirect to Receptionist Page */
                                 //out.println("Receptionist Login Verified");
-                                rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.html");
+                                rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.jsp");
                                 break;
                             case "Doctor":
                                 /* Redirect to Doctor Page */
@@ -76,7 +78,8 @@ public class LoginServlet extends HttpServlet
                     }
                     else
                     {
-                        rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/");
+                        req.getRequestDispatcher("index.html").include(req,rep);  
+
                     }
                 }
                 if(flag==1)
