@@ -115,7 +115,7 @@ public class patientDAO extends HttpServlet
                     patient_obj.setPhoneNumber(PhoneNumber);
                     
                     MaritalStatus = rs.getString(9);
-                    patient_obj.setMaritalStatus(MaritalStatus)
+                    patient_obj.setMaritalStatus(MaritalStatus);
                     
                     Age = rs.getString(10);
                     patient_obj.setAge(Age);

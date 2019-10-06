@@ -6,16 +6,19 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<!-- Reception.HTML Static Page Complete -->
+<!-- Reception.JSP Page Complete -->
 
 <html>
+
     <head>
+
         <title>Reception</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,22 +30,25 @@ and open the template in the editor.
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 
-        <!-- Materialize Front End Framework -->
+                                    <!-- Materialize Front End Framework -->
 
         <!-- Compiled and minified CSS -->
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">          
 
         <!-- Compiled and minified JavaScript -->
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
 
         <!-- Custom CSS -->
+
         <link rel="stylesheet" href="css/base.css" type="text/css">
 
-        <style type="text/css">
+   <!--      <style type="text/css">
             
             
         </style>
-
+ -->
     </head>
 
     <body>
@@ -70,7 +76,7 @@ and open the template in the editor.
 		        <li><a href="#">Billing/Discharge</a></li>
 		        <li><a href="http://localhost:8080/ElectronicHealthRecord/ViewPatient.jsp">View Patients</a></li>
 		        <li><a href="#">View Doctors</a></li>
-		        <li><a href="#">Schedule Appointment</a></li>
+		        <li><a href="http://localhost:8080/ElectronicHealthRecord/index.html">Logout</a></li>
 		     	</ul>
 		    </div>
   		</nav>
@@ -90,8 +96,6 @@ and open the template in the editor.
              <%
                 // TO DISPLAY USER AND ROLE
                 
-                //HttpSession session=request.getSession(false);  
-                
                 String username = (String)session.getAttribute("uname");  
                 String role = (String)session.getAttribute("role");  
 
@@ -109,6 +113,8 @@ and open the template in the editor.
           </div>
       </div>
         </div>
-        
+        <%
+        session.invalidate();
+        %>
     </body>
 </html>

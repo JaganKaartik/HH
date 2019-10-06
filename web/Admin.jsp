@@ -33,6 +33,9 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/admin.css" type="text/css">
 
+         <!-- External JavaScript File -->
+        <script src="js/home.js"></script>
+
     </head>
     <style type="text/css">
         #form1 {
@@ -70,16 +73,21 @@
 
 
         <div class = "container">
+
+            <div class = "card-panel light-blue row">
+                <%
+
+                // TO DISPLAY USER AND ROLE
+                
+                String username = (String)session.getAttribute("uname");  
+                String role = (String)session.getAttribute("role");  
+
+                 %>
+                 <h6 class="white-text">Welcome! Admin: <%=username%></h6> 
+            </div>
+
             <div class = "row">
-                <div class ="card-panel green darken-3 col s6">
-                    <form method="get" action="viewAllPat">
-                        <button type="button" class="btn btn-primary" id="viewuserbutton">View Users
-                        </button>
-                    </form>
-                   <div id="formA">
-                        <!-- Scriptlet -->
-                   </div>
-                </div>
+                
             </div>
 
             <div class = "row">
@@ -91,7 +99,7 @@
                         <input type="text" name="role" placeholder="Role"/>
                         <input type="password" name="p1" placeholder="Password"/>
                         <input type="password" name="p2" placeholder="Confirm Password"/>
-                        <button type="button" class="btn btn-warning">Submit to DB</button>
+                        <input type="submit"/>
                     </form>
                 </div>
             </div>
@@ -99,6 +107,9 @@
        <!-- <%
             out.println("Admin.JSP Page Admin Login Verified");
         %> -->
+        <%
+        session.invalidate();
+        %>
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});
             $("#viewuserbutton").click(function(){$("#formA").toggle();});

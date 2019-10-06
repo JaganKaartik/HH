@@ -62,7 +62,11 @@ public class SignupServlet extends HttpServlet
                     out.println("Failed!");
                     //fail
                 }
-                    
+                
+                // Redirect to Admin.jsp page
+
+                    req.getRequestDispatcher("Admin.jsp").forward(req,rep);
+
                 /* Close Statement and Connection in JDBC */
                 
                 ps.close();
