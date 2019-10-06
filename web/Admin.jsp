@@ -70,7 +70,19 @@
 
 
         <div class = "container">
-            <div class = "darken-4 row">
+            <div class = "row">
+                <div class ="card-panel green darken-3 col s6">
+                    <form method="get" action="viewAllPat">
+                        <button type="button" class="btn btn-primary" id="viewuserbutton">View Users
+                        </button>
+                    </form>
+                   <div id="formA">
+                        <!-- Scriptlet -->
+                   </div>
+                </div>
+            </div>
+
+            <div class = "row">
                 <div class ="card-panel green darken-3 col s6">
                     <button type="button" class="btn btn-primary" id="formButton">Add User</button>
 
@@ -89,6 +101,7 @@
         %> -->
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});
+            $("#viewuserbutton").click(function(){$("#formA").toggle();});
         </script>
     </body>
 </html>

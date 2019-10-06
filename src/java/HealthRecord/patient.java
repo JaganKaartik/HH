@@ -30,7 +30,7 @@ public class Patient
     
 //    void setValue(String pid,String fname,String lname,String dob,String bg,String ad,String pin,String pn,String ms,String age,String sex)
 //    {
-//        this.setPatientID(pid);
+//        this.PatientID = PatientID;
 //        this.setFirst_name(fname);
 //        this.setLast_name(lname);
 //        this.setDOB(dob);

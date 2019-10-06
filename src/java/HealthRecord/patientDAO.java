@@ -91,26 +91,47 @@ public class patientDAO extends HttpServlet
                 while(rs.next())
                 {
                     PatientID = rs.getString(1);
+                    patient_obj.setPatientID(PatientID);
+                    
                     First_name = rs.getString(2);
+                    patient_obj.setFirst_name(First_name);
+                    
                     Last_name = rs.getString(3);
+                    patient_obj.setLast_name(Last_name);
+                    
                     DOB = rs.getString(4);
+                    patient_obj.setDOB(DOB);
+                    
                     BloodGroup = rs.getString(5);
+                    patient_obj.setBloodGroup (BloodGroup);
+                    
                     Address = rs.getString(6);
+                    patient_obj.setAddress(Address);
+                    
                     Pincode = rs.getString(7);
+                    patient_obj.setPincode(Pincode);
+                    
                     PhoneNumber = rs.getString(8);
+                    patient_obj.setPhoneNumber(PhoneNumber);
+                    
                     MaritalStatus = rs.getString(9);
+                    patient_obj.setMaritalStatus(MaritalStatus)
+                    
                     Age = rs.getString(10);
+                    patient_obj.setAge(Age);
+                    
                     Sex = rs.getString(11);
+                    patient_obj.setSex(Sex);
 
-                    patient_obj.setValue(PatientID,First_name,Last_name,DOB,BloodGroup,Address,Pincode,PhoneNumber,MaritalStatus,Age,Sex);
+                    //patient_obj.setValue(PatientID,First_name,Last_name,DOB,BloodGroup,Address,Pincode,PhoneNumber,MaritalStatus,Age,Sex);
                     	
                     out.println(patient_obj.getFirst_name());
                     out.println(patient_obj.getAddress());
 
                	 	//Pass the Data Back
 
-               	 	req.setAttribute("pDAO",patient_obj);
-                	req.getRequestDispatcher("Demo.jsp").forward(req,rep);
+               	    req.setAttribute("pDAO",patient_obj);
+                	req.getRequestDispatcher("Reception.jsp").forward(req,rep);
                 }   
                	
             }

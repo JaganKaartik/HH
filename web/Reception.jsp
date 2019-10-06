@@ -103,7 +103,7 @@ and open the template in the editor.
           <div class="card-panel teal-lighten-2 col s3">
             <!-- Teal page content  -->
 
-            <h6> Reception Menu </h6><br>
+            <h3 class="black-text">Testing JDBC Values ${pDAO.getFirst_name()}</h3>
             
 
           </div>
