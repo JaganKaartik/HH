@@ -52,14 +52,6 @@
 			<h6 class="brand-logo center">Patient Information</h6>
 
                  <!-- Nav Bar (View Patient) -->
-
-			<ul id="nav-mobile" class="left hide-on-med-and-down">
-		        <li><a href="#">1</a></li>
-		        <li><a href="#">2</a></li>
-		        <li><a href="#">3</a></li>
-		        <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-		     </ul>
 		    </div>
 
             <!-- Need to implement SERVLET -- SERVLET Connection  -->

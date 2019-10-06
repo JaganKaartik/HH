@@ -52,22 +52,12 @@ and open the template in the editor.
 
           <!-- Registration Form (Send to Registration Servelt) -->
 
-          <form class ="register-form" onSubmit = "return checkPassword(this)" method="post" action="signup">
-            <input type="text" name="user" placeholder="Username"/>
-            <input type="text" name="role" placeholder="Role"/>
-            <input type="password" name="p1" placeholder="Password"/>
-            <input type="password" name="p2" placeholder="Confirm Password"/>
-            <button>Sign Up</button>
-            <p class="message">Already Registered? <a href="#"> Login</a> </p>
-          </form>
-
           <!-- Login Form -->
 
           <form class="login-form" method="post" action="login">
             <input type="text" name="user" placeholder="Username"/>
             <input type="password" name="password" placeholder="Password"/>
             <button>login</button>
-            <p class="message">Not Registered? <a href="#">Register</a></p>
           </form>
         </div>
 
@@ -80,6 +70,13 @@ and open the template in the editor.
       </blockquote>
     </div> -->
 
+    <!-- <div id="footer">
+
+
+    <p>&nbsp;</p>
+    <h6>Copyright 2019 HygeaHealth+ is a registered trademark of HygeaHealth Corporation</h6>
+  </div>
+ -->
     <script>
       $('.message a').click(function(){$('form').animate({height: "toggle",opacity: "toggle"},"slow");});   
     </script>

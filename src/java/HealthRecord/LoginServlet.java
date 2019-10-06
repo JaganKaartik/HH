@@ -57,6 +57,7 @@ public class LoginServlet extends HttpServlet
                         switch (role)
                         {
                             case "Admin":
+
                                 /* Redirect to Admin Page */
                                 //out.println("Admin Login Verified");
 
@@ -65,6 +66,7 @@ public class LoginServlet extends HttpServlet
                                 req.getRequestDispatcher("Admin.jsp").forward(req,rep);
                                 break;
                             case "Receptionist":
+
                                 /* Redirect to Receptionist Page */
                                 //out.println("Receptionist Login Verified");
                                 //rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.jsp");
@@ -72,6 +74,7 @@ public class LoginServlet extends HttpServlet
                                 req.getRequestDispatcher("Reception.jsp").forward(req,rep);
                                 break;
                             case "Doctor":
+
                                 /* Redirect to Doctor Page */
                                 //out.println("Doctor Login Verified");
                                 //rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Doctor.jsp");
@@ -87,9 +90,12 @@ public class LoginServlet extends HttpServlet
                 }
                 if(flag==1)
                 {
-                    //out.println("User! Not Found");
-                    req.getRequestDispatcher("index.html").forward(req,rep);  
+                    
+                   req.getRequestDispatcher("index.html").forward(req,rep);  
+
                 }
+                st.close();
+                conn.close();
             }
             catch (SQLException ex) 
                 {

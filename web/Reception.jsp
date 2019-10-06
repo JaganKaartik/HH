@@ -16,7 +16,7 @@ and open the template in the editor.
 
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Reception</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,9 +38,25 @@ and open the template in the editor.
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/base.css" type="text/css">
 
+        <style type="text/css">
+            
+            
+        </style>
+
     </head>
 
     <body>
+
+        <!-- CHECK IF USER IS LOGGIN IN OR NOt USING SESSION TRACKING -->
+
+        <%
+
+            if(session.getAttribute("uname")==null)
+            {
+                response.sendRedirect("index.html");
+            }
+
+        %>
 
         <!-- Static Web Page that links to a Dynamic Page -->
 
@@ -58,6 +74,41 @@ and open the template in the editor.
 		     	</ul>
 		    </div>
   		</nav>
+
+        <div class="alert alert-success alert-dismissible fade show">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Successfully loggin in!</strong> 
+        </div>
+
+        <div class="container">
+        <div class="row">
+
+          <div class="card-panel teal-lighten-2 col s3">
+
+            <!-- Grey navigation panel -->
+
+             <%
+                // TO DISPLAY USER AND ROLE
+                
+                //HttpSession session=request.getSession(false);  
+                
+                String username = (String)session.getAttribute("uname");  
+                String role = (String)session.getAttribute("role");  
+
+            %>
+
+            <h6>Hello <%=role%> <%=username%></h6>
+          </div>
+
+          <div class="card-panel teal-lighten-2 col s3">
+            <!-- Teal page content  -->
+
+            <h6> Reception Menu </h6><br>
+            
+
+          </div>
+      </div>
+        </div>
         
     </body>
 </html>
