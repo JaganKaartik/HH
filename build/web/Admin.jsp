@@ -4,6 +4,7 @@
     Author     : jagankaartik58
 --%>
 
+<%@page import="HealthRecord.Patient"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -143,13 +144,80 @@
                 <form method="get" action="viewAllPat">
                      <button type="submit" class="btn btn-primary">View All Patients</button>
                 </form>
-            </div>
-            <% 
-                    if(request.getAttribute("pobj")!=null)
-                    {
-                        out.println("HELLO");
+                <% 
+                        if(request.getAttribute("pobj")!=null)
+                        {
+                            //Fetched the Array of Objects of type Patient
+
+                            Patient patient_obj[] = (Patient [])request.getAttribute("pobj");
+                            
+
+                            out.println("<br>");
+                            out.println("<br>");
+                            out.println("<table>");
+                            out.println("<thead>");
+                            out.println("<tr>");
+                            out.println("<th>PatientID</th>");
+                            out.println("<th>First_Name</th>");
+                            out.println("<th>Last_Name</th>");
+                            out.println("<th>DOB</th>");
+                            out.println("<th>BloodGroup</th>");
+                            out.println("<th>Address</th>");
+                            out.println("<th>Pincode</th>");
+                            out.println("<th>PhoneNumber</th>");
+                            out.println("<th>MaritalStatus</th>");
+                            out.println("<th>Age</th>");
+                            out.println("<th>Sex</th>");
+                            out.println("</tr>");
+                            out.println("</thead>");
+
+                            out.println("<tbody>");
+
+                            for(int i=0;i<patient_obj.length;++i) 
+                            {
+                                out.println("<tr>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getPatientID());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getFirst_name());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getLast_name());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getDOB());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getBloodGroup());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getAddress());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getPincode());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getPhoneNumber());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getMaritalStatus());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getAge());
+                                    out.println("</td>");
+                                    out.println("<td>");
+                                    out.println(patient_obj[i].getSex());
+                                    out.println("</td>");
+                                out.println("</tr>");
+                            }
+
+                            out.println("</tbody>");
+                            out.println("</table>");
+
                     }
-            %>
+                %>
+            </div>
         </div>
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});

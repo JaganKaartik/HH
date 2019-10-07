@@ -102,12 +102,12 @@ public class ViewAllPat extends HttpServlet
                     Sex = rs.getString(11);
                     patient_obj[i].setSex(Sex);
 
-                    //Pass the Data Back
-
-                    req.setAttribute("pobj",patient_obj);
-                    req.getRequestDispatcher("Admin.jsp").forward(req,rep);
-                    i+=1;
+                    i = i + 1;
                 } 
+                  //Pass the Data Back
+
+                req.setAttribute("pobj",patient_obj);
+                req.getRequestDispatcher("Admin.jsp").forward(req,rep);
             }
             catch(SQLException ex) {
                 System.out.println(ex);
