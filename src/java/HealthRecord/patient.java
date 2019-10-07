@@ -28,20 +28,11 @@ public class Patient
     private String Age;
     private String Sex;
     
-//    void setValue(String pid,String fname,String lname,String dob,String bg,String ad,String pin,String pn,String ms,String age,String sex)
-//    {
-//        this.PatientID = PatientID;
-//        this.setFirst_name(fname);
-//        this.setLast_name(lname);
-//        this.setDOB(dob);
-//        this.setBloodGroup(bg);
-//        this.setAddress(ad);
-//        this.setPincode(pin);
-//        this.setPhoneNumber(pn);
-//        this.setMaritalStatus(ms);
-//        this.setAge(age);
-//        this.setSex(sex);
-//    }
+    /*
+        
+        Using in-built getter and setter methods 
+
+    */
 
     /**
      * @return the PatientID

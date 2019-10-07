@@ -88,6 +88,18 @@ and open the template in the editor.
         <url-pattern>/patientDAO</url-pattern>
     </servlet-mapping>
 
+    <!-- View All Users Servlet -->
+
+    <servlet>
+        <servlet-name>ViewAllUser</servlet-name>
+        <servlet-class>HealthRecord.ViewAllUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ViewAllUser</servlet-name>
+        <url-pattern>/viewAllUser</url-pattern>
+    </servlet-mapping>
+
     <!-- View All Patients Servlet -->
 
     <servlet>

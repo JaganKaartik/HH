@@ -5,13 +5,9 @@
  */
 package HealthRecord;
 
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-//import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,60 +17,100 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jagankaartik58
  */
+
 public class ViewAllPat extends HttpServlet 
 {
-    String uname[] = new String[10];
-    String roles[] = new String[10];
-    String temp;
+    String PatientID;
+    String First_name;
+    String Last_name;
+    String DOB;
+    String BloodGroup;
+    String Address;
+    String Pincode;
+    String PhoneNumber;
+    String MaritalStatus;
+    String Age;
+    String Sex;
     
-
-    @Override
-    public void doGet(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
-    {
-        try {
-            //JDBC Steps
+     public void doGet(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
+     {
+            /* Initialize Objects of type Patient */
             
-            PrintWriter out = rep.getWriter();
+            Patient[] patient_obj = new Patient[10];
             
-            try {
-                Class.forName("org.postgresql.Driver");
+            for(int i=0;i<10;++i)
+            {
+                patient_obj[i] = new Patient();
             }
-            catch(ClassNotFoundException ex) {
+
+            try {
+                //JDBC Steps
+                
+                PrintWriter out = rep.getWriter();
+                
+                try {
+                    Class.forName("org.postgresql.Driver");
+                }
+                catch(ClassNotFoundException ex) {
+                    System.out.println(ex);
+                }
+                
+                String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+                String db_username = "postgres";
+                String sql = "select * from public.\"PatientInformation\"";
+                
+                Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+                
+                Statement st = conn.createStatement();
+                
+                ResultSet rs = st.executeQuery(sql);
+
+                int i=0;
+
+                while(rs.next())
+                {
+                    PatientID = rs.getString(1);
+                    patient_obj[i].setPatientID(PatientID);
+                    
+                    First_name = rs.getString(2);
+                    patient_obj[i].setFirst_name(First_name);
+                    
+                    Last_name = rs.getString(3);
+                    patient_obj[i].setLast_name(Last_name);
+                    
+                    DOB = rs.getString(4);
+                    patient_obj[i].setDOB(DOB);
+                    
+                    BloodGroup = rs.getString(5);
+                    patient_obj[i].setBloodGroup (BloodGroup);
+                    
+                    Address = rs.getString(6);
+                    patient_obj[i].setAddress(Address);
+                    
+                    Pincode = rs.getString(7);
+                    patient_obj[i].setPincode(Pincode);
+                    
+                    PhoneNumber = rs.getString(8);
+                    patient_obj[i].setPhoneNumber(PhoneNumber);
+                    
+                    MaritalStatus = rs.getString(9);
+                    patient_obj[i].setMaritalStatus(MaritalStatus);
+                    
+                    Age = rs.getString(10);
+                    patient_obj[i].setAge(Age);
+                    
+                    Sex = rs.getString(11);
+                    patient_obj[i].setSex(Sex);
+
+                    //Pass the Data Back
+
+                    req.setAttribute("pobj",patient_obj);
+                    req.getRequestDispatcher("Admin.jsp").forward(req,rep);
+                    i+=1;
+                } 
+            }
+            catch(SQLException ex) {
                 System.out.println(ex);
             }
-            
-            String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-            String db_username = "postgres";
-            String sql = "select * from public.\"User\"";
-            
-            Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
-            
-            Statement st = conn.createStatement();
-            
-            ResultSet rs = st.executeQuery(sql);
-
-            int i = 0;
-            
-            while(rs.next())
-            {
-                temp = rs.getString(1);
-                uname[i] = temp;
-                temp = rs.getString(2);
-                roles[i] = temp;
-                i+=1;
-            }
-
-            out.println(uname[0]);
-            out.println(roles[0]);
-
-            req.setAttribute("uname",uname);
-            req.setAttribute("roles",roles);
-            req.getRequestDispatcher("Admin.jsp").forward(req,rep);
-            
-        }
-        catch(SQLException ex) {
-            Logger.getLogger(ViewAllPat.class.getName()).log(Level.SEVERE, null,ex);
-        }
-
-    }   
+     }
 }

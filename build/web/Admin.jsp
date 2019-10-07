@@ -102,7 +102,7 @@
                     </form>
                 </div>
             <div class = "card-panel light-green darken-3 col s6 row">
-                <form method="get" action="viewAllPat">
+                <form method="get" action="viewAllUser">
                      <button type="submit" class="btn btn-primary">View All Users</button>
                 </form>
                 <% 
@@ -139,6 +139,17 @@
                     }
                 %>
             </div>
+            <div class = "card-panel light-green darken-3 col s6 row">
+                <form method="get" action="viewAllPat">
+                     <button type="submit" class="btn btn-primary">View All Patients</button>
+                </form>
+            </div>
+            <% 
+                    if(request.getAttribute("pobj")!=null)
+                    {
+                        out.println("HELLO");
+                    }
+            %>
         </div>
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});
