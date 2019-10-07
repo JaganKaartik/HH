@@ -4,6 +4,10 @@
     Author     : jagankaartik58
 --%>
 
+
+<!-- Admin Page Fully Functional -->
+
+
 <%@page import="HealthRecord.Patient"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

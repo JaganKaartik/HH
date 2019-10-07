@@ -25,7 +25,7 @@ import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
 
-/* Servlet Collaboration (2nd Servlet) */
+/* Servlet Collaboration (2nd Servlet) to fetch Specific Patient Information */
 
 
 public class patientDAO extends HttpServlet
@@ -125,10 +125,12 @@ public class patientDAO extends HttpServlet
 
                     //patient_obj.setValue(PatientID,First_name,Last_name,DOB,BloodGroup,Address,Pincode,PhoneNumber,MaritalStatus,Age,Sex);
                     	
+                    // For De-Bug Purposes
+
                     out.println(patient_obj.getFirst_name());
                     out.println(patient_obj.getAddress());
 
-               	 	//Pass the Data Back
+               	 	//Pass the Data Back to Reception.JSP
 
                	    req.setAttribute("pDAO",patient_obj);
                 	req.getRequestDispatcher("Reception.jsp").forward(req,rep);

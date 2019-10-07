@@ -53,6 +53,7 @@
 
                  <!-- Nav Bar (View Patient) -->
 		    </div>
+        </nav>
 
             <!-- Need to implement SERVLET -- SERVLET Connection  -->
 
@@ -127,6 +128,5 @@
 
             </div> -->
 
-  		</nav>
     </body>
 </html>

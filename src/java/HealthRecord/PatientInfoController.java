@@ -10,6 +10,7 @@ package HealthRecord;
  * @author jagankaartik58
  */
 
+
 /*
 **
 ** 		SERVLET COLLABORATION IS IMPLEMENTED HERE
@@ -34,7 +35,13 @@ import javax.servlet.ServletException;
 public class PatientInfoController extends HttpServlet
 {
     
-    /* Post Method */
+    /*  
+
+        Servlet 1 to accept a request from client!
+        Servlet 1 forwards the request to Servlet 2
+        Servlet - Servlet Collaboration
+
+     */
 
     @Override
     public void doGet(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException

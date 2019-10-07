@@ -18,6 +18,12 @@ import javax.servlet.http.HttpServletResponse;
  * @author jagankaartik58
  */
 
+/*
+
+    View All Patients Servlet
+
+*/
+    
 public class ViewAllPat extends HttpServlet 
 {
     String PatientID;

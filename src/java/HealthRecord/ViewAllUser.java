@@ -18,6 +18,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jagankaartik58
  */
+
+
+/*
+
+    View All Users Servlet
+
+*/
+
+
 public class ViewAllUser extends HttpServlet 
 {
     String uname[] = new String[10];

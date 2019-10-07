@@ -9,6 +9,8 @@ import java.io.IOException;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
+/* Logout-Servlet */
+
 /**
  *
  * @author jagankaartik58

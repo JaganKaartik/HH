@@ -11,7 +11,7 @@ import java.io.IOException;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
-/* Login-Servlet is working */
+/* Login-Servlet */
 
 /**
  *
