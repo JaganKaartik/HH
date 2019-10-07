@@ -99,6 +99,7 @@
                 <div class ="card-panel green darken-3 col s6 row">
                     <button type="button" class="btn btn-primary" id="formButton">Add User</button>
                     <form id="form1" onSubmit = "return checkPassword(this)" method="post" action="signup">
+                        <input type="text" name="id" placeholder="Empoyee ID"/>
                         <input type="text" name="user" placeholder="Username"/>
                         <input type="text" name="role" placeholder="Role"/>
                         <input type="password" name="p1" placeholder="Password"/>

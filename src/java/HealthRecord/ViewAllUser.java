@@ -63,13 +63,12 @@ public class ViewAllUser extends HttpServlet
             
             while(rs.next())
             {
-                temp = rs.getString(1);
+                temp = rs.getString("name");
                 uname[i] = temp;
-                temp = rs.getString(2);
+                temp = rs.getString("role");
                 roles[i] = temp;
                 i+=1;
             }
-
             req.setAttribute("uname",uname);
             req.setAttribute("roles",roles);
             req.getRequestDispatcher("Admin.jsp").forward(req,rep);

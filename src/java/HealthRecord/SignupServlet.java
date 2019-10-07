@@ -34,6 +34,7 @@ public class SignupServlet extends HttpServlet
     {
              PrintWriter out = rep.getWriter();
             try {
+                String id = req.getParameter("id");
                 String username = req.getParameter("user");
                 String password = req.getParameter("p1");
                 String role = req.getParameter("role");
@@ -47,10 +48,11 @@ public class SignupServlet extends HttpServlet
                     Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
-                PreparedStatement ps = conn.prepareStatement("insert into public.\"User\" values(?,?,?)");
-                ps.setString(1, username);
-                ps.setString(2, role);
-                ps.setString(3, password);
+                PreparedStatement ps = conn.prepareStatement("insert into public.\"User\" values(?,?,?,?)");
+                ps.setString(1, id);
+                ps.setString(2, username);
+                ps.setString(3, role);
+                ps.setString(4, password);
                 int val = ps.executeUpdate();
                 if(val>0)
                 {

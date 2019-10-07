@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet
                 int flag = 1;
                 while (rs.next())
                 {
-                    String uname = rs.getString("username");
+                    String uname = rs.getString("name");
                     String psswrd = rs.getString("password"); 
 
                     if(uname.equals(checkname) && psswrd.equals(checkpass))

@@ -63,7 +63,7 @@ and open the template in the editor.
 		    <div class="nav-wrapper light-blue darken-3">
 		    	<!-- HREF TO ABOUT.HTML -->
 			    <a href="#" class="brand-logo right">HygeaHealth+</a>
-			    <a href="#" class="brand-logo center">Dashboard</a>
+			    <a href="#" class="brand-logo center">Reception Dashboard</a>
 			    <ul id="nav-mobile" class="left hide-on-med-and-down">
 		        <li><a href="http://localhost:8080/ElectronicHealthRecord/registerpatient.html">Register Patient</a></li>
 		        <li><a href="#">Billing/Discharge</a></li>
@@ -97,6 +97,7 @@ and open the template in the editor.
 
             <div class="card-panel light-blue ">
                 <!-- Row 2 -->
+                    <h5 class="white-text">View Patient Details</h5>
                     <nav>
                         <div class="nav-wrapper">
 
@@ -176,6 +177,21 @@ and open the template in the editor.
                         }
                     %>
 
+            </div>
+
+            <div class="card-panel light-blue row">
+                 <h5 class="white-text">View Doctor Details</h5>
+                 <nav>
+                        <div class="nav-wrapper">
+                            <form method="get" action="viewdoc">
+                                <div class="input-field">
+                                  <input name="ser" type="search" placeholder="Patient ID" required>
+                                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                  <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                </nav>
             </div>
         </div>
 
