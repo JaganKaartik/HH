@@ -154,18 +154,18 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table>");
+                            out.println("<table class=\"centered highlight\">");
                             out.println("<thead>");
                             out.println("<tr>");
-                            out.println("<th>PatientID</th>");
-                            out.println("<th>First_Name</th>");
-                            out.println("<th>Last_Name</th>");
-                            out.println("<th>DOB</th>");
-                            out.println("<th>BloodGroup</th>");
+                            out.println("<th>Patient ID</th>");
+                            out.println("<th>First Name</th>");
+                            out.println("<th>Last Name</th>");
+                            out.println("<th>Date of Birth</th>");
+                            out.println("<th>Blood Group</th>");
                             out.println("<th>Address</th>");
                             out.println("<th>Pincode</th>");
-                            out.println("<th>PhoneNumber</th>");
-                            out.println("<th>MaritalStatus</th>");
+                            out.println("<th>Phone Number</th>");
+                            out.println("<th>Marital Status</th>");
                             out.println("<th>Age</th>");
                             out.println("<th>Sex</th>");
                             out.println("</tr>");
