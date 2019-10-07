@@ -63,21 +63,13 @@ public class ViewAllPat extends HttpServlet
                 roles[i] = temp;
                 i+=1;
             }
-            
+
             out.println(uname[0]);
-            out.println(uname[1]);
-            out.println(uname[2]);
-            // for (String uname1 : uname) {
-            //     out.println(uname1);
-            // }
-            // for(String str : uname) 
-            // {
-            //     out.println(str);
-            // }
-            //req.setAttribute("uname",uname);
-            //req.setAttribute("roles",roles);
-            //req.getRequestDispatcher("Admin.jsp").forward(req, rep);
-            /* Testing Strings */
+            out.println(roles[0]);
+
+            req.setAttribute("uname",uname);
+            req.setAttribute("roles",roles);
+            req.getRequestDispatcher("Admin.jsp").forward(req,rep);
             
         }
         catch(SQLException ex) {

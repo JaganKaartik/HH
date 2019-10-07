@@ -93,9 +93,20 @@
 
             <div class = "card-panel green darken-3 col s6 row">
                 <form method="get" action="viewAllPat">
-                     <input type="submit"/>
+                     <button type="submit" class="btn btn-primary">View All Users</button>
                 </form>
-                <h5 class = "white-text"> All Users </h5>
+                <% 
+                    if(request.getAttribute("uname")!=null)
+                    {
+                        String unames[] = (String [])request.getAttribute("uname"); 
+                        for(String str : unames) 
+                        {
+                            out.println("<h1>");
+                            out.println(str);
+                            out.println("</h1>");
+                        }
+                    }
+                %>
             </div>
 
             <div class = "row">
@@ -112,9 +123,6 @@
                 </div>
             </div>
         </div>
-        <!-- <%
-        session.invalidate();
-        %> -->
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});
             $("#viewuserbutton").click(function(){$("#formA").toggle();});
