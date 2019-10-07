@@ -91,28 +91,8 @@
                  <h6 class="white-text">Welcome! Admin: <%=username%></h6> 
             </div>
 
-            <div class = "card-panel green darken-3 col s6 row">
-                <form method="get" action="viewAllPat">
-                     <button type="submit" class="btn btn-primary">View All Users</button>
-                </form>
-                <% 
-                    if(request.getAttribute("uname")!=null)
-                    {
-                        String unames[] = (String [])request.getAttribute("uname"); 
-                        for(String str : unames) 
-                        {
-                            out.println("<h1>");
-                            out.println(str);
-                            out.println("</h1>");
-                        }
-                    }
-                %>
-            </div>
-
-            <div class = "row">
-                <div class ="card-panel green darken-3 col s6">
+                <div class ="card-panel green darken-3 col s6 row">
                     <button type="button" class="btn btn-primary" id="formButton">Add User</button>
-
                     <form id="form1" onSubmit = "return checkPassword(this)" method="post" action="signup">
                         <input type="text" name="user" placeholder="Username"/>
                         <input type="text" name="role" placeholder="Role"/>
@@ -121,11 +101,47 @@
                         <input type="submit"/>
                     </form>
                 </div>
+            <div class = "card-panel light-green darken-3 col s6 row">
+                <form method="get" action="viewAllPat">
+                     <button type="submit" class="btn btn-primary">View All Users</button>
+                </form>
+                <% 
+                    if(request.getAttribute("uname")!=null)
+                    {
+                        out.println("<br>");
+                        out.println("<br>");
+                        out.println("<table>");
+                        out.println("<thead>");
+                        out.println("<tr>");
+                        out.println("<th>Name</th>");
+                        out.println("<th>Role</th>");
+                        out.println("</tr>");
+                        out.println("</thead>");
+                        out.println("<tbody>");
+
+                        String unames[] = (String [])request.getAttribute("uname"); 
+                        String roles[] = (String [])request.getAttribute("roles");
+
+                        for(int i=0;i<unames.length;++i) 
+                        {
+                            out.println("<tr>");
+                            out.println("<td>");
+                            out.println(unames[i]);
+                            out.println("</td>");
+                            out.println("<td>");
+                            out.println(roles[i]);
+                            out.println("</td>");
+                            out.println("</tr>");
+                        }
+
+                        out.println("</tbody>");
+                        out.println("</table>");
+                    }
+                %>
             </div>
         </div>
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});
-            $("#viewuserbutton").click(function(){$("#formA").toggle();});
         </script>
     </body>
 </html>
