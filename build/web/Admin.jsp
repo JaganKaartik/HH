@@ -61,13 +61,18 @@
                 <!-- HREF TO ABOUT.HTML -->
                 <a href="#" class="brand-logo left">HygeaHealth+</a>
                 <a href="#" class="brand-logo center">Admin Dashboard</a>
-                <!-- <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="http://localhost:8080/ElectronicHealthRecord/registerpatient.html">Register Patient</a></li>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <!-- <li><a href="http://localhost:8080/ElectronicHealthRecord/registerpatient.html">Register Patient</a></li>
                 <li><a href="#">Billing/Discharge</a></li>
                 <li><a href="http://localhost:8080/ElectronicHealthRecord/ViewPatient.jsp">View Patients</a></li>
-                <li><a href="#">View Doctors</a></li>
-                <li><a href="#">Schedule Appointment</a></li>
-                </ul> -->
+                <li><a href="#">View Doctors</a></li> -->
+                <!-- <li><a href="#">Schedule Appointment</a></li> -->
+                <li>
+                    <form action="logout" method="post">
+                    <button type="submit" class="btn btn-primary">LogOut</button>
+                    </form>
+                </li>
+                </ul>
             </div>
         </nav>
 
@@ -86,8 +91,11 @@
                  <h6 class="white-text">Welcome! Admin: <%=username%></h6> 
             </div>
 
-            <div class = "row">
-                
+            <div class = "card-panel green darken-3 col s6 row">
+                <form method="get" action="viewAllPat">
+                     <input type="submit"/>
+                </form>
+                <h5 class = "white-text"> All Users </h5>
             </div>
 
             <div class = "row">
@@ -104,12 +112,9 @@
                 </div>
             </div>
         </div>
-       <!-- <%
-            out.println("Admin.JSP Page Admin Login Verified");
-        %> -->
-        <%
+        <!-- <%
         session.invalidate();
-        %>
+        %> -->
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});
             $("#viewuserbutton").click(function(){$("#formA").toggle();});

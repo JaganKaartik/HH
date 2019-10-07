@@ -76,7 +76,11 @@ and open the template in the editor.
 		        <li><a href="#">Billing/Discharge</a></li>
 		        <li><a href="http://localhost:8080/ElectronicHealthRecord/ViewPatient.jsp">View Patients</a></li>
 		        <li><a href="#">View Doctors</a></li>
-		        <li><a href="http://localhost:8080/ElectronicHealthRecord/index.html">Logout</a></li>
+                <li>
+		        <form action="logout" method="post">
+                    <button type="submit" class="btn btn-primary">LogOut</button>
+                </form>
+                </li>
 		     	</ul>
 		    </div>
   		</nav>
@@ -113,8 +117,5 @@ and open the template in the editor.
           </div>
       </div>
         </div>
-        <%
-        session.invalidate();
-        %>
     </body>
 </html>

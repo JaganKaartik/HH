@@ -23,6 +23,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ViewAllPat extends HttpServlet 
 {
+    String uname[] = new String[10];
+    String roles[] = new String[10];
+    String temp;
+    
+
     @Override
     public void doGet(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
     {
@@ -47,22 +52,31 @@ public class ViewAllPat extends HttpServlet
             Statement st = conn.createStatement();
             
             ResultSet rs = st.executeQuery(sql);
-            
-            String[] unames = new String[3]; //0 1 2
-            String[] roles = new String[3]; //0 1 2
+
             int i = 0;
             
             while(rs.next())
             {
-                unames[i] = rs.getString(1);
-                roles[i] = rs.getString(2);
+                temp = rs.getString(1);
+                uname[i] = temp;
+                temp = rs.getString(2);
+                roles[i] = temp;
                 i+=1;
             }
             
-            req.setAttribute("unames",unames);
-            req.setAttribute("roles",roles);
-            req.getRequestDispatcher("Admin.jsp").forward(req, rep);
-            
+            out.println(uname[0]);
+            out.println(uname[1]);
+            out.println(uname[2]);
+            // for (String uname1 : uname) {
+            //     out.println(uname1);
+            // }
+            // for(String str : uname) 
+            // {
+            //     out.println(str);
+            // }
+            //req.setAttribute("uname",uname);
+            //req.setAttribute("roles",roles);
+            //req.getRequestDispatcher("Admin.jsp").forward(req, rep);
             /* Testing Strings */
             
         }
