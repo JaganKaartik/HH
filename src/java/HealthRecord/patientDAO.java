@@ -88,12 +88,6 @@ public class patientDAO extends HttpServlet
              
                 Patient patient_obj = new Patient();
 
-                if (rs.next() == false) 
-                {
-                      
-                      rep.sendRedirect("error_page.jsp");
-                 
-                }
                 
                 while(rs.next())
                 {
@@ -142,6 +136,13 @@ public class patientDAO extends HttpServlet
                	    req.setAttribute("pDAO",patient_obj);
                 	req.getRequestDispatcher("Reception.jsp").forward(req,rep);
                 }   
+
+                if (rs.next() == false) 
+                {
+                      // rep.sendRedirect("error_page.jsp");
+                      req.getRequestDispatcher("error_page.jsp").forward(req,rep);
+                 
+                }
                	
             }
 	    catch(SQLException ex) {

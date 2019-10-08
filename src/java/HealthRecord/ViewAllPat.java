@@ -75,13 +75,6 @@ public class ViewAllPat extends HttpServlet
                 
                 ResultSet rs = st.executeQuery(sql);
 
-                if (rs.next() == false) 
-                {
-                      
-                      rep.sendRedirect("error_page.jsp");
-                 
-                }
-
                 int i=0;
 
                 List<Patient> patients = new ArrayList<Patient>();
@@ -126,11 +119,21 @@ public class ViewAllPat extends HttpServlet
                     patients.add(patient_obj);
 
                     i = i + 1;
-                } 
-                  //Pass the Data Back (Array List)
+                }
+
+                 //Pass the Data Back (Array List)
 
                 req.setAttribute("pobj",patients);
                 req.getRequestDispatcher("Admin.jsp").forward(req,rep);
+
+                //Exception
+                
+                if(rs.next() == false) 
+                {
+                      
+                      rep.sendRedirect("error_page.jsp");
+                 
+                }
             }
             catch(SQLException ex) {
                 System.out.println(ex);

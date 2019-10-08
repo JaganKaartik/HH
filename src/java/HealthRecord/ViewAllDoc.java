@@ -70,12 +70,6 @@ public class ViewAllDoc extends HttpServlet
             
             ResultSet rs = st.executeQuery(sql);
 
-            if (rs.next() == false) 
-            {
-                  
-                  rep.sendRedirect("error_page.jsp");
-             
-            }
             
             int i=0;
             
@@ -108,6 +102,13 @@ public class ViewAllDoc extends HttpServlet
 
             req.setAttribute("doctors",doctor);
             req.getRequestDispatcher("Admin.jsp").forward(req,rep);
+
+            if (rs.next() == false) 
+            {
+                  
+                  rep.sendRedirect("error_page.jsp");
+             
+            }
             
         }
         catch(SQLException ex) {

@@ -60,12 +60,6 @@ public class ViewDoctor extends HttpServlet
 
              //Using POJO (Plain Old Java Object) to Store Information
 
-             if (rs.next() == false) 
-             {
-                  
-                  rep.sendRedirect("error_page.jsp");
-             
-             }
              
              Doctor doctor_obj = new Doctor();
              
@@ -92,7 +86,14 @@ public class ViewDoctor extends HttpServlet
                      req.setAttribute("doctor",doctor_obj);
                      req.getRequestDispatcher("Reception.jsp").forward(req,rep);
                  }
-             
+
+                 if(rs.next()!=true) 
+                 {
+                      
+                      rep.sendRedirect("error_page.jsp");
+                 
+                 }
+                 
             }
                 catch(SQLException ex) 
                 {
