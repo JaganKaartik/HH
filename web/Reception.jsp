@@ -67,7 +67,6 @@ and open the template in the editor.
 			    <ul id="nav-mobile" class="left hide-on-med-and-down">
 		        <li><a href="http://localhost:8080/ElectronicHealthRecord/registerpatient.html">Register Patient</a></li>
 		        <li><a href="#">Billing/Discharge</a></li>
-		        <li><a href="#">View Doctors</a></li>
                 <li>
 		        <form action="logout" method="post">
                     <button type="submit" class="btn btn-primary">LogOut</button>

@@ -34,13 +34,6 @@ class Admin extends User
     String adminName;
 }
 
-class Doctor extends User
-{
-    String doctorid;
-    String doctorName;
-    String dept;
-}
-
 class Receptionist extends User
 {
     String empId;
