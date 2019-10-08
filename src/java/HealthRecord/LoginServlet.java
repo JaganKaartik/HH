@@ -39,7 +39,9 @@ public class LoginServlet extends HttpServlet
                 Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
                 Statement st = conn.createStatement();
                 ResultSet rs = st.executeQuery(sql);
+                
                 int flag = 1;
+
                 while (rs.next())
                 {
                     String uname = rs.getString("name");

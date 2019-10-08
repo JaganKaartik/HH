@@ -123,4 +123,16 @@ and open the template in the editor.
         <url-pattern>/viewalldoc</url-pattern>
     </servlet-mapping>
 
+    <!-- View A Doctor Servlet -->
+    
+    <servlet>
+        <servlet-name>ViewDoctor</servlet-name>
+        <servlet-class>HealthRecord.ViewDoctor</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ViewDoctor</servlet-name>
+        <url-pattern>/viewdoc</url-pattern>
+    </servlet-mapping>
+
 </web-app>

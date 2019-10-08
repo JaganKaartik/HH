@@ -69,7 +69,6 @@ and open the template in the editor.
 			    <a href="#" class="brand-logo center">Reception Dashboard</a>
 			    <ul id="nav-mobile" class="left hide-on-med-and-down">
 		        <li><a href="http://localhost:8080/ElectronicHealthRecord/registerpatient.html">Register Patient</a></li>
-		        <li><a href="#">Billing/Discharge</a></li>
                 <li>
 		        <form action="logout" method="post">
                     <button type="submit" class="btn btn-primary">LogOut</button>
@@ -185,9 +184,9 @@ and open the template in the editor.
                  <h5 class="white-text">View Doctor Details</h5>
                  <nav>
                         <div class="nav-wrapper">
-                            <form method="get" action="viewalldoc">
+                            <form method="get" action="viewdoc">
                                 <div class="input-field">
-                                  <input name="ser" type="search" placeholder="Doctor ID" required>
+                                  <input name="id" type="search" placeholder="ID" required>
                                   <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                                   <i class="material-icons">close</i>
                                 </div>
@@ -198,14 +197,17 @@ and open the template in the editor.
                 <!-- Output Dynamic Data from Doctor Details Servlet -->
 
                 <%
-                    if(request.getAttribute("doctors")!=null)
+                    if(request.getAttribute("doctor")!=null)
                     {
-                        List<Doctor> docs = (ArrayList<Doctor>)request.getAttribute("doctors");
+                            
+                            
+                            /* Doctor Servlet Returns Doctor Object */
+
+                            Doctor d = (Doctor)request.getAttribute("doctor");
 
                             out.println("<br>");
                             out.println("<br>");
                             out.println("<table class=\"centered highlight\">");
-
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Doctor ID</th>");
@@ -216,11 +218,7 @@ and open the template in the editor.
                             out.println("<th>Certifications</th>");
                             out.println("</tr>");
                             out.println("</thead>");
-                            
                             out.println("<tbody>");
-
-                        for(Doctor d : docs)
-                        {
                             out.println("<tr>");
                                 out.println("<td>");
                                 out.println(d.getEID());
@@ -241,10 +239,9 @@ and open the template in the editor.
                                 out.println(d.getCertifications());
                                 out.println("</td>");
                             out.println("</tr>");
-                        }
+                            out.println("</tbody>");
+                            out.println("</table>");
 
-                        out.println("</tbody>");
-                        out.println("</table>");
                     }
                 %>
 
