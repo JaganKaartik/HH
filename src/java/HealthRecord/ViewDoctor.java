@@ -63,7 +63,7 @@ public class ViewDoctor extends HttpServlet
              if (rs.next() == false) 
              {
                   
-                  rep.sendRedirect("error_page.html");
+                  rep.sendRedirect("error_page.jsp");
              
              }
              

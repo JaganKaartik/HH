@@ -87,6 +87,13 @@ public class patientDAO extends HttpServlet
                 //Using POJO (Plain Old Java Object) to Store Information
              
                 Patient patient_obj = new Patient();
+
+                if (rs.next() == false) 
+                {
+                      
+                      rep.sendRedirect("error_page.jsp");
+                 
+                }
                 
                 while(rs.next())
                 {
