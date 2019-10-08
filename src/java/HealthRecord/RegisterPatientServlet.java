@@ -67,7 +67,7 @@ public class RegisterPatientServlet extends HttpServlet
             String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
             String db_username = "postgres";
             
-            String sql = "select * from public.\"User\" ";
+           // String sql = "select * from public.\"User\" ";
             
             Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
             PreparedStatement ps = conn.prepareStatement("insert into public.\"PatientInformation\" values (?,?,?,?,?,?,?,?,?,?,?);");

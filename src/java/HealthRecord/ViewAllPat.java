@@ -75,6 +75,13 @@ public class ViewAllPat extends HttpServlet
                 
                 ResultSet rs = st.executeQuery(sql);
 
+                if (rs.next() == false) 
+                {
+                      
+                      rep.sendRedirect("error_page.html");
+                 
+                }
+
                 int i=0;
 
                 List<Patient> patients = new ArrayList<Patient>();

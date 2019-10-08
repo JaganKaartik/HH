@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/Reception.jsp</file>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/SignupServlet.java</file>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/ViewAllPat.java</file>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/ViewAllUser.java</file>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/Admin.jsp</file>
-            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/patientServlet.java</file>
+            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/ViewDoctor.java</file>
+            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/ViewAllDoc.java</file>
+            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/patientDAO.java</file>
         </group>
     </open-files>
 </project-private>

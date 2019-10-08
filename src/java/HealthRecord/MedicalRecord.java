@@ -11,6 +11,7 @@ package HealthRecord;
  *
  * @author jagankaartik58
  */
-public class MedicalRecord {
+public class MedicalRecord 
+{
     
 }

@@ -69,6 +69,13 @@ public class ViewAllDoc extends HttpServlet
             Statement st = conn.createStatement();
             
             ResultSet rs = st.executeQuery(sql);
+
+            if (rs.next() == false) 
+            {
+                  
+                  rep.sendRedirect("error_page.html");
+             
+            }
             
             int i=0;
             

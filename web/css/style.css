@@ -4,6 +4,7 @@
 }
 
 body {
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(bluegradient1.png);
   padding: 0;
   margin: 0;
 }

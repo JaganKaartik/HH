@@ -22,7 +22,7 @@ import javax.servlet.ServletException;
 
 public class ViewDoctor extends HttpServlet 
 {
-    String EID;
+    String EID = null;
     String Name;
     String Gender;
     String Education;
@@ -57,11 +57,17 @@ public class ViewDoctor extends HttpServlet
              Statement st = conn.createStatement();
              
              ResultSet rs = st.executeQuery(sql);
-             
+
              //Using POJO (Plain Old Java Object) to Store Information
+
+             if (rs.next() == false) 
+             {
+                  
+                  rep.sendRedirect("error_page.html");
+             
+             }
              
              Doctor doctor_obj = new Doctor();
-             
              
                  while(rs.next())
                  {
@@ -84,12 +90,13 @@ public class ViewDoctor extends HttpServlet
                      doctor_obj.setCerfitications(Certifications);
 
                      req.setAttribute("doctor",doctor_obj);
-                 	 req.getRequestDispatcher("Reception.jsp").forward(req,rep);
+                     req.getRequestDispatcher("Reception.jsp").forward(req,rep);
                  }
              
             }
-                catch(SQLException ex) {
-                    Logger.getLogger(ViewDoctor.class.getName()).log(Level.SEVERE, null,ex);
+                catch(SQLException ex) 
+                {
+                    System.out.println(ex);
                 }
     }   
 }
