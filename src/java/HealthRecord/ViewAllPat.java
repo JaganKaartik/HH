@@ -8,6 +8,8 @@ package HealthRecord;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,12 +44,14 @@ public class ViewAllPat extends HttpServlet
      {
             /* Initialize Objects of type Patient */
             
-            Patient[] patient_obj = new Patient[5];
+            // Patient[] patient_obj = new Patient[5];
             
-            for(int i=0;i<5;++i)
-            {
-                patient_obj[i] = new Patient();
-            }
+            // for(int i=0;i<5;++i)
+            // {
+            //     patient_obj = new Patient();
+            // }
+
+            /* Using ArrayList for Efficiceny */
 
             try {
                 //JDBC Steps
@@ -73,46 +77,52 @@ public class ViewAllPat extends HttpServlet
 
                 int i=0;
 
+                List<Patient> patients = new ArrayList<Patient>();
+
                 while(rs.next())
                 {
+                    Patient patient_obj = new Patient();
+
                     PatientID = rs.getString(1);
-                    patient_obj[i].setPatientID(PatientID);
+                    patient_obj.setPatientID(PatientID);
                     
                     First_name = rs.getString(2);
-                    patient_obj[i].setFirst_name(First_name);
+                    patient_obj.setFirst_name(First_name);
                     
                     Last_name = rs.getString(3);
-                    patient_obj[i].setLast_name(Last_name);
+                    patient_obj.setLast_name(Last_name);
                     
                     DOB = rs.getString(4);
-                    patient_obj[i].setDOB(DOB);
+                    patient_obj.setDOB(DOB);
                     
                     BloodGroup = rs.getString(5);
-                    patient_obj[i].setBloodGroup (BloodGroup);
+                    patient_obj.setBloodGroup (BloodGroup);
                     
                     Address = rs.getString(6);
-                    patient_obj[i].setAddress(Address);
+                    patient_obj.setAddress(Address);
                     
                     Pincode = rs.getString(7);
-                    patient_obj[i].setPincode(Pincode);
+                    patient_obj.setPincode(Pincode);
                     
                     PhoneNumber = rs.getString(8);
-                    patient_obj[i].setPhoneNumber(PhoneNumber);
+                    patient_obj.setPhoneNumber(PhoneNumber);
                     
                     MaritalStatus = rs.getString(9);
-                    patient_obj[i].setMaritalStatus(MaritalStatus);
+                    patient_obj.setMaritalStatus(MaritalStatus);
                     
                     Age = rs.getString(10);
-                    patient_obj[i].setAge(Age);
+                    patient_obj.setAge(Age);
                     
                     Sex = rs.getString(11);
-                    patient_obj[i].setSex(Sex);
+                    patient_obj.setSex(Sex);
+
+                    patients.add(patient_obj);
 
                     i = i + 1;
                 } 
-                  //Pass the Data Back
+                  //Pass the Data Back (Array List)
 
-                req.setAttribute("pobj",patient_obj);
+                req.setAttribute("pobj",patients);
                 req.getRequestDispatcher("Admin.jsp").forward(req,rep);
             }
             catch(SQLException ex) {

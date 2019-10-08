@@ -5,10 +5,13 @@
 --%>
 
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <!-- Admin Page Fully Functional -->
 
 
 <%@page import="HealthRecord.Patient"%>
+<%@page import="HealthRecord.Doctor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -154,7 +157,10 @@
                         {
                             //Fetched the Array of Objects of type Patient
 
-                            Patient patient_obj[] = (Patient [])request.getAttribute("pobj");
+                            //Patient patient_obj[] = (Patient [])request.getAttribute("pobj");
+
+                            List<Patient> pats = (ArrayList<Patient>)request.getAttribute("pobj");
+
                             
 
                             out.println("<br>");
@@ -178,41 +184,41 @@
 
                             out.println("<tbody>");
 
-                            for(int i=0;i<patient_obj.length;++i) 
+                            for(Patient p : pats)
                             {
                                 out.println("<tr>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getPatientID());
+                                    out.println(p.getPatientID());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getFirst_name());
+                                    out.println(p.getFirst_name());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getLast_name());
+                                    out.println(p.getLast_name());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getDOB());
+                                    out.println(p.getDOB());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getBloodGroup());
+                                    out.println(p.getBloodGroup());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getAddress());
+                                    out.println(p.getAddress());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getPincode());
+                                    out.println(p.getPincode());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getPhoneNumber());
+                                    out.println(p.getPhoneNumber());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getMaritalStatus());
+                                    out.println(p.getMaritalStatus());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getAge());
+                                    out.println(p.getAge());
                                     out.println("</td>");
                                     out.println("<td>");
-                                    out.println(patient_obj[i].getSex());
+                                    out.println(p.getSex());
                                     out.println("</td>");
                                 out.println("</tr>");
                             }
@@ -220,6 +226,64 @@
                             out.println("</tbody>");
                             out.println("</table>");
 
+                    }
+                %>
+            </div>
+            <div class = "card-panel light-green darken-3 col s6 row">
+                <form method="get" action="viewalldoc">
+                     <button type="submit" class="btn btn-primary">View All Doctors</button>
+                </form>
+
+                 <!-- Output Dynamic Data from Doctor Details Servlet -->
+
+                <%
+                    if(request.getAttribute("doctors")!=null)
+                    {
+                        List<Doctor> docs = (ArrayList<Doctor>)request.getAttribute("doctors");
+
+                            out.println("<br>");
+                            out.println("<br>");
+                            out.println("<table class=\"centered highlight\">");
+
+                            out.println("<thead>");
+                            out.println("<tr>");
+                            out.println("<th>Doctor ID</th>");
+                            out.println("<th>Name</th>");
+                            out.println("<th>Gender</th>");
+                            out.println("<th>Education</th>");
+                            out.println("<th>Speciality</th>");
+                            out.println("<th>Certifications</th>");
+                            out.println("</tr>");
+                            out.println("</thead>");
+                            
+                            out.println("<tbody>");
+
+                        for(Doctor d : docs)
+                        {
+                            out.println("<tr>");
+                                out.println("<td>");
+                                out.println(d.getEID());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(d.getName());
+                                out.println("</td>");   
+                                out.println("<td>");
+                                out.println(d.getGender());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(d.getEducation());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(d.getSpeciality());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(d.getCertifications());
+                                out.println("</td>");
+                            out.println("</tr>");
+                        }
+
+                        out.println("</tbody>");
+                        out.println("</table>");
                     }
                 %>
             </div>

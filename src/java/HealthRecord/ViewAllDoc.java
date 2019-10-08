@@ -29,7 +29,7 @@ import javax.servlet.http.HttpServletResponse;
 
 */
 
-public class ViewDoctorDet 
+public class ViewAllDoc extends HttpServlet
 {
 	String EID;
     String Name;
@@ -48,7 +48,8 @@ public class ViewDoctorDet
             //       {
             //           doctor_obj[i] = new Doctor();
             //       }
-            //JDBC Steps
+
+            //JDBC Steps to retrive All Doctors
             
             PrintWriter out = rep.getWriter();
             
@@ -99,11 +100,11 @@ public class ViewDoctorDet
             }
 
             req.setAttribute("doctors",doctor);
-            req.getRequestDispatcher("Reception.jsp").forward(req,rep);
+            req.getRequestDispatcher("Admin.jsp").forward(req,rep);
             
         }
         catch(SQLException ex) {
-                Logger.getLogger(ViewDoctorDet.class.getName()).log(Level.SEVERE, null,ex);
+        	System.out.println(ex);
         }
 
    	}
