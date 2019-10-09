@@ -11,31 +11,52 @@ package HealthRecord;
  *
  * @author jagankaartik58
  */
+
 public class MedicalRecord 
 {	
    
+   /*    Patient ID     */
+
+   private String PatientID; //
+
    // Other Records
 
-   private String Allergies;
-   private String Medications;
-   private String Problems;
+   private String Allergies; // 
+   private String Medications; //
+   private String Problems; // 
    private String Vaccinations;
    
    /* Vitals */
    
-   private String Height;
-   private String Weight;
-   private String BodyTemp;
+   private String Height; //
+   private String Weight; // 
+   private String BodyTemp; // 
+
+
    private String PulseRate;
-   private String BloodPressure;
+   private String BPDiastolic;
+   private String BPSystolic;
 
+   //Other Medical History 
 
-   private String PrevHospital;
    private String PrevConsultation;
    private String Habits;
    private String SurgeryHistory;
    
 
+   /**
+     * @return the PatientID
+     */
+    public String getPatientID() {
+        return PatientID;
+    }
+
+    /**
+     * @param PatientID the PatientID to set
+     */
+    public void setPatientID(String PatientID) {
+        this.PatientID = PatientID;
+    }
 
     /**
      * @return the Allergies
@@ -150,17 +171,31 @@ public class MedicalRecord
     }
 
     /**
-     * @return the BloodPressure
+     * @return the BPDiastolic
      */
-    public String getBloodPressure() {
-        return BloodPressure;
+    public String getBPDiastolic() {
+        return BPDiastolic;
     }
 
     /**
-     * @param BloodPressure the BloodPressure to set
+     * @param BPDiastolic the BPDiastolic to set
      */
-    public void setBloodPressure(String BloodPressure) {
-        this.BloodPressure = BloodPressure;
+    public void setBPDiastolic(String BPDiastolic) {
+        this.BPDiastolic = BPDiastolic;
+    }
+
+    /**
+     * @return the BPSystolic
+     */
+    public String getBPSystolic() {
+        return BPSystolic;
+    }
+
+    /**
+     * @param BPSystolic the BPSystolic to set
+     */
+    public void setBPSystolic(String BPSystolic) {
+        this.BPSystolic = BPSystolic;
     }
 
     /**
