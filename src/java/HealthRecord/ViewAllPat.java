@@ -134,6 +134,12 @@ public class ViewAllPat extends HttpServlet
                       rep.sendRedirect("error_page.jsp");
                  
                 }
+
+                /* Close Statement and Connection in JDBC */
+                
+                st.close();
+                conn.close();
+                
             }
             catch(SQLException ex) {
                 System.out.println(ex);

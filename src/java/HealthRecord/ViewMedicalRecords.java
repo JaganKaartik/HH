@@ -71,13 +71,15 @@ public class ViewMedicalRecords extends HttpServlet
              //Using POJO (Plain Old Java Object) to Store Information
              
              MedicalRecord mr = new MedicalRecord();
+
+             out.println(sql);
              
              while(rs.next())
              {
                  
                  PatientID = rs.getString(1);
                  mr.setPatientID(PatientID);
-                 
+                
                  Allergies = rs.getString(2);
                  mr.setAllergies(Allergies);
                  
@@ -118,6 +120,8 @@ public class ViewMedicalRecords extends HttpServlet
                  mr.setSurgeryHistory(SurgeryHistory);
                  
                  //Pass the Data Back to Reception.JSP
+
+                 out.println(mr.getSurgeryHistory());
                  
                  req.setAttribute("medicalrecord",mr);
                  req.getRequestDispatcher("Reception.jsp").forward(req,rep);
@@ -128,6 +132,11 @@ public class ViewMedicalRecords extends HttpServlet
              {
                  req.getRequestDispatcher("error_page.jsp").forward(req,rep);
              }
+
+             /* Close Statement and Connection in JDBC */
+                
+             st.close();
+             conn.close();
              
          }
          catch(SQLException ex) {

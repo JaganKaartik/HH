@@ -76,6 +76,12 @@ public class ViewAllUser extends HttpServlet
                 roles[i] = temp;
                 i+=1;
             }
+
+            /* Close Statement and Connection in JDBC */
+                
+            st.close();
+            conn.close();
+
             req.setAttribute("uname",uname);
             req.setAttribute("roles",roles);
             req.getRequestDispatcher("Admin.jsp").forward(req,rep);

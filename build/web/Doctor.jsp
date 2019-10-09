@@ -40,6 +40,17 @@
         
         <script src="js/home.js"></script>
 
+        <!-- Google Fonts -->
+
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+        <style type="text/css">
+            
+            body {
+                font-family: 'Adamina';font-size: 22px;
+            }
+        </style>
+
         <title>Doctor JSP</title>
 
     </head>
@@ -116,6 +127,32 @@
 
 
          -->
+
+         <div class="container">
+
+            <div class="card-panel hoverable light-blue ">
+                <!-- Row 2 -->
+                    <h5 class="white-text">View Patient Details</h5>
+                    <nav>
+                        <div class="nav-wrapper">
+
+                        <form method="get" action="patinfocontrol">
+                            <div class="input-field">
+                              <input name="ser" type="search" placeholder="Patient ID" required>
+                              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                              <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                        </div>
+                    </nav>
+
+
+               
+
+            </div>
+
+         </div>
+
 
     </body>
 </html>

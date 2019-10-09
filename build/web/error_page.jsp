@@ -19,7 +19,7 @@
         <!-- Custom stlylesheet -->
         <link type="text/css" rel="stylesheet" href="css/style.css" />
 
-        <link type="text/css" rel="stylesheet" href="css/base.css" />
+        <link type="text/css" rel="stylesheet" href="css/error.css" />
 
     </head>
 <body>

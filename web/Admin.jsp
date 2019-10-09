@@ -44,6 +44,17 @@
          <!-- External JavaScript File -->
         <script src="js/home.js"></script>
 
+        <!-- Google Fonts -->
+
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+
+        <style type="text/css">
+            
+            body {
+                font-family: 'Adamina';font-size: 22px;
+            }
+        </style>
+
     </head>
     <style type="text/css">
         #form1 {

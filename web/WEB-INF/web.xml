@@ -66,6 +66,7 @@ and open the template in the editor.
     <!-- Patient Info Controller -->
     
     <servlet>
+        <display-name>Patient Information Control</display-name>
         <servlet-name>PatInfoController</servlet-name>
         <servlet-class>HealthRecord.PatientInfoController</servlet-class>
     </servlet>
@@ -145,6 +146,30 @@ and open the template in the editor.
     <servlet-mapping>
         <servlet-name>MedicalRecord</servlet-name>
         <url-pattern>/addmedrec</url-pattern>
+    </servlet-mapping>
+
+     <!-- View Medical Records Servlet -->
+    
+    <servlet>
+        <servlet-name>ViewMedicalRecord</servlet-name>
+        <servlet-class>HealthRecord.ViewMedicalRecords</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ViewMedicalRecord</servlet-name>
+        <url-pattern>/viewmedrec</url-pattern>
+    </servlet-mapping>
+
+    <!-- Delete Patients Servlet -->
+    
+    <servlet>
+        <servlet-name>DeleteMedicalRecord</servlet-name>
+        <servlet-class>HealthRecord.DeletePat</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteMedicalRecord</servlet-name>
+        <url-pattern>/delpat</url-pattern>
     </servlet-mapping>
 
 </web-app>
