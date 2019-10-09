@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="HealthRecord.MedicalRecord"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="HealthRecord.Patient"%>
+<%@page import="HealthRecord.Doctor"%>
 
 <!DOCTYPE html>
 <html>
@@ -35,6 +40,8 @@
         <!-- Custom CSS -->
         
         <link rel="stylesheet" href="css/base.css" type="text/css">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
          <!-- External JavaScript File -->
         
@@ -108,12 +115,13 @@
                 String Sex;
                 
 
-                Doctor <TREATS> Patients
+                    Doctor <TREATS> Patients
 
-                Doctor X  -> Treats Patient(s) Y..
+                 Doctor X  -> Treats Patient(s) Y..
 
-                Medical Records
+                        Medical Records
 
+                                
                                 <TREATS>
 
                 EID Name Speciality PatientID (Medical History)
@@ -131,23 +139,9 @@
          <div class="container">
 
             <div class="card-panel hoverable light-blue ">
+                
                 <!-- Row 2 -->
-                    <h5 class="white-text">View Patient Details</h5>
-                    <nav>
-                        <div class="nav-wrapper">
-
-                        <form method="get" action="patinfocontrol">
-                            <div class="input-field">
-                              <input name="ser" type="search" placeholder="Patient ID" required>
-                              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                              <i class="material-icons">close</i>
-                            </div>
-                        </form>
-                        </div>
-                    </nav>
-
-
-               
+                   
 
             </div>
 

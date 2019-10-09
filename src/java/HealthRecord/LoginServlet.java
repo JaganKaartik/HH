@@ -26,9 +26,11 @@ public class LoginServlet extends HttpServlet
             try {
                 String checkname = req.getParameter("user");
                 String checkpass = req.getParameter("password");
+
                 String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
                 String db_username = "postgres";
                 String sql = "select * from public.\"User\" ";
+
                 try {
                     Class.forName("org.postgresql.Driver");
                 }
@@ -38,6 +40,7 @@ public class LoginServlet extends HttpServlet
                 }
                 Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
                 Statement st = conn.createStatement();
+                
                 ResultSet rs = st.executeQuery(sql);
                 
                 int flag = 1;

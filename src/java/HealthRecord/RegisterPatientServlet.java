@@ -102,6 +102,8 @@ public class RegisterPatientServlet extends HttpServlet
                 //fail
             }
 
+            req.getRequestDispatcher("Reception.jsp").forward(req,rep);
+
             /* Close Statement and Connection in JDBC */
                 
             ps.close();

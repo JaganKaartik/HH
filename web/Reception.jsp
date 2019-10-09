@@ -10,7 +10,6 @@
 <%@page import="HealthRecord.Patient"%>
 <%@page import="HealthRecord.Doctor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include file="Doctor.jsp"/>
 <!DOCTYPE html>
 
 <!-- 

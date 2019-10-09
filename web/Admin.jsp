@@ -130,7 +130,7 @@
                     {
                         out.println("<br>");
                         out.println("<br>");
-                        out.println("<table>");
+                        out.println("<table class=\"highlight\">");
                         out.println("<thead>");
                         out.println("<tr>");
                         out.println("<th>Name</th>");
