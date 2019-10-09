@@ -74,6 +74,7 @@
 
         %>
 
+
         <nav>
             <div class="nav-wrapper light-blue darken-3">
                 <!-- HREF TO ABOUT.HTML -->
@@ -88,6 +89,7 @@
                 </ul>
             </div>
         </nav>
+
 
         <!-- 
 
@@ -137,16 +139,77 @@
          -->
 
          <div class="container">
+            <%
+                
+                String username = (String)session.getAttribute("uname");  
+                String role = (String)session.getAttribute("role");  
 
-            <div class="card-panel hoverable light-blue ">
+            %>
+                 <h4 class="center-align white-text">Welcome! Dr. <%=username%></h4> 
+        </div>
+
+         <div class="container">
                 
                 <!-- Row 2 -->
-                   
+                <h5 class="white-text">Update Information</h5>
+               <button type="button" class="btn btn-primary" id="infoButton">Toggle to View Form</button>
+
+            <div class="card-panel light-blue darken-4 row">
+                    <form id="form1" class="col s6" method="post" action="adddoc">
+
+                         <div class = "row">
+                               <div class="input-field col s6">
+                                  <input name="EID" type="text" class="validate">
+                                  <label for="EID">EID</label>
+                               </div>
+                         </div>
+
+                         <div class="row">
+                                <div class="input-field col s6">
+                                  <input name="Name" type="text" class="validate">
+                                  <label for="Name">Name</label>
+                                </div>
+                         </div>
+
+                         <div class="row">
+                                <div class="input-field col s6">
+                                  <input name="Gender" type="text" class="validate">
+                                  <label for="Gender">Gender</label>
+                                </div>
+                         </div>
+
+                         <div class = "row">
+                               <div class="input-field col s6">
+                                  <input name="Education" type="text" class="validate">
+                                  <label for="Education">Education</label>
+                               </div>
+                         </div>
+
+                         <div class="row">
+                                <div class="input-field col s6">
+                                  <input name="Speciality" type="text" class="validate">
+                                  <label for="Speciality">Speciality</label>
+                                </div>
+                         </div>
+
+                         <div class="row">
+                                <div class="input-field col s6">
+                                  <input name="Certifications" type="text" class="validate">
+                                  <label for="Certifications">Certifications</label>
+                                </div>
+                         </div>
+                        
+                         <button class="btn btn-primary" >Update</button>
+                    </form>
+                
+                          
 
             </div>
 
          </div>
 
-
+        <script type="text/javascript">
+            $("#infoButton").click(function(){$("#form1").toggle();});
+        </script>
     </body>
 </html>
