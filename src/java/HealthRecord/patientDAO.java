@@ -143,6 +143,12 @@ public class patientDAO extends HttpServlet
                       req.getRequestDispatcher("error_page.jsp").forward(req,rep);
                  
                 }
+
+                /* Closing the Statement and JDBC */
+
+                
+                st.close();
+                conn.close();
                	
             }
 	    catch(SQLException ex) {
