@@ -68,7 +68,8 @@ and open the template in the editor.
 			    <a href="#" class="brand-logo right">HygeaHealth+</a>
 			    <a href="#" class="brand-logo center">Reception Dashboard</a>
 			    <ul id="nav-mobile" class="left hide-on-med-and-down">
-		        <li><a href="http://localhost:8080/ElectronicHealthRecord/registerpatient.html">Register Patient</a></li>
+		          <li><a href="registerpatient.html">Register Patient</a></li>
+                  <li><a href="AddMedicalRecord.html">Add Medical Record</a></li>
                 <li>
 		        <form action="logout" method="post">
                     <button type="submit" class="btn btn-primary">LogOut</button>

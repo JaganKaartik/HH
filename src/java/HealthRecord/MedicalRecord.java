@@ -199,20 +199,6 @@ public class MedicalRecord
     }
 
     /**
-     * @return the PrevHospital
-     */
-    public String getPrevHospital() {
-        return PrevHospital;
-    }
-
-    /**
-     * @param PrevHospital the PrevHospital to set
-     */
-    public void setPrevHospital(String PrevHospital) {
-        this.PrevHospital = PrevHospital;
-    }
-
-    /**
      * @return the PrevConsultation
      */
     public String getPrevConsultation() {

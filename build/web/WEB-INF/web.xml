@@ -135,4 +135,16 @@ and open the template in the editor.
         <url-pattern>/viewdoc</url-pattern>
     </servlet-mapping>
 
+    <!-- Medical Record Servlet -->
+    
+    <servlet>
+        <servlet-name>MedicalRecord</servlet-name>
+        <servlet-class>HealthRecord.MedicalRecordServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MedicalRecord</servlet-name>
+        <url-pattern>/addmedrec</url-pattern>
+    </servlet-mapping>
+
 </web-app>
