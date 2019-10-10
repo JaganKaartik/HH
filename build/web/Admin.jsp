@@ -98,7 +98,7 @@
         </nav>
 
 
-        <div class = "container">
+        <!-- <div class = "container"> -->
 
             <div class = "card-panel hoverable cyan darken-4 row">
                 <%
@@ -315,7 +315,7 @@
                     }
                 %>
             </div>
-        </div>
+        <!-- </div> -->
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});
         </script>
