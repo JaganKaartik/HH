@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
     <servlet>
         <servlet-name>RegPatient</servlet-name>
         <servlet-class>HealthRecord.patientServlet</servlet-class>
@@ -170,6 +171,18 @@ and open the template in the editor.
     <servlet-mapping>
         <servlet-name>DeleteMedicalRecord</servlet-name>
         <url-pattern>/delpat</url-pattern>
+    </servlet-mapping>
+
+    <!-- Add Doctor Details Servlet -->
+    
+    <servlet>
+        <servlet-name>DoctorRecord</servlet-name>
+        <servlet-class>HealthRecord.DoctorRecord</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DoctorRecord</servlet-name>
+        <url-pattern>/adddoc</url-pattern>
     </servlet-mapping>
 
 </web-app>

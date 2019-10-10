@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="HealthRecord.UserModel"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <!-- Admin Page Fully Functional -->
@@ -46,12 +47,13 @@
 
         <!-- Google Fonts -->
 
-        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
 
         <style type="text/css">
             
             body {
-                font-family: 'Adamina';font-size: 22px;
+                font-family: 'EB Garamond';font-size: 22px;
             }
         </style>
 
@@ -76,7 +78,7 @@
         %>
 
         <nav>
-            <div class="nav-wrapper  green darken-2">
+            <div class="nav-wrapper  cyan darken-3">
                 <!-- HREF TO ABOUT.HTML -->
                 <a href="#" class="brand-logo left">HygeaHealth+</a>
                 <a href="#" class="brand-logo center">Admin Dashboard</a>
@@ -98,19 +100,22 @@
 
         <div class = "container">
 
-            <div class = "card-panel light-blue row">
+            <div class = "card-panel hoverable cyan darken-4 row">
                 <%
 
                 // TO DISPLAY USER AND ROLE
                 
                 String username = (String)session.getAttribute("uname");  
-                String role = (String)session.getAttribute("role");  
+                String role = (String)session.getAttribute("role"); 
 
                  %>
-                 <h6 class="white-text">Welcome! Admin: <%=username%></h6> 
+                 <div class="row">
+                    <h5 class="white-text">Welcome! Admin <%=username%></h5> 
+
+                  </div>
             </div>
 
-                <div class ="card-panel green darken-3 col s6 row">
+                <div class ="card-panel hoverable cyan darken-3 col s6 row">
                     <button type="button" class="btn btn-primary" id="formButton">Add User</button>
                     <form id="form1" onSubmit = "return checkPassword(this)" method="post" action="signup">
                         <input type="text" name="id" placeholder="Empoyee ID"/>
@@ -121,36 +126,48 @@
                         <input type="submit"/>
                     </form>
                 </div>
-            <div class = "card-panel light-green darken-3 col s6 row">
+            <div class = "card-panel hoverable cyan darken-3 col s6 row">
                 <form method="get" action="viewAllUser">
                      <button type="submit" class="btn btn-primary">View All Users</button>
                 </form>
                 <% 
-                    if(request.getAttribute("uname")!=null)
+                    if(request.getAttribute("usrs")!=null)
                     {
+                        
+                        List<UserModel> urs = (ArrayList<UserModel>)request.getAttribute("usrs");
+
+                            
                         out.println("<br>");
                         out.println("<br>");
-                        out.println("<table class=\"highlight\">");
+                        out.println("<table class=\"centered highlight\">");
                         out.println("<thead>");
+
                         out.println("<tr>");
+                        out.println("<th>ID</th>");
                         out.println("<th>Name</th>");
                         out.println("<th>Role</th>");
                         out.println("</tr>");
+                        
                         out.println("</thead>");
                         out.println("<tbody>");
 
-                        String unames[] = (String [])request.getAttribute("uname"); 
-                        String roles[] = (String [])request.getAttribute("roles");
 
-                        for(int i=0;i<unames.length;++i) 
+                        for(UserModel u : urs)
                         {
                             out.println("<tr>");
+
                             out.println("<td>");
-                            out.println(unames[i]);
+                            out.println(u.getId());
                             out.println("</td>");
+
                             out.println("<td>");
-                            out.println(roles[i]);
+                            out.println(u.getName());
                             out.println("</td>");
+
+                            out.println("<td>");
+                            out.println(u.getRole());
+                            out.println("</td>");
+
                             out.println("</tr>");
                         }
 
@@ -159,7 +176,7 @@
                     }
                 %>
             </div>
-            <div class = "card-panel light-green darken-3 col s6 row">
+            <div class = "card-panel hoverable cyan darken-3 col s6 row">
                 <form method="get" action="viewAllPat">
                      <button type="submit" class="btn btn-primary">View All Patients</button>
                 </form>
@@ -240,7 +257,7 @@
                     }
                 %>
             </div>
-            <div class = "card-panel light-green darken-3 col s6 row">
+            <div class = "card-panel hoverable cyan darken-3 col s6 row">
                 <form method="get" action="viewalldoc">
                      <button type="submit" class="btn btn-primary">View All Doctors</button>
                 </form>

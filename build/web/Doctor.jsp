@@ -49,12 +49,12 @@
 
         <!-- Google Fonts -->
 
-        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
 
         <style type="text/css">
             
-            body {
-                font-family: 'Adamina';font-size: 22px;
+            .jagmod{
+                font-family: 'Actor';font-size: 22px;
             }
         </style>
 
@@ -74,8 +74,9 @@
 
         %>
 
+
         <nav>
-            <div class="nav-wrapper light-blue darken-3">
+            <div class="nav-wrapper cyan darken-4 ">
                 <!-- HREF TO ABOUT.HTML -->
                 <a href="#" class="brand-logo right">HygeaHealth+</a>
                 <a href="#" class="brand-logo center">Doctor Dashboard</a>
@@ -88,6 +89,7 @@
                 </ul>
             </div>
         </nav>
+
 
         <!-- 
 
@@ -137,16 +139,95 @@
          -->
 
          <div class="container">
+            <%
+                
+                String username = (String)session.getAttribute("uname");  
+                String role = (String)session.getAttribute("role");  
 
-            <div class="card-panel hoverable light-blue ">
+            %>
+                 <h4 class="center-align white-text">Welcome! Dr. <%=username%></h4> 
+            
+        </div>
+
+         <div class="container">
                 
                 <!-- Row 2 -->
-                   
+                <h5 class="white-text">Update Information</h5>
+               <button type="button" class="btn btn-primary" id="infoButton">Toggle to View Form</button>
+
+            <div class="card-panel hoverable cyan darken-4 row">
+                    <form id="form1" class="col s6" method="post" action="adddoc">
+
+                         <div class = "row">
+                               <div class="input-field col s6">
+                                  <input name="EID" type="text" class="validate">
+                                  <label for="EID">EID</label>
+                               </div>
+                         </div>
+
+                         <div class="row">
+                                <div class="input-field col s6">
+                                  <input name="Name" type="text" class="validate">
+                                  <label for="Name">Name</label>
+                                </div>
+                         </div>
+
+                         <div class="row">
+                                <div class="input-field col s6">
+                                  <input name="Gender" type="text" class="validate">
+                                  <label for="Gender">Gender</label>
+                                </div>
+                         </div>
+
+                         <div class = "row">
+                               <div class="input-field col s6">
+                                  <input name="Education" type="text" class="validate">
+                                  <label for="Education">Education</label>
+                               </div>
+                         </div>
+
+                         <div class="row">
+                                <div class="input-field col s6">
+                                  <input name="Speciality" type="text" class="validate">
+                                  <label for="Speciality">Speciality</label>
+                                </div>
+                         </div>
+
+                         <div class="row">
+                                <div class="input-field col s6">
+                                  <input name="Certifications" type="text" class="validate">
+                                  <label for="Certifications">Certifications</label>
+                                </div>
+                         </div>
+                        
+                         <button class="btn btn-primary" >Update</button>
+                    </form>
+                
+                          
 
             </div>
 
+          <button type="button" class="btn btn-primary" id="info2Button">Toggle to View Servlet Information</button>
+            <div class="card-panel hoverable cyan darken-4 row">
+                    <form id="form2">
+                     <%
+                      
+                         String abspath = application.getServerInfo();
+
+                     %>
+                     <div class = "row">
+                        <h5 class="jagmod white-text">Server Information: <%= abspath%></h5>
+                    <h5 class="jagmod white-text">ServletContext (Real Path) :<%=getServletContext().getRealPath("/")%></h5>
+                    </div>
+                    </form>
+            </div>
+
          </div>
+                 
 
-
+        <script type="text/javascript">
+            $("#infoButton").click(function(){$("#form1").toggle();});
+            $("#info2Button").click(function(){$("#form2").toggle();});
+        </script>
     </body>
 </html>

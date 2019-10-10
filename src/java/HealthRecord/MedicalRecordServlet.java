@@ -109,7 +109,9 @@ public class MedicalRecordServlet extends HttpServlet
                 out.println("Failed!");
                 //fail
             }
-            
+                
+            req.getRequestDispatcher("Receptionist.jsp").forward(req,rep);
+
              /* Close Statement and Connection in JDBC */
                 
             ps.close();

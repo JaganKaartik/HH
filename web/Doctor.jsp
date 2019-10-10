@@ -49,12 +49,12 @@
 
         <!-- Google Fonts -->
 
-        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
 
         <style type="text/css">
             
-            body {
-                font-family: 'Adamina';font-size: 22px;
+            .jagmod{
+                font-family: 'Actor';font-size: 22px;
             }
         </style>
 
@@ -76,7 +76,7 @@
 
 
         <nav>
-            <div class="nav-wrapper light-blue darken-3">
+            <div class="nav-wrapper cyan darken-4 ">
                 <!-- HREF TO ABOUT.HTML -->
                 <a href="#" class="brand-logo right">HygeaHealth+</a>
                 <a href="#" class="brand-logo center">Doctor Dashboard</a>
@@ -146,6 +146,7 @@
 
             %>
                  <h4 class="center-align white-text">Welcome! Dr. <%=username%></h4> 
+            
         </div>
 
          <div class="container">
@@ -154,7 +155,7 @@
                 <h5 class="white-text">Update Information</h5>
                <button type="button" class="btn btn-primary" id="infoButton">Toggle to View Form</button>
 
-            <div class="card-panel light-blue darken-4 row">
+            <div class="card-panel hoverable cyan darken-4 row">
                     <form id="form1" class="col s6" method="post" action="adddoc">
 
                          <div class = "row">
@@ -206,10 +207,27 @@
 
             </div>
 
+          <button type="button" class="btn btn-primary" id="info2Button">Toggle to View Servlet Information</button>
+            <div class="card-panel hoverable cyan darken-4 row">
+                    <form id="form2">
+                     <%
+                      
+                         String abspath = application.getServerInfo();
+
+                     %>
+                     <div class = "row">
+                        <h5 class="jagmod white-text">Server Information: <%= abspath%></h5>
+                    <h5 class="jagmod white-text">ServletContext (Real Path) :<%=getServletContext().getRealPath("/")%></h5>
+                    </div>
+                    </form>
+            </div>
+
          </div>
+                 
 
         <script type="text/javascript">
             $("#infoButton").click(function(){$("#form1").toggle();});
+            $("#info2Button").click(function(){$("#form2").toggle();});
         </script>
     </body>
 </html>

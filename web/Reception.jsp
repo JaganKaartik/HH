@@ -53,14 +53,6 @@ and open the template in the editor.
 
         <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
 
-        <style type="text/css">
-            
-            body {
-                font-family: 'Adamina';font-size: 22px;
-            }
-        </style>
-
-
     </head>
 
     <body>
@@ -77,7 +69,7 @@ and open the template in the editor.
         %>
 
 		 <nav>
-		    <div class="nav-wrapper light-blue darken-3">
+		    <div class="nav-wrapper cyan darken-4">
 		    	<!-- HREF TO ABOUT.HTML -->
 			    <a href="#" class="brand-logo right">HygeaHealth+</a>
 			    <a href="#" class="brand-logo center">Reception Dashboard</a>
@@ -95,7 +87,7 @@ and open the template in the editor.
 
         <div class="container">
 
-            <div class="card-panel hoverable light-blue row">
+            <div class="card-panel hoverable cyan darken-3 row">
 
                 <!-- Row 1 -->
 
@@ -107,11 +99,11 @@ and open the template in the editor.
 
                 %>
 
-            <h6>Hello <%=role%> <%=username%></h6>
+            <h5 class="white-text">Hello! <%=role%> <%=username%></h5>
 
             </div>
 
-            <div class="card-panel hoverable light-blue ">
+            <div class="card-panel hoverable cyan darken-3  ">
                 <!-- Row 2 -->
                     <h5 class="white-text">View Patient Details</h5>
                     <nav>
@@ -198,7 +190,7 @@ and open the template in the editor.
 
             </div>
 
-            <div class="card-panel hoverable light-blue row">
+            <div class="card-panel hoverable cyan darken-3  row">
                  <h5 class="white-text">View Doctor Details</h5>
                  <nav>
                         <div class="nav-wrapper">
@@ -265,7 +257,7 @@ and open the template in the editor.
 
             </div>
 
-            <div class="card-panel hoverable light-blue row">
+            <div class="card-panel hoverable cyan darken-3 row">
                  <h5 class="white-text">View Patient Medical Records</h5>
                  <nav>
                         <div class="nav-wrapper">
@@ -463,7 +455,7 @@ and open the template in the editor.
 
             </div>
 
-            <div class="card-panel light-blue row">
+            <div class="card-panel  hoverable cyan darken-3 row">
                 <h5 class="white-text">Delete Patient</h5>
                 <nav>
                         <div class="nav-wrapper">

@@ -9,6 +9,8 @@ package HealthRecord;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,10 +31,9 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ViewAllUser extends HttpServlet 
 {
-    String uname[] = new String[10];
-    String roles[] = new String[10];
-    String temp;
-    
+    String id;
+    String name;
+    String role;
 
     @Override
     public void doGet(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
@@ -59,6 +60,34 @@ public class ViewAllUser extends HttpServlet
             
             ResultSet rs = st.executeQuery(sql);
 
+            List<UserModel> usr = new ArrayList<UserModel>();
+
+            out.println(sql);
+
+            int i = 0;
+            
+            while(rs.next())
+            {
+                
+                UserModel u = new UserModel();
+
+                id = rs.getString("id");
+                u.setId(id);
+                
+                name = rs.getString("name");
+                u.setName(name);
+
+                role = rs.getString("role");
+                u.setRole(role);
+
+                usr.add(u);
+
+                i = i + 1;
+            }
+
+            req.setAttribute("usrs",usr);
+            req.getRequestDispatcher("Admin.jsp").forward(req,rep);
+
             if (rs.next() == false) 
             {
                   
@@ -66,25 +95,11 @@ public class ViewAllUser extends HttpServlet
              
             }
 
-            int i = 0;
-            
-            while(rs.next())
-            {
-                temp = rs.getString("name");
-                uname[i] = temp;
-                temp = rs.getString("role");
-                roles[i] = temp;
-                i+=1;
-            }
 
             /* Close Statement and Connection in JDBC */
                 
             st.close();
             conn.close();
-
-            req.setAttribute("uname",uname);
-            req.setAttribute("roles",roles);
-            req.getRequestDispatcher("Admin.jsp").forward(req,rep);
             
         }
         catch(SQLException ex) {
