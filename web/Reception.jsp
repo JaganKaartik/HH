@@ -50,8 +50,14 @@ and open the template in the editor.
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
 
-        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <style type="text/css">
+            
+            body {
+                font-family: 'EB Garamond';font-size: 22px;
+            }
+        </style>
 
     </head>
 

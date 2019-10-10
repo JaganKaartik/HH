@@ -54,7 +54,7 @@ public class ViewAllUser extends HttpServlet
             String db_username = "postgres";
             String sql = "select * from public.\"User\"";
             
-            Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+            Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer"); 
             
             Statement st = conn.createStatement();
             
