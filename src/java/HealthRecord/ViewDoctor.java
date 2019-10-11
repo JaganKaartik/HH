@@ -16,6 +16,7 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
@@ -37,24 +38,30 @@ public class ViewDoctor extends HttpServlet
             
             
         try {
-             try {
-                 Class.forName("org.postgresql.Driver");
-             }
-             catch(ClassNotFoundException ex) {
-                 System.out.println(ex);
-             }
+             // try {
+             //     Class.forName("org.postgresql.Driver");
+             // }
+             // catch(ClassNotFoundException ex) {
+             //     System.out.println(ex);
+             // }
              
              /* Fetching Id from Reception.JSP */
              
              String id = req.getParameter("id");
+             String redirect = req.getParameter("page");
+
+             out.println(redirect);
              
-             String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-             String db_username = "postgres";
+             // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+             // String db_username = "postgres";
              String sql = "select * from public.\"Doctor\" where id = '"+id+"' ";
              
-             Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+             // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
+             ServletContext ctx=getServletContext();  
+             Connection con=(Connection)ctx.getAttribute("mycon");
              
-             Statement st = conn.createStatement();
+             Statement st = con.createStatement();
              
              ResultSet rs = st.executeQuery(sql);
 
@@ -84,7 +91,16 @@ public class ViewDoctor extends HttpServlet
                      doctor_obj.setCerfitications(Certifications);
 
                      req.setAttribute("doctor",doctor_obj);
-                     req.getRequestDispatcher("Reception.jsp").forward(req,rep);
+                     
+                     if(redirect.equals("Reception"))
+                     {
+                        req.getRequestDispatcher("Reception.jsp").forward(req,rep);
+                     }
+                     else
+                     {
+                        req.getRequestDispatcher("Admin.jsp").forward(req,rep);
+                     }
+                    
                  }
 
                  if(rs.next()!=true) 
@@ -97,7 +113,7 @@ public class ViewDoctor extends HttpServlet
                  /* Close Statement and Connection in JDBC */
                 
                  st.close();
-                 conn.close();
+                 con.close();
                  
             }
                 catch(SQLException ex) 

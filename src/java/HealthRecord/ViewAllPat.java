@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -58,20 +59,23 @@ public class ViewAllPat extends HttpServlet
                 
                 PrintWriter out = rep.getWriter();
                 
-                try {
-                    Class.forName("org.postgresql.Driver");
-                }
-                catch(ClassNotFoundException ex) {
-                    System.out.println(ex);
-                }
+                // try {
+                //     Class.forName("org.postgresql.Driver");
+                // }
+                // catch(ClassNotFoundException ex) {
+                //     System.out.println(ex);
+                // }
                 
-                String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-                String db_username = "postgres";
+                // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+                // String db_username = "postgres";
                 String sql = "select * from public.\"PatientInformation\"";
                 
-                Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+                // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
+                ServletContext ctx=getServletContext();  
+                Connection con=(Connection)ctx.getAttribute("mycon");
                 
-                Statement st = conn.createStatement();
+                Statement st = con.createStatement();
                 
                 ResultSet rs = st.executeQuery(sql);
 
@@ -138,7 +142,7 @@ public class ViewAllPat extends HttpServlet
                 /* Close Statement and Connection in JDBC */
                 
                 st.close();
-                conn.close();
+                con.close();
                 
             }
             catch(SQLException ex) {

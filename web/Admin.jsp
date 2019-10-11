@@ -8,6 +8,7 @@
 <%@page import="HealthRecord.UserModel"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
+
 <!-- Admin Page Fully Functional -->
 
 
@@ -44,6 +45,8 @@
 
          <!-- External JavaScript File -->
         <script src="js/home.js"></script>
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- Google Fonts -->
 
@@ -98,7 +101,7 @@
         </nav>
 
 
-        <!-- <div class = "container"> -->
+        <div class = "container">
 
             <div class = "card-panel hoverable cyan darken-4 row">
                 <%
@@ -314,6 +317,81 @@
                         out.println("</table>");
                     }
                 %>
+            </div>
+
+                 <div class="card-panel hoverable cyan darken-3 col s6 row">
+                 <h5 class="white-text">View Doctor Details</h5>
+                
+
+                    <nav>
+                        <div class="nav-wrapper">
+
+                        <form method="get" action="viewdoc">
+                            <div class="input-field">
+                              <input name="ser" type="search" placeholder="Doctor ID" required>
+                              <input type="hidden" name="page" value="Admin">
+                              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                              <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                        </div>
+                    </nav>
+
+
+
+                <!-- Output Dynamic Data from Doctor Details Servlet -->
+
+                <%
+                    if(request.getAttribute("doctor")!=null)
+                    {
+                            
+                            
+                            /* Doctor Servlet Returns Doctor Object */
+
+                            Doctor d = (Doctor)request.getAttribute("doctor");
+
+                            out.println("<br>");
+                            out.println("<br>");
+                            out.println("<table class=\"centered highlight\">");
+                            out.println("<thead>");
+                            out.println("<tr>");
+                            out.println("<th>Doctor ID</th>");
+                            out.println("<th>Name</th>");
+                            out.println("<th>Gender</th>");
+                            out.println("<th>Education</th>");
+                            out.println("<th>Speciality</th>");
+                            out.println("<th>Certifications</th>");
+                            out.println("</tr>");
+                            out.println("</thead>");
+                            out.println("<tbody>");
+                            out.println("<tr>");
+                                out.println("<td>");
+                                out.println(d.getEID());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(d.getName());
+                                out.println("</td>");   
+                                out.println("<td>");
+                                out.println(d.getGender());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(d.getEducation());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(d.getSpeciality());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(d.getCertifications());
+                                out.println("</td>");
+                            out.println("</tr>");
+                            out.println("</tbody>");
+                            out.println("</table>");
+
+                    }
+                %>
+
+            </div>
+
             </div>
         <!-- </div> -->
         <script type="text/javascript">

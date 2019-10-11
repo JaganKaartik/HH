@@ -118,6 +118,7 @@ and open the template in the editor.
                         <form method="get" action="patinfocontrol">
                             <div class="input-field">
                               <input name="ser" type="search" placeholder="Patient ID" required>
+                              <input type="hidden" name="page" value="Reception">
                               <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                               <i class="material-icons">close</i>
                             </div>
@@ -203,6 +204,7 @@ and open the template in the editor.
                             <form method="get" action="viewdoc">
                                 <div class="input-field">
                                   <input name="id" type="search" placeholder="ID" required>
+                                  <input type="hidden" name="page" value="Reception">
                                   <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                                   <i class="material-icons">close</i>
                                 </div>
@@ -270,6 +272,7 @@ and open the template in the editor.
                             <form method="get" action="viewmedrec">
                                 <div class="input-field">
                                   <input name="recordid" type="search" placeholder="Patient ID" required>
+                                  <input type="hidden" name="page" value="Reception">
                                   <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                                   <i class="material-icons">close</i>
                                 </div>
@@ -468,6 +471,7 @@ and open the template in the editor.
                             <form method="post" action="delpat">
                                 <div class="input-field">
                                   <input name="id" type="search" placeholder="Patient ID" required>
+                                  <input type="hidden" name="page" value="Reception">
                                   <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                                   <i class="material-icons">close</i>
                                 </div>

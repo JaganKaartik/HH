@@ -28,7 +28,8 @@ public class DBListener implements ServletContextListener
 				ServletContext ctx=event.getServletContext();  
 				ctx.setAttribute("mycon", con);  
 			}catch(Exception e)
-			{e.printStackTrace();}  
+			{
+				e.printStackTrace();}  
 	}  
 	  
 	public void contextDestroyed(ServletContextEvent arg0){}  

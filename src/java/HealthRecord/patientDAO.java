@@ -21,6 +21,7 @@ import java.io.PrintWriter;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletContext;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
@@ -63,24 +64,28 @@ public class patientDAO extends HttpServlet
 
 	    		PrintWriter out = rep.getWriter();
 
-                try {
-                    Class.forName("org.postgresql.Driver");
-                }
-                catch(ClassNotFoundException ex) {
-                    System.out.println(ex);
-                }
+                // try {
+                //     Class.forName("org.postgresql.Driver");
+                // }
+                // catch(ClassNotFoundException ex) {
+                //     System.out.println(ex);
+                // }
                 
                 /* Fetching Item from previous servlet */
                 
                 String id = (String) req.getAttribute("id");
                 
-                String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-                String db_username = "postgres";
+                // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+                // String db_username = "postgres";
+                
                 String sql = "select * from public.\"PatientInformation\" where pid = '"+id+"' ";
 
-                Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+                // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
+                ServletContext ctx=getServletContext();  
+                Connection con=(Connection)ctx.getAttribute("mycon");  
                 
-                Statement st = conn.createStatement();
+                Statement st = con.createStatement();
 
                 ResultSet rs = st.executeQuery(sql);
                 
@@ -148,7 +153,7 @@ public class patientDAO extends HttpServlet
 
                 
                 st.close();
-                conn.close();
+                con.close();
                	
             }
 	    catch(SQLException ex) {

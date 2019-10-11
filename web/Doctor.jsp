@@ -50,12 +50,18 @@
         <!-- Google Fonts -->
 
         <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Esteban' rel='stylesheet'>
 
         <style type="text/css">
             
             .jagmod{
                 font-family: 'Actor';font-size: 22px;
             }
+
+            .jagmod2{
+                font-family: 'Esteban';font-size: 22px;
+            }
+
         </style>
 
         <title>Doctor JSP</title>
@@ -216,8 +222,8 @@
 
                      %>
                      <div class = "row">
-                        <h5 class="jagmod white-text">Server Information: <%= abspath%></h5>
-                    <h5 class="jagmod white-text">ServletContext (Real Path) :<%=getServletContext().getRealPath("/")%></h5>
+                        <h5 class="jagmod2 white-text">Server Information: <%= abspath%></h5>
+                    <h5 class="jagmod2 white-text">ServletContext (Real Path) :<%=getServletContext().getRealPath("/")%></h5>
                     </div>
                     </form>
             </div>
