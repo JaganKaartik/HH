@@ -11,6 +11,12 @@
 <%@page import="HealthRecord.Patient"%>
 <%@page import="HealthRecord.Doctor"%>
 
+<!-- Exception Handling Page -->
+
+<%@ page errorPage="exception.jsp" %> 
+
+<!-- End of Exception Handling Page Import -->
+
 <!DOCTYPE html>
 <html>
     <head>

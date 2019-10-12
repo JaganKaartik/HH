@@ -23,6 +23,7 @@
             <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/ViewPatient.jsp</file>
             <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/LoginServlet.java</file>
             <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/error_page.jsp</file>
+            <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/web/exception.jsp</file>
             <file>file:/Volumes/JK/EHR%20System/ElectronicHealthRecord/src/java/HealthRecord/DBListener.java</file>
         </group>
     </open-files>

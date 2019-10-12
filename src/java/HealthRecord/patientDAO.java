@@ -74,6 +74,7 @@ public class patientDAO extends HttpServlet
                 /* Fetching Item from previous servlet */
                 
                 String id = (String) req.getAttribute("id");
+                String redirect = (String) req.getAttribute("page");
                 
                 // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
                 // String db_username = "postgres";
@@ -139,7 +140,15 @@ public class patientDAO extends HttpServlet
                	 	//Pass the Data Back to Reception.JSP
 
                	    req.setAttribute("pDAO",patient_obj);
-                	req.getRequestDispatcher("Reception.jsp").forward(req,rep);
+
+                    if(redirect.equals("Reception"))
+                    {
+                        req.getRequestDispatcher("Reception.jsp").forward(req,rep);
+                    }
+                    else
+                    {
+                        req.getRequestDispatcher("Admin.jsp").forward(req,rep);
+                    }
                 }   
 
                 if (rs.next() == false) 

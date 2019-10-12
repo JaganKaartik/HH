@@ -10,6 +10,14 @@
 <%@page import="HealthRecord.Patient"%>
 <%@page import="HealthRecord.Doctor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!-- Exception Handling Page -->
+
+<%@ page errorPage="exception.jsp" %> 
+
+<!-- End of Exception Handling Page Import -->
+
+
 <!DOCTYPE html>
 
 <!-- 

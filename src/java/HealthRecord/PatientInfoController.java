@@ -49,10 +49,12 @@ public class PatientInfoController extends HttpServlet
         // Accept Search Query for Patient ID or name
 
         String search_query = req.getParameter("ser");
+        String page = req.getParameter("page");
 
         // Setting the attribute of request object so that it can be accessed in the forwarded servlet
 
        	req.setAttribute("id",search_query);
+        req.setAttribute("page",page);
 
         // Redirecting client request to another Servlet
 

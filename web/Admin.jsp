@@ -9,12 +9,21 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 
+<!-- Exception Handling Page -->
+
+<%@ page errorPage="exception.jsp" %> 
+
+<!-- End of Exception Handling Page Import -->
+
+
 <!-- Admin Page Fully Functional -->
 
 
 <%@page import="HealthRecord.Patient"%>
 <%@page import="HealthRecord.Doctor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -321,14 +330,16 @@
 
                  <div class="card-panel hoverable cyan darken-3 col s6 row">
                  <h5 class="white-text">View Doctor Details</h5>
-                
+                    
+
+                <!-- VIEW DOCTOR DETAILS -->
 
                     <nav>
                         <div class="nav-wrapper">
 
                         <form method="get" action="viewdoc">
                             <div class="input-field">
-                              <input name="ser" type="search" placeholder="Doctor ID" required>
+                              <input name="id" type="search" placeholder="Doctor ID">
                               <input type="hidden" name="page" value="Admin">
                               <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                               <i class="material-icons">close</i>
@@ -392,8 +403,102 @@
 
             </div>
 
+             <div class="card-panel hoverable cyan darken-3  ">
+                <!-- Row 2 -->
+                    <h5 class="white-text">View Patient Details</h5>
+                    <nav>
+                        <div class="nav-wrapper">
+
+                        <form method="get" action="patinfocontrol">
+                            <div class="input-field">
+                              <input name="ser" type="search" placeholder="Patient ID" required>
+                              <input type="hidden" name="page" value="Admin">
+                              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                              <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                        </div>
+                    </nav>
+
+
+                    <!-- Output Dynamic Data from Patient Information Control -->
+
+                    <%
+
+                        if(request.getAttribute("pDAO")!=null)
+                        {
+
+                            Patient patient_obj = (Patient)request.getAttribute("pDAO");
+
+                            out.println("<br>");
+                            out.println("<br>");
+                            out.println("<table class=\"centered highlight\">");
+                            out.println("<thead>");
+                            out.println("<tr>");
+                            out.println("<th>Patient ID</th>");
+                            out.println("<th>First Name</th>");
+                            out.println("<th>Last Name</th>");
+                            out.println("<th>Date of Birth</th>");
+                            out.println("<th>Blood Group</th>");
+                            out.println("<th>Address</th>");
+                            out.println("<th>Pincode</th>");
+                            out.println("<th>Phone Number</th>");
+                            out.println("<th>Marital Status</th>");
+                            out.println("<th>Age</th>");
+                            out.println("<th>Sex</th>");
+                            out.println("</tr>");
+                            out.println("</thead>");
+                            out.println("<tbody>");
+                            out.println("<tr>");
+                                out.println("<td>");
+                                out.println(patient_obj.getPatientID());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getFirst_name());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getLast_name());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getDOB());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getBloodGroup());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getAddress());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getPincode());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getPhoneNumber());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getMaritalStatus());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getAge());
+                                out.println("</td>");
+                                out.println("<td>");
+                                out.println(patient_obj.getSex());
+                                out.println("</td>");
+                            out.println("</tr>");
+                            out.println("</tbody>");
+                            out.println("</table>");
+                        }
+                    %>
+
             </div>
-        <!-- </div> -->
+
+
+
+
+
+            <!-- END OF MAIN CONTAINER  -->
+            </div>      
+
+
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});
         </script>

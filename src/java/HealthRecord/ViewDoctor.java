@@ -48,6 +48,7 @@ public class ViewDoctor extends HttpServlet
              /* Fetching Id from Reception.JSP */
              
              String id = req.getParameter("id");
+
              String redirect = req.getParameter("page");
 
              out.println(redirect);
@@ -67,6 +68,7 @@ public class ViewDoctor extends HttpServlet
 
              //Using POJO (Plain Old Java Object) to Store Information
 
+             System.out.println(sql);
              
              Doctor doctor_obj = new Doctor();
              
@@ -96,7 +98,7 @@ public class ViewDoctor extends HttpServlet
                      {
                         req.getRequestDispatcher("Reception.jsp").forward(req,rep);
                      }
-                     else
+                     if(redirect.equals("Admin"))
                      {
                         req.getRequestDispatcher("Admin.jsp").forward(req,rep);
                      }
