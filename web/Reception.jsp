@@ -65,6 +65,10 @@ and open the template in the editor.
             body {
                 font-family: 'EB Garamond';font-size: 22px;
             }
+            .customcont {
+              width: 85%;
+              margin: auto;
+            }
         </style>
 
     </head>
@@ -99,7 +103,7 @@ and open the template in the editor.
 		    </div>
   		</nav>
 
-        <div class="container">
+        <div class="customcont">
 
             <div class="card-panel hoverable cyan darken-3 row">
 
@@ -298,6 +302,15 @@ and open the template in the editor.
 
                             MedicalRecord mr = (MedicalRecord)request.getAttribute("medicalrecord");
 
+                            /* Testing JSP Implicit Error Handling Object */
+
+                            /* Checking all vitals is not NULL/NIL */
+
+                            if(mr.getHeight().length()==0)
+                            {
+                                throw new Exception("Vitals not found");
+                            }
+
                             out.println("<br>");
                             out.println("<br>");
 
@@ -487,6 +500,8 @@ and open the template in the editor.
                         </div>
                 </nav>
             </div>
+
+             <!-- TO TEST JSP IMPLICIT ERROR OBJECT -->
 
         </div>
     </body>

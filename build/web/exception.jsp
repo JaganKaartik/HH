@@ -14,6 +14,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <h1>Error! Vitals not found Monitored/Entered</h1>
         <% exception.printStackTrace(response.getWriter()); %>
     </body>
 </html>

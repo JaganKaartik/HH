@@ -26,24 +26,30 @@ public class DeletePat extends HttpServlet
     {
     	PrintWriter out = rep.getWriter();  
         try{
-              try{
-                  Class.forName("org.postgresql.Driver");
-              }
-              catch(ClassNotFoundException ex) {
-                  System.out.println(ex);
-              }
               
+              // try{
+              //     Class.forName("org.postgresql.Driver");
+              // }
+              // catch(ClassNotFoundException ex) {
+              //     System.out.println(ex);
+              // }
+            
+              
+              // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+              // String db_username = "postgres";
+              // String sql = "delete from public.\"PatientInformation\" where pid = '"+id+"' ";
+              
+              // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
               /* Fetching Id from Reception.JSP */
               
               String id = req.getParameter("id");
+
+
+              ServletContext ctx=getServletContext();  
+              Connection con=(Connection)ctx.getAttribute("mycon");
               
-              String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-              String db_username = "postgres";
-              String sql = "delete from public.\"PatientInformation\" where pid = '"+id+"' ";
-              
-              Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
-              
-              Statement st = conn.createStatement();
+              Statement st = con.createStatement();
 
               
               int val = st.executeUpdate(sql);

@@ -26,22 +26,28 @@ public class LoginServlet extends HttpServlet
     public void doPost(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
     {
             try {
+                
                 String checkname = req.getParameter("user");
                 String checkpass = req.getParameter("password");
 
-                String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-                String db_username = "postgres";
-                String sql = "select * from public.\"User\" ";
+                // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+                // String db_username = "postgres";
+                // String sql = "select * from public.\"User\" ";
 
-                try {
-                    Class.forName("org.postgresql.Driver");
-                }
-                catch (ClassNotFoundException ex) 
-                {
-                    System.out.println(ex);
-                }
-                Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
-                Statement st = conn.createStatement();
+                // try {
+                //     Class.forName("org.postgresql.Driver");
+                // }
+                // catch (ClassNotFoundException ex) 
+                // {
+                //     System.out.println(ex);
+                // }
+                // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+               
+
+                ServletContext ctx=getServletContext();  
+                Connection con=(Connection)ctx.getAttribute("mycon");
+
+                Statement st = con.createStatement();
                 
                 ResultSet rs = st.executeQuery(sql);
                 
@@ -102,7 +108,7 @@ public class LoginServlet extends HttpServlet
 
                 }
                 st.close();
-                conn.close();
+                con.close();
             }
             catch (SQLException ex) 
                 {

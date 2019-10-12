@@ -67,13 +67,12 @@ public class ViewAllPat extends HttpServlet
                 // }
                 
                 // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-                // String db_username = "postgres";
-                String sql = "select * from public.\"PatientInformation\"";
-                
+                // String db_username = "postgres";  
                 // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
 
                 ServletContext ctx=getServletContext();  
                 Connection con=(Connection)ctx.getAttribute("mycon");
+                String sql = "select * from public.\"PatientInformation\"";
                 
                 Statement st = con.createStatement();
                 

@@ -52,19 +52,19 @@ public class ViewAllUser extends HttpServlet
             // }
             
             // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-            // String db_username = "postgres";
-            String sql = "select * from public.\"User\"";
-            
+            // String db_username = "postgres";         
             // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer"); 
 
             ServletContext ctx=getServletContext();  
             Connection con=(Connection)ctx.getAttribute("mycon");
+            String sql = "select * from public.\"User\"";
+
             
             Statement st = con.createStatement();
             
             ResultSet rs = st.executeQuery(sql);
 
-            List<UserModel> usr = new ArrayList<UserModel>();
+            List<User> usr = new ArrayList<User>();
 
             out.println(sql);
 
@@ -73,7 +73,7 @@ public class ViewAllUser extends HttpServlet
             while(rs.next())
             {
                 
-                UserModel u = new UserModel();
+                User u = new User();
 
                 id = rs.getString("id");
                 u.setId(id);

@@ -145,9 +145,13 @@ public class patientDAO extends HttpServlet
                     {
                         req.getRequestDispatcher("Reception.jsp").forward(req,rep);
                     }
-                    else
+                    else if(redirect.equals("Admin"))
                     {
                         req.getRequestDispatcher("Admin.jsp").forward(req,rep);
+                    }
+                    else
+                    {
+                        req.getRequestDispatcher("Doctor.jsp").forward(req,rep);
                     }
                 }   
 

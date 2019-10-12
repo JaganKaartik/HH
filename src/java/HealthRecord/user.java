@@ -9,33 +9,51 @@ package HealthRecord;
  *
  * @author jagankaartik58
  */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author jagankaartik58
- */
-
-/* Main Inheritance */
-
-class User
+public class User 
 {
-    String username;
-    String password;
-}
+    private String id;
+    private String name;
+    private String role;
 
-class Admin extends User
-{
-    String adminId;
-    String adminName;
-}
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
 
-class Receptionist extends User
-{
-    String empId;
-    String empName;
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the role
+     */
+    public String getRole() {
+        return role;
+    }
+
+    /**
+     * @param role the role to set
+     */
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

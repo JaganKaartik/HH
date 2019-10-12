@@ -55,18 +55,21 @@ public class ViewMedicalRecords extends HttpServlet
              //     System.out.println(ex);
              // }
              
+             // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+             // String db_username = "postgres";
+             // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
              /* Fetching Id from Recpetion.JSP */
              
              String id = req.getParameter("recordid");
-             
-             // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-             // String db_username = "postgres";
-             String sql = "select * from public.\"MedicalRecords\" where patientid = '"+id+"' ";
-             
-             // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+             String redirect = req.getParameter("page");
+
+             // Using Servlet Context Listerner
 
              ServletContext ctx=getServletContext();  
              Connection con=(Connection)ctx.getAttribute("mycon");
+             String sql = "select * from public.\"MedicalRecords\" where patientid = '"+id+"' ";
+            
              
              Statement st = con.createStatement();
              
@@ -128,8 +131,15 @@ public class ViewMedicalRecords extends HttpServlet
                  out.println(mr.getSurgeryHistory());
                  
                  req.setAttribute("medicalrecord",mr);
-                 req.getRequestDispatcher("Reception.jsp").forward(req,rep);
-                 
+
+                 if(redirect.equals("Reception"))
+                 {
+                     req.getRequestDispatcher("Reception.jsp").forward(req,rep);
+                 }
+                 else
+                 {
+                      req.getRequestDispatcher("Doctor.jsp").forward(req,rep);
+                 }                 
              }
              
              if (rs.next() == false)

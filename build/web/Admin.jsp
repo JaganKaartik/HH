@@ -1,11 +1,11 @@
 <%-- 
     Document   : Admin
-    Created on : Sep 30, 2019, 4:52:29 PM
+    Created on : Sep 30, 2019, 4:52:29 AM
     Author     : jagankaartik58
 --%>
 
 
-<%@page import="HealthRecord.UserModel"%>
+<%@page import="HealthRecord.User"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 
@@ -67,6 +67,11 @@
             body {
                 font-family: 'EB Garamond';font-size: 22px;
             }
+
+            .customcont {
+              width: 99%;
+              margin: auto;
+            }
         </style>
 
     </head>
@@ -110,7 +115,7 @@
         </nav>
 
 
-        <div class = "container">
+        <div class = "customcont">
 
             <div class = "card-panel hoverable cyan darken-4 row">
                 <%
@@ -146,7 +151,7 @@
                     if(request.getAttribute("usrs")!=null)
                     {
                         
-                        List<UserModel> urs = (ArrayList<UserModel>)request.getAttribute("usrs");
+                        List<User> urs = (ArrayList<User>)request.getAttribute("usrs");
 
                             
                         out.println("<br>");
@@ -164,7 +169,7 @@
                         out.println("<tbody>");
 
 
-                        for(UserModel u : urs)
+                        for(User u : urs)
                         {
                             out.println("<tr>");
 
@@ -329,7 +334,7 @@
             </div>
 
                  <div class="card-panel hoverable cyan darken-3 col s6 row">
-                 <h5 class="white-text">View Doctor Details</h5>
+                 <h5 class="white-text">Search Doctor Details</h5>
                     
 
                 <!-- VIEW DOCTOR DETAILS -->
@@ -405,7 +410,7 @@
 
              <div class="card-panel hoverable cyan darken-3  ">
                 <!-- Row 2 -->
-                    <h5 class="white-text">View Patient Details</h5>
+                    <h5 class="white-text">Seach Patient Details</h5>
                     <nav>
                         <div class="nav-wrapper">
 
@@ -502,5 +507,6 @@
         <script type="text/javascript">
             $("#formButton").click(function(){$("#form1").toggle();});
         </script>
+
     </body>
 </html>

@@ -49,18 +49,23 @@ public class SignupServlet extends HttpServlet
                 String username = req.getParameter("user");
                 String password = req.getParameter("p1");
                 String role = req.getParameter("role");
-                String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-                String db_username = "postgres";
-                try {
-                    Class.forName("org.postgresql.Driver");
-                }
-                catch (ClassNotFoundException ex) 
-                {
-                    Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
 
-                PreparedStatement ps = conn.prepareStatement("insert into public.\"User\" values(?,?,?,?)");
+                // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+                // String db_username = "postgres";
+                // try {
+                //     Class.forName("org.postgresql.Driver");
+                // }
+                // catch (ClassNotFoundException ex) 
+                // {
+                //     Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+                // }
+                // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
+
+                ServletContext ctx=getServletContext();  
+                Connection con=(Connection)ctx.getAttribute("mycon");
+
+                PreparedStatement ps = con.prepareStatement("insert into public.\"User\" values(?,?,?,?)");
 
                 ps.setString(1, id);
                 ps.setString(2, username);
@@ -89,7 +94,7 @@ public class SignupServlet extends HttpServlet
                 /* Close Statement and Connection in JDBC */
                 
                 ps.close();
-                conn.close();
+                con.close();
             }
             catch (SQLException ex) 
                 {

@@ -36,18 +36,20 @@ public class DoctorRecord extends HttpServlet
                 
                 /* JDBC Steps */
                 
-                try {
-                    Class.forName("org.postgresql.Driver");
-                }
-                catch(ClassNotFoundException ex) {
-                    System.out.println(ex);
-                }
+                // try {
+                //     Class.forName("org.postgresql.Driver");
+                // }
+                // catch(ClassNotFoundException ex) {
+                //     System.out.println(ex);
+                // }
                 
-                String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-                String db_username = "postgres";
-                
-                
-                Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+                // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+                // String db_username = "postgres";
+                // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
+                ServletContext ctx=getServletContext();  
+                Connection con=(Connection)ctx.getAttribute("mycon");
+
                 PreparedStatement ps = conn.prepareStatement("insert into public.\"Doctor\" values (?,?,?,?,?,?);");
                 
                 

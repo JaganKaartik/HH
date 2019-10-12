@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletContext;
 
 public class MedicalRecordServlet extends HttpServlet
 {
@@ -67,19 +68,23 @@ public class MedicalRecordServlet extends HttpServlet
             
             /* JDBC Steps */
             
-            try {
-                Class.forName("org.postgresql.Driver");
-            }
-            catch(ClassNotFoundException ex) {
-                System.out.println(ex);
-            }
+            // try {
+            //     Class.forName("org.postgresql.Driver");
+            // }
+            // catch(ClassNotFoundException ex) {
+            //     System.out.println(ex);
+            // }
             
-            String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-            String db_username = "postgres";
-            
-            
-            Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
-            PreparedStatement ps = conn.prepareStatement("insert into public.\"MedicalRecords\" values (?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+            // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+            // String db_username = "postgres";
+            // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
+            /* Using Servlet Context Listener insted of Traditional JDBC Steps */
+
+            ServletContext ctx=getServletContext();  
+            Connection con=(Connection)ctx.getAttribute("mycon"); 
+
+            PreparedStatement ps = con.prepareStatement("insert into public.\"MedicalRecords\" values (?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
             
             
             ps.setString(1,PatientID);
@@ -99,6 +104,8 @@ public class MedicalRecordServlet extends HttpServlet
 
             int val = ps.executeUpdate();
 
+            rep.sendRedirect("Reception.jsp");
+
             if(val>0)
             {
                 out.println("Success!");
@@ -110,12 +117,10 @@ public class MedicalRecordServlet extends HttpServlet
                 //fail
             }
                 
-            req.getRequestDispatcher("Receptionist.jsp").forward(req,rep);
-
              /* Close Statement and Connection in JDBC */
                 
             ps.close();
-            conn.close();
+            con.close();
    
         }
         catch(SQLException ex) {
