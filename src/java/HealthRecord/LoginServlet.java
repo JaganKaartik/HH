@@ -8,9 +8,9 @@ package HealthRecord;
 
 import java.sql.*;
 import java.io.IOException;
+import javax.servlet.ServletContext;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
-import javax.servlet.jsp.PageContext;
 
 /* Login-Servlet */
 
@@ -30,22 +30,24 @@ public class LoginServlet extends HttpServlet
                 String checkname = req.getParameter("user");
                 String checkpass = req.getParameter("password");
 
-                // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-                // String db_username = "postgres";
-                // String sql = "select * from public.\"User\" ";
+                String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+                String db_username = "postgres";
+                
 
-                // try {
-                //     Class.forName("org.postgresql.Driver");
-                // }
-                // catch (ClassNotFoundException ex) 
-                // {
-                //     System.out.println(ex);
-                // }
-                // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+                try {
+                    Class.forName("org.postgresql.Driver");
+                }
+                catch (ClassNotFoundException ex) 
+                {
+                    System.out.println(ex);
+                }
+                Connection con = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
                
 
-                ServletContext ctx=getServletContext();  
-                Connection con=(Connection)ctx.getAttribute("mycon");
+                // ServletContext ctx=getServletContext();  
+                // Connection con=(Connection)ctx.getAttribute("mycon");
+                
+                String sql = "select * from public.\"User\"";
 
                 Statement st = con.createStatement();
                 

@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletContext;
 
 public class DoctorRecord extends HttpServlet
 {
@@ -50,7 +51,7 @@ public class DoctorRecord extends HttpServlet
                 ServletContext ctx=getServletContext();  
                 Connection con=(Connection)ctx.getAttribute("mycon");
 
-                PreparedStatement ps = conn.prepareStatement("insert into public.\"Doctor\" values (?,?,?,?,?,?);");
+                PreparedStatement ps = con.prepareStatement("insert into public.\"Doctor\" values (?,?,?,?,?,?);");
                 
                 
                 ps.setString(1,EID);
@@ -78,7 +79,7 @@ public class DoctorRecord extends HttpServlet
                 /* Close Statement and Connection in JDBC */
                 
                 ps.close();
-                conn.close();
+                con.close();
                 
             }
             catch(SQLException ex) {

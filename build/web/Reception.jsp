@@ -501,7 +501,25 @@ and open the template in the editor.
                 </nav>
             </div>
 
-             <!-- TO TEST JSP IMPLICIT ERROR OBJECT -->
+             <!-- TESTED JSP IMPLICIT ERROR OBJECT -->
+
+             <!-- TO REMOVE THE ERROR RECORD -->
+
+             <div class="card-panel  hoverable cyan darken-3 row">
+                <h5 class="white-text">Delete Medical Record</h5>
+                <nav>
+                        <div class="nav-wrapper">
+                            <form method="post" action="delmedrec">
+                                <div class="input-field">
+                                  <input name="id" type="search" placeholder="Patient ID" required>
+                                  <input type="hidden" name="page" value="Reception">
+                                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                  <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                </nav>
+            </div>
 
         </div>
     </body>

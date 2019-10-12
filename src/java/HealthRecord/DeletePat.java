@@ -16,6 +16,7 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
@@ -37,13 +38,13 @@ public class DeletePat extends HttpServlet
               
               // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
               // String db_username = "postgres";
-              // String sql = "delete from public.\"PatientInformation\" where pid = '"+id+"' ";
               
               // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
 
               /* Fetching Id from Reception.JSP */
               
               String id = req.getParameter("id");
+              String sql = "delete from public.\"PatientInformation\" where pid = '"+id+"' ";
 
 
               ServletContext ctx=getServletContext();  
@@ -68,7 +69,7 @@ public class DeletePat extends HttpServlet
               /* Close Statement and Connection in JDBC */
 
               st.close();
-              conn.close();
+              con.close();
 
               /* Forward! Re-Direct to Reception.JSP */
 

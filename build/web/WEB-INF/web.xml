@@ -159,11 +159,11 @@ and open the template in the editor.
     <!-- Delete Patients Servlet -->
     
     <servlet>
-        <servlet-name>DeleteMedicalRecord</servlet-name>
+        <servlet-name>DeletePat</servlet-name>
         <servlet-class>HealthRecord.DeletePat</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DeleteMedicalRecord</servlet-name>
+        <servlet-name>DeletePat</servlet-name>
         <url-pattern>/delpat</url-pattern>
     </servlet-mapping>
     
@@ -177,4 +177,16 @@ and open the template in the editor.
         <servlet-name>DoctorRecord</servlet-name>
         <url-pattern>/adddoc</url-pattern>
     </servlet-mapping>
+
+    <!-- Delete Patient Medical Records Servlet -->
+    
+    <servlet>
+        <servlet-name>DeleteMedicalRecord</servlet-name>
+        <servlet-class>HealthRecord.DeleteMedicalRecord</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteMedicalRecord</servlet-name>
+        <url-pattern>/delmedrec</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

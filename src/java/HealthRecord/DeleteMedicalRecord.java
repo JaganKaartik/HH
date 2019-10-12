@@ -10,6 +10,8 @@ package HealthRecord;
  * @author jagankaartik58
  */
 
+// Status: Verified
+
 /* Servlet to Delete Medical Records from the Database */
 
 import java.sql.*;
@@ -19,8 +21,73 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.ServletContext;
 
 public class DeleteMedicalRecord extends HttpServlet
 {
-    
+    public void doPost(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
+    {
+    	PrintWriter out = rep.getWriter();  
+        try{
+              
+              // try{
+              //     Class.forName("org.postgresql.Driver");
+              // }
+              // catch(ClassNotFoundException ex) {
+              //     System.out.println(ex);
+              // }
+            
+              
+              // String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+              // String db_username = "postgres";
+              // String sql = "delete from public.\"PatientInformation\" where pid = '"+id+"' ";
+              
+              // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
+              /* Fetching Id of Patient whose record is to be deleted from Reception.JSP atm */
+              
+              String id = req.getParameter("id");
+
+
+              ServletContext ctx=getServletContext();  
+              Connection con=(Connection)ctx.getAttribute("mycon");
+
+
+              String sql = "delete from public.\"MedicalRecords\" where patientid = '"+id+"' ";
+              
+              Statement st = con.createStatement();
+
+              out.println(sql);
+
+              
+              int val = st.executeUpdate(sql);
+
+              /* Forward! Re-Direct to Reception.JSP */
+
+              rep.sendRedirect("Reception.jsp");
+              
+              if(val>0)
+              {
+                  out.println("Success!");
+                  //Success
+              }
+              else
+              {
+                  out.println("Failed!");
+                  //fail
+              }
+              
+              /* Close Statement and Connection in JDBC */
+
+              st.close();
+              con.close();
+
+            
+     
+              
+          }
+             catch(SQLException ex) {
+                 Logger.getLogger(DeletePat.class.getName()).log(Level.SEVERE, null,ex);
+             }
+    }
 }
