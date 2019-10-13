@@ -69,7 +69,7 @@
             }
 
             .customcont {
-              width: 99%;
+              width: 85%;
               margin: auto;
             }
         </style>
@@ -497,6 +497,41 @@
             </div>
 
 
+             <div class="card-panel  hoverable cyan darken-3 row">
+                <h5 class="white-text">Delete Patient</h5>
+                <nav>
+                        <div class="nav-wrapper">
+                            <form method="post" action="delpat">
+                                <div class="input-field">
+                                  <input name="id" type="search" placeholder="Patient ID" required>
+                                  <input type="hidden" name="page" value="Admin">
+                                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                  <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                </nav>
+            </div>
+
+             <!-- TESTED JSP IMPLICIT ERROR OBJECT -->
+
+             <!-- TO REMOVE THE ERROR RECORD -->
+
+             <div class="card-panel  hoverable cyan darken-3 row">
+                <h5 class="white-text">Delete Medical Record</h5>
+                <nav>
+                        <div class="nav-wrapper">
+                            <form method="post" action="delmedrec">
+                                <div class="input-field">
+                                  <input name="id" type="search" placeholder="Patient ID" required>
+                                  <input type="hidden" name="page" value="Admin">
+                                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                  <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                </nav>
+            </div>
 
 
 
