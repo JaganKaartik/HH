@@ -560,27 +560,35 @@
                private String SurgeryHistory;
 
                 -->
+                <!-- <br>
+                <br>
+                <br>
 
-                <select id="pet-select">
-                    <option value="">--Please choose an option--</option>
-                    <option value="Allergies">Allergies</option>
-                    <option value="Medications">Medications</option>
-                    <option value="Problems">Problems</option>
-                    <option value="Vaccinations">Vaccinations</option>
-                    <option value="Height">Height</option>
-                    <option value="Weight">Weight</option>
-                    <option value="BodyTemp">BodyTemp</option>
-                    <option value="PulseRate">PulseRate</option>
-                    <option value="BodyTemp">BodyTemp</option>
-                    <option value="BPDiastolic">BPDiastolic</option>
-                    <option value="BPSystolic">BPSystolic</option>
-                    <option value="PrevConsultation">Previous Consultation</option>
-                    <option value="Habits">Habits</option>
-                    <option value="SurgeryHistory">Surgery History</option>
-                </select>
+                <div class="input-field col s12">
+                    <select>
+                        <option value="">--Please choose an option--</option>
+                        <option value="Allergies">Allergies</option>
+                        <option value="Medications">Medications</option>
+                        <option value="Problems">Problems</option>
+                        <option value="Vaccinations">Vaccinations</option>
+                        <option value="Height">Height</option>
+                        <option value="Weight">Weight</option>
+                        <option value="BodyTemp">BodyTemp</option>
+                        <option value="PulseRate">PulseRate</option>
+                        <option value="BodyTemp">BodyTemp</option>
+                        <option value="BPDiastolic">BPDiastolic</option>
+                        <option value="BPSystolic">BPSystolic</option>
+                        <option value="PrevConsultation">Previous Consultation</option>
+                        <option value="Habits">Habits</option>
+                        <option value="SurgeryHistory">Surgery History</option>
+                    </select>
+                    <label>Materialize Select</label>
+                </div> -->
 
 
-<!-- 
+  
+       
+
                 <nav>
                         <div class="nav-wrapper">
                             <form method="post" action="delmedrec">
@@ -592,7 +600,7 @@
                                 </div>
                             </form>
                         </div>
-                </nav> -->
+                </nav>
             </div>
 
 

@@ -75,7 +75,6 @@
             .nav-wrapper{
                 background-color: #3ab5a5;
             }
-
         </style>
 
         <title>Doctor JSP</title>
