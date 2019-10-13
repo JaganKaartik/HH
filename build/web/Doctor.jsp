@@ -72,6 +72,9 @@
             .jagcust{
                   font-family: 'Noto Sans';font-size: 22px;
             }
+            .nav-wrapper{
+                background-color: #3ab5a5;
+            }
 
         </style>
 
@@ -162,7 +165,7 @@
                 String role = (String)session.getAttribute("role");  
 
             %>
-                 <h4 class="center-align white-text">Welcome! Dr. <%=username%></h4> 
+                 <h4 class="center-align cyan-text text-darken-3">Welcome! Dr. <%=username%></h4> 
             
         </div>
 
@@ -173,7 +176,7 @@
             <div class="card-panel hoverable cyan darken-4 row ">
                 <!-- Row 2 -->
                 <div class="row">
-                <h5 class="jagcust white-text">Search Patient Demographics</h5>
+                <h5 class="jagcust cyan-text text-lighten-3">Search Patient Demographics</h5>
                 </div>
                     <nav>
                         <div class="nav-wrapper">
@@ -201,7 +204,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"cyan-text text-lighten-3 centered highlight\">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Patient ID</th>");
@@ -464,7 +467,7 @@
             </div>
 
              <!-- Row 2 -->
-                <h5 class="white-text">Update Personal Information</h5>
+                <h5 class="cyan-text text-darken-3">Update Personal Information</h5>
                <button type="button" class="btn btn-primary" id="infoButton">Toggle to View Form</button>
 
             <div class="card-panel hoverable cyan darken-4 row">

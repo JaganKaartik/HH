@@ -69,6 +69,10 @@ and open the template in the editor.
               width: 85%;
               margin: auto;
             }
+            .nav-wrapper{
+                background-color: #3ab5a5;
+            }
+
         </style>
 
     </head>
@@ -87,7 +91,7 @@ and open the template in the editor.
         %>
 
 		 <nav>
-		    <div class="nav-wrapper cyan darken-4">
+		    <div class="nav-wrapper cyan darken-3">
 		    	<!-- HREF TO ABOUT.HTML -->
 			    <a href="#" class="brand-logo right">HygeaHealth+</a>
 			    <a href="#" class="brand-logo center">Reception Dashboard</a>
@@ -105,7 +109,7 @@ and open the template in the editor.
 
         <div class="customcont">
 
-            <div class="card-panel hoverable cyan darken-3 row">
+            <div class="card-panel hoverable cyan lighten-4 row">
 
                 <!-- Row 1 -->
 
@@ -117,7 +121,7 @@ and open the template in the editor.
 
                 %>
 
-            <h5 class="white-text">Hello! <%=role%> <%=username%></h5>
+            <h5 class="cyan-text text-darken-3 row">Hello! <%=role%> <%=username%></h5>
 
             </div>
 
@@ -150,7 +154,7 @@ and open the template in the editor.
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"cyan-text text-lighten-4 centered highlight\">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Patient ID</th>");
@@ -209,8 +213,8 @@ and open the template in the editor.
 
             </div>
 
-            <div class="card-panel hoverable cyan darken-3  row">
-                 <h5 class="white-text">View Doctor Details</h5>
+            <div class="card-panel hoverable cyan lighten-4 row">
+                 <h5 class="cyan-text text-darken-3">View Doctor Details</h5>
                  <nav>
                         <div class="nav-wrapper">
                             <form method="get" action="viewdoc">
@@ -237,7 +241,7 @@ and open the template in the editor.
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"centered highlight cyan-text text-darken-4\">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Doctor ID</th>");
@@ -317,11 +321,11 @@ and open the template in the editor.
                             /* First Table */
                             out.println("<div class=\"row\">");
 
-                            out.println("<h5 class=\"center-align white-text jagmod\">Medical Profile</h5>");
+                            out.println("<h5 class=\"center-align cyan-text text-lighten-1 jagmod\">Medical Profile</h5>");
 
                             out.println("</div>");
 
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"cyan-text text-lighten-4 centered highlight\">");
 
                             out.println("<thead>");
                             out.println("<tr>");
@@ -370,13 +374,13 @@ and open the template in the editor.
 
                             out.println("<div class=\"row\">");
 
-                            out.println("<h5 class=\"center-align white-text jagmod\">Vitals</h5>");
+                            out.println("<h5 class=\"center-align cyan-text text-lighten-1 jagmod\">Vitals</h5>");
 
                             out.println("</div>");
 
                             /* Start of Table 2 */
 
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"cyan-text text-lighten-4 centered highlight\">");
 
                             /* New Mod */
 
@@ -438,13 +442,13 @@ and open the template in the editor.
 
                             out.println("<div class=\"row\">");
 
-                            out.println("<h5 class=\"center-align white-text jagmod\">Medical History</h5>");
+                            out.println("<h5 class=\"center-align cyan-text text-lighten-1 jagmod\">Medical History</h5>");
 
                             out.println("</div>");
 
                             /* Start of Table 3 */
 
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"cyan-text text-lighten-4 centered highlight\">");
 
                             out.println("<thead>");
 
@@ -485,8 +489,8 @@ and open the template in the editor.
 
             </div>
 
-            <div class="card-panel  hoverable cyan darken-3 row">
-                <h5 class="white-text">Delete Patient</h5>
+            <div class="card-panel  hoverable cyan lighten-4 row">
+                <h5 class="cyan-text text-darken-3">Delete Patient</h5>
                 <nav>
                         <div class="nav-wrapper">
                             <form method="post" action="delpat">

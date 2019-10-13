@@ -44,6 +44,8 @@ public class DeletePat extends HttpServlet
               /* Fetching Id from Reception.JSP */
               
               String id = req.getParameter("id");
+              String redirect = req.getParameter("page");
+
               String sql = "delete from public.\"PatientInformation\" where pid = '"+id+"' ";
 
 
@@ -71,11 +73,16 @@ public class DeletePat extends HttpServlet
               st.close();
               con.close();
 
-              /* Forward! Re-Direct to Reception.JSP */
+              /* Forward! Re-Direct to Reception.JSP or Admin.JSP */
 
-              rep.sendRedirect("Reception.jsp");
-     
-              
+              if(redirect.equals("Reception"))
+              {
+                 rep.sendRedirect("Reception.jsp");
+              }
+              else
+              {
+                 rep.sendRedirect("Admin.jsp");
+              }      
           }
              catch(SQLException ex) {
                  Logger.getLogger(DeletePat.class.getName()).log(Level.SEVERE, null,ex);

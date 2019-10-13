@@ -47,6 +47,7 @@ public class DeleteMedicalRecord extends HttpServlet
               /* Fetching Id of Patient whose record is to be deleted from Reception.JSP atm */
               
               String id = req.getParameter("id");
+              String redirect = req.getParameter("page");
 
 
               ServletContext ctx=getServletContext();  
@@ -54,17 +55,15 @@ public class DeleteMedicalRecord extends HttpServlet
 
 
               String sql = "delete from public.\"MedicalRecords\" where patientid = '"+id+"' ";
+
+              String newsql = "update public.\"MedicalRecords\" ";
               
               Statement st = con.createStatement();
 
               out.println(sql);
-
               
               int val = st.executeUpdate(sql);
 
-              /* Forward! Re-Direct to Reception.JSP */
-
-              rep.sendRedirect("Reception.jsp");
               
               if(val>0)
               {
@@ -82,9 +81,21 @@ public class DeleteMedicalRecord extends HttpServlet
               st.close();
               con.close();
 
+              /* Redirect to Reception.JSP or Admin.JSP */
+
+
+              if(redirect.equals("Reception"))
+              {
+                 rep.sendRedirect("Reception.jsp");
+              }
+              else
+              {
+                 rep.sendRedirect("Admin.jsp");
+              }  
+
             
      
-              
+           
           }
              catch(SQLException ex) {
                  Logger.getLogger(DeletePat.class.getName()).log(Level.SEVERE, null,ex);

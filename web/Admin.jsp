@@ -165,7 +165,7 @@
                             
                         out.println("<br>");
                         out.println("<br>");
-                        out.println("<table class=\"centered highlight blue-text text-darken-2\">");
+                        out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
                         out.println("<thead>");
 
                         out.println("<tr>");
@@ -219,7 +219,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
+                            out.println("<table class=\"centered highlight cyan-text text-lighten-4 \">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Patient ID</th>");
@@ -297,7 +297,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight blue-text text-darken-2\">");
+                            out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
 
                             out.println("<thead>");
                             out.println("<tr>");
@@ -343,9 +343,8 @@
             </div>
 
                  <div class="card-panel hoverable cyan darken-3 col s6 row">
-                 <h5 class="cyan-text text-lighten-4 ">Search Doctor Details</h5>
-                    
-
+                    <h5 class="cyan-text text-lighten-4">Search Doctor Details</h5>
+            
                 <!-- VIEW DOCTOR DETAILS -->
 
                     <nav>
@@ -377,7 +376,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
+                            out.println("<table class=\"centered highlight cyan-text text-lighten-4\">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Doctor ID</th>");
@@ -419,7 +418,9 @@
 
              <div class="card-panel hoverable cyan lighten-4 ">
                 <!-- Row 2 -->
-                    <h5 class="cyan-text text-darken-3">Seach Patient Details</h5>
+                <div class="row">
+                    <h5 class="cyan-text text-darken-3 row">Seach Patient Details</h5>
+                </div>
                     <nav>
                         <div class="nav-wrapper">
 
@@ -507,7 +508,7 @@
 
 
              <div class="card-panel  hoverable cyan darken-3 row">
-                <h5 class="cyan-text text-lighten-4 ">Delete Patient</h5>
+                <h5 class="cyan-text text-lighten-4 row ">Delete Patient</h5>
                 <nav>
                         <div class="nav-wrapper">
                             <form method="post" action="delpat">
@@ -527,7 +528,59 @@
              <!-- TO REMOVE THE ERROR RECORD -->
 
              <div class="card-panel  hoverable cyan lighten-4  row">
-                <h5 class="cyan-text text-darken-3">Delete Medical Record</h5>
+                <h5 class="cyan-text text-darken-3 row ">Delete Medical Record</h5>
+
+
+                <!-- Modify Medical Record Option -->
+
+                <!-- 
+
+                Reference 
+
+               private String Allergies; // 
+               private String Medications; //
+               private String Problems; // 
+               private String Vaccinations;
+               
+               /* Vitals */
+               
+               private String Height; //
+               private String Weight; // 
+               private String BodyTemp; // 
+
+
+               private String PulseRate;
+               private String BPDiastolic;
+               private String BPSystolic;
+
+               //Other Medical History 
+
+               private String PrevConsultation;
+               private String Habits;
+               private String SurgeryHistory;
+
+                -->
+
+                <select id="pet-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Allergies">Allergies</option>
+                    <option value="Medications">Medications</option>
+                    <option value="Problems">Problems</option>
+                    <option value="Vaccinations">Vaccinations</option>
+                    <option value="Height">Height</option>
+                    <option value="Weight">Weight</option>
+                    <option value="BodyTemp">BodyTemp</option>
+                    <option value="PulseRate">PulseRate</option>
+                    <option value="BodyTemp">BodyTemp</option>
+                    <option value="BPDiastolic">BPDiastolic</option>
+                    <option value="BPSystolic">BPSystolic</option>
+                    <option value="PrevConsultation">Previous Consultation</option>
+                    <option value="Habits">Habits</option>
+                    <option value="SurgeryHistory">Surgery History</option>
+                </select>
+
+
+<!-- 
                 <nav>
                         <div class="nav-wrapper">
                             <form method="post" action="delmedrec">
@@ -539,7 +592,7 @@
                                 </div>
                             </form>
                         </div>
-                </nav>
+                </nav> -->
             </div>
 
 

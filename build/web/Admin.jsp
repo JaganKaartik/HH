@@ -69,9 +69,18 @@
             }
 
             .customcont {
-              width: 99%;
+              width: 85%;
               margin: auto;
             }
+
+            .nav-wrapper{
+                background-color: #3ab5a5;
+            }
+
+            /*
+                https://github.com/Jimdo/materialize-jimdo/blob/master/css/ghpages-materialize.css
+                Line number : 5432;
+            */
         </style>
 
     </head>
@@ -117,7 +126,7 @@
 
         <div class = "customcont">
 
-            <div class = "card-panel hoverable cyan darken-4 row">
+            <div class = "card-panel hoverable cyan lighten-4 row">
                 <%
 
                 // TO DISPLAY USER AND ROLE
@@ -127,7 +136,7 @@
 
                  %>
                  <div class="row">
-                    <h5 class="white-text">Welcome! Admin <%=username%></h5> 
+                    <h5 class="cyan-text text-darken-3">Welcome! Admin <%=username%></h5> 
 
                   </div>
             </div>
@@ -143,7 +152,7 @@
                         <input type="submit"/>
                     </form>
                 </div>
-            <div class = "card-panel hoverable cyan darken-3 col s6 row">
+            <div class = "card-panel hoverable cyan lighten-4 col s6 row">
                 <form method="get" action="viewAllUser">
                      <button type="submit" class="btn btn-primary">View All Users</button>
                 </form>
@@ -156,7 +165,7 @@
                             
                         out.println("<br>");
                         out.println("<br>");
-                        out.println("<table class=\"centered highlight\">");
+                        out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
                         out.println("<thead>");
 
                         out.println("<tr>");
@@ -210,7 +219,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"centered highlight cyan-text text-lighten-4 \">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Patient ID</th>");
@@ -274,7 +283,7 @@
                     }
                 %>
             </div>
-            <div class = "card-panel hoverable cyan darken-3 col s6 row">
+            <div class = "card-panel hoverable cyan lighten-4 col s6 row">
                 <form method="get" action="viewalldoc">
                      <button type="submit" class="btn btn-primary">View All Doctors</button>
                 </form>
@@ -288,7 +297,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
 
                             out.println("<thead>");
                             out.println("<tr>");
@@ -334,9 +343,8 @@
             </div>
 
                  <div class="card-panel hoverable cyan darken-3 col s6 row">
-                 <h5 class="white-text">Search Doctor Details</h5>
-                    
-
+                    <h5 class="cyan-text text-lighten-4">Search Doctor Details</h5>
+            
                 <!-- VIEW DOCTOR DETAILS -->
 
                     <nav>
@@ -368,7 +376,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"centered highlight cyan-text text-lighten-4\">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Doctor ID</th>");
@@ -408,9 +416,11 @@
 
             </div>
 
-             <div class="card-panel hoverable cyan darken-3  ">
+             <div class="card-panel hoverable cyan lighten-4 ">
                 <!-- Row 2 -->
-                    <h5 class="white-text">Seach Patient Details</h5>
+                <div class="row">
+                    <h5 class="cyan-text text-darken-3 row">Seach Patient Details</h5>
+                </div>
                     <nav>
                         <div class="nav-wrapper">
 
@@ -437,7 +447,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Patient ID</th>");
@@ -497,6 +507,93 @@
             </div>
 
 
+             <div class="card-panel  hoverable cyan darken-3 row">
+                <h5 class="cyan-text text-lighten-4 row ">Delete Patient</h5>
+                <nav>
+                        <div class="nav-wrapper">
+                            <form method="post" action="delpat">
+                                <div class="input-field">
+                                  <input name="id" type="search" placeholder="Patient ID" required>
+                                  <input type="hidden" name="page" value="Admin">
+                                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                  <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                </nav>
+            </div>
+
+             <!-- TESTED JSP IMPLICIT ERROR OBJECT -->
+
+             <!-- TO REMOVE THE ERROR RECORD -->
+
+             <div class="card-panel  hoverable cyan lighten-4  row">
+                <h5 class="cyan-text text-darken-3 row ">Delete Medical Record</h5>
+
+
+                <!-- Modify Medical Record Option -->
+
+                <!-- 
+
+                Reference 
+
+               private String Allergies; // 
+               private String Medications; //
+               private String Problems; // 
+               private String Vaccinations;
+               
+               /* Vitals */
+               
+               private String Height; //
+               private String Weight; // 
+               private String BodyTemp; // 
+
+
+               private String PulseRate;
+               private String BPDiastolic;
+               private String BPSystolic;
+
+               //Other Medical History 
+
+               private String PrevConsultation;
+               private String Habits;
+               private String SurgeryHistory;
+
+                -->
+
+                <select id="pet-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="Allergies">Allergies</option>
+                    <option value="Medications">Medications</option>
+                    <option value="Problems">Problems</option>
+                    <option value="Vaccinations">Vaccinations</option>
+                    <option value="Height">Height</option>
+                    <option value="Weight">Weight</option>
+                    <option value="BodyTemp">BodyTemp</option>
+                    <option value="PulseRate">PulseRate</option>
+                    <option value="BodyTemp">BodyTemp</option>
+                    <option value="BPDiastolic">BPDiastolic</option>
+                    <option value="BPSystolic">BPSystolic</option>
+                    <option value="PrevConsultation">Previous Consultation</option>
+                    <option value="Habits">Habits</option>
+                    <option value="SurgeryHistory">Surgery History</option>
+                </select>
+
+
+<!-- 
+                <nav>
+                        <div class="nav-wrapper">
+                            <form method="post" action="delmedrec">
+                                <div class="input-field">
+                                  <input name="id" type="search" placeholder="Patient ID" required>
+                                  <input type="hidden" name="page" value="Admin">
+                                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                  <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                </nav> -->
+            </div>
 
 
 
