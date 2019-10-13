@@ -72,6 +72,15 @@
               width: 85%;
               margin: auto;
             }
+
+            .nav-wrapper{
+                background-color: #3ab5a5;
+            }
+
+            /*
+                https://github.com/Jimdo/materialize-jimdo/blob/master/css/ghpages-materialize.css
+                Line number : 5432;
+            */
         </style>
 
     </head>
@@ -117,7 +126,7 @@
 
         <div class = "customcont">
 
-            <div class = "card-panel hoverable cyan darken-4 row">
+            <div class = "card-panel hoverable cyan lighten-4 row">
                 <%
 
                 // TO DISPLAY USER AND ROLE
@@ -127,7 +136,7 @@
 
                  %>
                  <div class="row">
-                    <h5 class="white-text">Welcome! Admin <%=username%></h5> 
+                    <h5 class="cyan-text text-darken-3">Welcome! Admin <%=username%></h5> 
 
                   </div>
             </div>
@@ -143,7 +152,7 @@
                         <input type="submit"/>
                     </form>
                 </div>
-            <div class = "card-panel hoverable cyan darken-3 col s6 row">
+            <div class = "card-panel hoverable cyan lighten-4 col s6 row">
                 <form method="get" action="viewAllUser">
                      <button type="submit" class="btn btn-primary">View All Users</button>
                 </form>
@@ -156,7 +165,7 @@
                             
                         out.println("<br>");
                         out.println("<br>");
-                        out.println("<table class=\"centered highlight\">");
+                        out.println("<table class=\"centered highlight blue-text text-darken-2\">");
                         out.println("<thead>");
 
                         out.println("<tr>");
@@ -210,7 +219,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Patient ID</th>");
@@ -274,7 +283,7 @@
                     }
                 %>
             </div>
-            <div class = "card-panel hoverable cyan darken-3 col s6 row">
+            <div class = "card-panel hoverable cyan lighten-4 col s6 row">
                 <form method="get" action="viewalldoc">
                      <button type="submit" class="btn btn-primary">View All Doctors</button>
                 </form>
@@ -288,7 +297,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"centered highlight blue-text text-darken-2\">");
 
                             out.println("<thead>");
                             out.println("<tr>");
@@ -334,7 +343,7 @@
             </div>
 
                  <div class="card-panel hoverable cyan darken-3 col s6 row">
-                 <h5 class="white-text">Search Doctor Details</h5>
+                 <h5 class="cyan-text text-lighten-4 ">Search Doctor Details</h5>
                     
 
                 <!-- VIEW DOCTOR DETAILS -->
@@ -368,7 +377,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Doctor ID</th>");
@@ -408,9 +417,9 @@
 
             </div>
 
-             <div class="card-panel hoverable cyan darken-3  ">
+             <div class="card-panel hoverable cyan lighten-4 ">
                 <!-- Row 2 -->
-                    <h5 class="white-text">Seach Patient Details</h5>
+                    <h5 class="cyan-text text-darken-3">Seach Patient Details</h5>
                     <nav>
                         <div class="nav-wrapper">
 
@@ -437,7 +446,7 @@
 
                             out.println("<br>");
                             out.println("<br>");
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"centered highlight cyan-text text-darken-3\">");
                             out.println("<thead>");
                             out.println("<tr>");
                             out.println("<th>Patient ID</th>");
@@ -498,7 +507,7 @@
 
 
              <div class="card-panel  hoverable cyan darken-3 row">
-                <h5 class="white-text">Delete Patient</h5>
+                <h5 class="cyan-text text-lighten-4 ">Delete Patient</h5>
                 <nav>
                         <div class="nav-wrapper">
                             <form method="post" action="delpat">
@@ -517,8 +526,8 @@
 
              <!-- TO REMOVE THE ERROR RECORD -->
 
-             <div class="card-panel  hoverable cyan darken-3 row">
-                <h5 class="white-text">Delete Medical Record</h5>
+             <div class="card-panel  hoverable cyan lighten-4  row">
+                <h5 class="cyan-text text-darken-3">Delete Medical Record</h5>
                 <nav>
                         <div class="nav-wrapper">
                             <form method="post" action="delmedrec">
