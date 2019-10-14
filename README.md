@@ -21,4 +21,4 @@ a particular provider, including demographics, progress notes, problems, medicat
 
 ### Class Diagram
 
-![](documentation/Class Diagram.jpeg)
+![](/documentation/Class Diagram.jpeg)
