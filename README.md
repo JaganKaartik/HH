@@ -31,3 +31,13 @@ a particular provider, including demographics, progress notes, problems, medicat
 ### Use Case Diagram
 
 ![Use-Case-Diagram](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/documentation/Use%20Case%20Diagram.jpeg)
+
+### UI Screens
+
+![HomePage](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/1.%20Homepage.png)
+![AdminDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/2.%20Admin%20Dashboard.png)
+![RecepDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/4.%20Receptionist%20Dashboard.png)
+![DocDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/5.%20Doctor%20Dashboard.png)
+
+
+
