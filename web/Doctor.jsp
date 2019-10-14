@@ -95,7 +95,7 @@
 
 
         <nav>
-            <div class="nav-wrapper cyan darken-4 ">
+            <div class="nav-wrapper cyan darken-3 ">
                 <!-- HREF TO ABOUT.HTML -->
                 <a href="#" class="brand-logo right">HygeaHealth+</a>
                 <a href="#" class="brand-logo center">Doctor Dashboard</a>
@@ -172,7 +172,7 @@
                 
                
             
-            <div class="card-panel hoverable cyan darken-4 row ">
+            <div class="card-panel hoverable cyan darken-3 row ">
                 <!-- Row 2 -->
                 <div class="row">
                 <h5 class="jagcust cyan-text text-lighten-3">Search Patient Demographics</h5>
@@ -469,7 +469,7 @@
                 <h5 class="cyan-text text-darken-3">Update Personal Information</h5>
                <button type="button" class="btn btn-primary" id="infoButton">Toggle to View Form</button>
 
-            <div class="card-panel hoverable cyan darken-4 row">
+            <div class="card-panel hoverable cyan darken-3 row">
                     <form id="form1" class="col s6" method="post" action="adddoc">
 
                          <div class = "row">
@@ -522,7 +522,7 @@
             </div>
 
           <button type="button" class="btn btn-primary" id="info2Button">Toggle to View Servlet Information</button>
-            <div class="card-panel hoverable cyan darken-4 row">
+            <div class="card-panel hoverable cyan darken-3 row">
                     <form id="form2">
                      <%
                       
