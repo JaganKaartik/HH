@@ -22,3 +22,12 @@ a particular provider, including demographics, progress notes, problems, medicat
 ### Class Diagram
 
 ![Class-Diagram](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/documentation/Class%20Diagram.jpeg)
+
+
+### ER Diagram
+
+![ER-Diagram](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/documentation/ER%20Diagram.png)
+
+### Use Case Diagram
+
+![Use-Case-Diagram](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/documentation/Use%20Case%20Diagram.jpeg)
