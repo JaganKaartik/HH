@@ -28,8 +28,13 @@ a particular provider, including demographics, progress notes, problems, medicat
 ![AdminDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/2.%20Admin%20Dashboard.png)
 ### Receptionist Dashboard
 ![RecepDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/4.%20Receptionist%20Dashboard.png)
+### Receptionist (Patient Registration)
+![RecepReg](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/4.%20Add%20Patient%20Demographics.png)
+![RecepReg2](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/4.%20Add%20Medical%20Records.png)
 ### Doctor Dashboard
 ![DocDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/5.%20Doctor%20Dashboard.png)
+### Searching Patient Records via Doctor Dashboard
+![DocSP](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/5.%20Doctor%20(Search%20Records).png)
 
 
 ### Tools/Dependencies
