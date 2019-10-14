@@ -21,4 +21,4 @@ a particular provider, including demographics, progress notes, problems, medicat
 
 ### Class Diagram
 
-![](/documentation/Class Diagram.jpeg)
+![Class-Diagram](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/documentation/Class%20Diagram.jpeg)
