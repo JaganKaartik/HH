@@ -1,6 +1,6 @@
 # HygeaHealth - An electronic health record system
 
-## Electronic-Health-Record
+## Introduction
 
 An Electronic Health Record (EHR) is an electronic version of a patients medical history, that is maintained by the 
 provider over time, and may include all of the key administrative clinical data relevant to that persons care under
@@ -19,7 +19,7 @@ a particular provider, including demographics, progress notes, problems, medicat
 
 ![Use-Case-Diagram](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/documentation/Use%20Case%20Diagram.jpeg)
 
-### Hygea Health UI
+## Hygea Health User Interface
 
 ### Homepage
 
