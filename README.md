@@ -18,3 +18,7 @@ a particular provider, including demographics, progress notes, problems, medicat
 8. PostGreSQL 
 9. Apache Tomcat Server 8.5.46
 10. Netbeans 8.2
+
+### Class Diagram
+
+![](image.png)
