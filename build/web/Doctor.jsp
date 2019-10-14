@@ -262,10 +262,10 @@
 
             </div>
 
-            <div class="card-panel hoverable cyan darken-4 row">
+            <div class="card-panel hoverable cyan lighten-3 row">
 
                  <div class="row">
-                 <h5 class="white-text">Search Patient Medical Records</h5>
+                 <h5 class="cyan-text text-darken-4">Search Patient Medical Records</h5>
                  </div>
                  
                  <nav>
@@ -297,11 +297,11 @@
                             /* First Table */
                             out.println("<div class=\"row\">");
 
-                            out.println("<h5 class=\"center-align white-text jagmod\">Medical Profile</h5>");
+                            out.println("<h5 class=\"center-align cyan-text text-darken-4  jagmod\">Medical Profile</h5>");
 
                             out.println("</div>");
 
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"cyan-text text-darken-4 centered highlight\">");
 
                             out.println("<thead>");
                             out.println("<tr>");
@@ -350,13 +350,13 @@
 
                             out.println("<div class=\"row\">");
 
-                            out.println("<h5 class=\"center-align white-text jagmod\">Vitals</h5>");
+                            out.println("<h5 class=\"center-align cyan-text text-darken-4 jagmod\">Vitals</h5>");
 
                             out.println("</div>");
 
                             /* Start of Table 2 */
 
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"cyan-text text-darken-4 centered highlight\">");
 
                             /* New Mod */
 
@@ -418,13 +418,13 @@
 
                             out.println("<div class=\"row\">");
 
-                            out.println("<h5 class=\"center-align white-text jagmod\">Medical History</h5>");
+                            out.println("<h5 class=\"center-align cyan-text text-darken-4 jagmod\">Medical History</h5>");
 
                             out.println("</div>");
 
                             /* Start of Table 3 */
 
-                            out.println("<table class=\"centered highlight\">");
+                            out.println("<table class=\"cyan-text text-darken-4 centered highlight\">");
 
                             out.println("<thead>");
 
@@ -530,8 +530,8 @@
 
                      %>
                      <div class = "row">
-                        <h5 class="jagmod2 white-text">Server Information: <%= abspath%></h5>
-                    <h5 class="jagmod2 white-text">ServletContext (Real Path) :<%=getServletContext().getRealPath("/")%></h5>
+                        <h5 class="jagmod2 cyan-text text-lighten-3">Server Information: <%= abspath%></h5>
+                    <h5 class="jagmod2 cyan-text text-lighten-3">ServletContext (Real Path) :<%=getServletContext().getRealPath("/")%></h5>
                     </div>
                     </form>
             </div>
