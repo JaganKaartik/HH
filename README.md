@@ -20,11 +20,6 @@ This project is done as part of the (15CSE376) Net Centric Programming course.
 
 ![Class-Diagram](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/documentation/Class%20Diagram.jpeg)
 
-
-### ER Diagram
-
-![ER-Diagram](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/documentation/ER%20Diagram.png)
-
 ### Use Case Diagram
 
 ![Use-Case-Diagram](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/documentation/Use%20Case%20Diagram.jpeg)
@@ -45,5 +40,4 @@ This project is done as part of the (15CSE376) Net Centric Programming course.
 ![DocDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/5.%20Doctor%20Dashboard.png)
 ### Searching Patient Records via Doctor Dashboard
 ![DocSP](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/5.%20Doctor%20(Search%20Records).png)
-
 
