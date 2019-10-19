@@ -10,11 +10,32 @@ A basic electronic health record application built on the Java EE Architecture w
 
 This project is done as part of the (15CSE376) Net Centric Programming course.
 
-### Requirements
+## Requirements
 
 * Apache Tomcat Server 8.5.46
 * Netbeans IDE 8.2
-* PostGreSQL Connector (JDBC) 42.2.8
+* PostgreSQL Connector (JDBC) 42.2.8
+* PostgreSQL Core 10
+* PGAdmin 4
+
+## Testing
+
+Based on the assumption that the software will be running a PostgreSQL database. For this software to work according to its design. Initialise a local PostgreSQL Database instance, in the system that intends to run this program. 
+
+Make changes to the local postgresql server location, username and password fields in the DBListener.java and LoginServlet.java files.
+
+```
+Class.forName("org.postgresql.Driver");
+String db_url = "jdbc:postgresql://yourlocalurl";
+String db_username = "yourUsername";
+String db_password = "yourPassword";
+```
+In order to use any other database instances, add the nessesary jar files in the 
+```project-root/web/WEB-INF/lib/```
+folder and change the JDBC fields accordingly.
+
+## UML Diagrams
+
 
 ### Class Diagram
 
