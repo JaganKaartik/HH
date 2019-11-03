@@ -121,7 +121,7 @@ Connection conn = DriverManager.getConnection(db_url,db_username, db_password);
 
 ```java
 Statement stmt = conn.createStatement();
-PreparedStatement ps = con.prepareStatement("insert into *tablename* values (?,?);");
+PreparedStatement ps = conn.prepareStatement("insert into *tablename* values (?,?);");
 ```
 ### Query Execution
 
