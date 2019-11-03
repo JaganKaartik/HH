@@ -81,5 +81,32 @@ Nowadays, applications are using Type 4 JDBC drivers.
 
 For this application, we are using PostgreSQL among other common types like MySQL, Oracle, MariaDB etc.
 
-## JDBC Code
+## Configuring JDBC via Netbeans 
 
+The driver may be either in the form of jar file, or zip file. Please incude this in the ```project-root/web/WEB-INF/lib/``` folder. 
+
+This project was created using PostgreSQL so the directory contains ```project-root/web/WEB-INF/lib/postgresql-42.2.8.jar``` file.
+
+In order to use any other database instances, add the nessesary jar files in the ```project-root/web/WEB-INF/lib/``` folder and change the JDBC fields accordingly.
+
+## JDBC Connection
+
+### Steps Involved
+
+1. Load the driver.
+2. Create a Connection object (by default, when you create, it will open
+a connection to the database).
+3. Create a Statement Object.
+4. Execute the statement using an SQL query written in the form of Java
+String.
+5. Process the results.
+6. Close the connection.
+
+
+If using PostgreSQL, 
+```
+Class.forName("org.postgresql.Driver");
+String db_url = "jdbc:postgresql://yourlocalurl";
+String db_username = "yourUsername";
+String db_password = "yourPassword";
+```
