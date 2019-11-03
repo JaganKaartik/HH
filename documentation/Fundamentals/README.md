@@ -126,10 +126,6 @@ Statement stmt = conn.createStatement();
 
 To execute an SQL query, we write the query in the form of String. Then invoke the method executeQuery or executeUpdate on the Statement object. 
 
-```java
-String query = "select * from public."PatientInformation"; 
-ResultSet rs = stmt.executeQuery(query); 
-```
 There are basically two types of queries. 
 
 1. To retrieve a set of records from the database table. 
@@ -138,4 +134,54 @@ There are basically two types of queries.
     	This method will return an object of type ResultSet which consists of records retrieved from table. 
     2. **executeUpdate(String query)**: 
        This method will return an integer, stating the number of records affected because of the statement. Note that both the methods accept a String object.
+       
+#### Eg. executeQuery 
 
+```java
+String query = "select * from public."PatientInformation"; 
+ResultSet rs = stmt.executeQuery(query); 
+```
+#### Eg. executeUpdate
+
+```java
+PreparedStatement ps = con.prepareStatement("insert into public.\"PatientInformation\" values (?,?,?,?,?,?,?,?,?,?,?);");
+
+/* Setting the PreparedStatements */
+            
+ps.setString(1,pid);
+ps.setString(2,first_Name);
+ps.setString(3,last_Name);
+ps.setString(4,dob);
+ps.setString(5,bloodgroup);
+ps.setString(6,address);
+ps.setString(7,pincode);
+ps.setString(8,pno);
+ps.setString(9,marstat);
+ps.setString(10,age);
+ps.setString(11,sex);
+
+int val = ps.executeUpdate();
+
+if(val>0)
+{
+	out.println("Success!");
+   //Success
+}
+else
+{
+   out.println("Failed!");
+   //fail
+}
+```
+
+
+### Processing Results
+
+The ResultSet object is similar to Java collection framework. It has an Iterator, which iterates through the records one by one, or fetch the first record, or fetch the last record.
+
+### Close the connection
+
+```java
+stmt.close();
+conn.close();
+```
