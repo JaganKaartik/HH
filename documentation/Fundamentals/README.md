@@ -122,3 +122,20 @@ Connection conn = DriverManager.getConnection(db_url,db_username, db_password);
 ```java
 Statement stmt = conn.createStatement();
 ```
+### Query Execution
+
+To execute an SQL query, we write the query in the form of String. Then invoke the method executeQuery or executeUpdate on the Statement object. 
+
+```java
+String query = "select * from public."PatientInformation"; 
+ResultSet rs = stmt.executeQuery(query); 
+```
+There are basically two types of queries. 
+
+1. To retrieve a set of records from the database table. 
+2. To insert/modify/delete one or more records in the database table. Hence, we have two methods for executing. 
+    1. **executeQuery(String query)**: 
+    	This method will return an object of type ResultSet which consists of records retrieved from table. 
+    2. **executeUpdate(String query)**: 
+       This method will return an integer, stating the number of records affected because of the statement. Note that both the methods accept a String object.
+
