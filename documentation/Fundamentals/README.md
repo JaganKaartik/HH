@@ -19,7 +19,7 @@ ODBC Stands for Open Database Connectivity, since ODBC drivers are entirely writ
 
 In Java 8, the JDBC-ODBC Bridge has been removed.
 
-![]()
+![](https://github.com/JaganKaartik/Hygea-Health/blob/master/documentation/Fundamentals/imgsrc/JDBC-ODBC-Bridge-Driver.jpg)
 
 #### Advantages:
 
@@ -35,7 +35,7 @@ In Java 8, the JDBC-ODBC Bridge has been removed.
 
 The Native API driver uses the client-side libraries of the database. The driver converts JDBC method calls into native calls of the database API. It is not written entirely in java.
 
-![]()
+![](https://github.com/JaganKaartik/Hygea-Health/blob/master/documentation/Fundamentals/imgsrc/JDBC-Native-API.jpg)
 
 ### Advantage:
 
@@ -50,7 +50,7 @@ The Native API driver uses the client-side libraries of the database. The driver
 
 The Network Protocol driver uses middleware (application server) that converts JDBC calls directly or indirectly into the vendor-specific database protocol. It is fully written in java.
 
-![]()
+![](https://github.com/JaganKaartik/Hygea-Health/blob/master/documentation/Fundamentals/imgsrc/JDBC-Network-Protocol.jpg)
 
 #### Advantage:
 
@@ -66,7 +66,7 @@ The Network Protocol driver uses middleware (application server) that converts J
 
 The thin driver converts JDBC calls directly into the vendor-specific database protocol. That is why it is known as thin driver. It is fully written in Java language.
 
-![]()
+![](https://github.com/JaganKaartik/Hygea-Health/blob/master/documentation/Fundamentals/imgsrc/JDBC-Thin-Driver.jpg)
 
 #### Advantage:
 
