@@ -102,11 +102,23 @@ String.
 5. Process the results.
 6. Close the connection.
 
+### Loading the Driver
 
-If using PostgreSQL, 
-```
+Eg. using PostgreSQL
+
+```java
 Class.forName("org.postgresql.Driver");
 String db_url = "jdbc:postgresql://yourlocalurl";
 String db_username = "yourUsername";
 String db_password = "yourPassword";
+```
+### Connection Object
+
+```java
+Connection conn = DriverManager.getConnection(db_url,db_username, db_password);
+```
+### Statement Object
+
+```java
+Statement stmt = conn.createStatement();
 ```
