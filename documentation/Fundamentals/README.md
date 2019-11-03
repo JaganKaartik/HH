@@ -117,10 +117,11 @@ String db_password = "yourPassword";
 ```java
 Connection conn = DriverManager.getConnection(db_url,db_username, db_password);
 ```
-### Statement Object
+### Statement Object and Prepared Statement Object
 
 ```java
 Statement stmt = conn.createStatement();
+PreparedStatement ps = con.prepareStatement("insert into *tablename* values (?,?);");
 ```
 ### Query Execution
 
