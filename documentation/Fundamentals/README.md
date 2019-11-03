@@ -107,6 +107,7 @@ String.
 Eg. using PostgreSQL
 
 ```java
+import java.sql.*;
 Class.forName("org.postgresql.Driver");
 String db_url = "jdbc:postgresql://yourlocalurl";
 String db_username = "yourUsername";
