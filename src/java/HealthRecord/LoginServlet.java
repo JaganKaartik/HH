@@ -8,12 +8,11 @@ package HealthRecord;
 
 import java.sql.*;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.servlet.ServletContext;
 import javax.servlet.http.*;
 import javax.servlet.ServletException;
 
-/* Login-Servlet is working */
+/* Login-Servlet */
 
 /**
  *
@@ -22,49 +21,80 @@ import javax.servlet.ServletException;
 
 public class LoginServlet extends HttpServlet
 {
+
     @Override
     public void doPost(HttpServletRequest req,HttpServletResponse rep) throws ServletException, IOException
     {
             try {
+                
                 String checkname = req.getParameter("user");
                 String checkpass = req.getParameter("password");
+
                 String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
                 String db_username = "postgres";
-                String sql = "select * from public.\"User\" ";
+                
+
                 try {
                     Class.forName("org.postgresql.Driver");
                 }
                 catch (ClassNotFoundException ex) 
                 {
-                    Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex);
                 }
-                Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
-                Statement st = conn.createStatement();
+                Connection con = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+               
+
+                // ServletContext ctx=getServletContext();  
+                // Connection con=(Connection)ctx.getAttribute("mycon");
+                
+                String sql = "select * from public.\"User\"";
+
+                Statement st = con.createStatement();
+                
                 ResultSet rs = st.executeQuery(sql);
+                
                 int flag = 1;
+
                 while (rs.next())
                 {
-                    String uname = rs.getString("username");
+                    String uname = rs.getString("name");
                     String psswrd = rs.getString("password"); 
+
                     if(uname.equals(checkname) && psswrd.equals(checkpass))
                     {
                         String role = rs.getString("role");
+
+                        HttpSession session = req.getSession();
+                        session.setAttribute("uname",uname);
+                        session.setAttribute("role",role);
+
+                        
                         switch (role)
                         {
                             case "Admin":
+
                                 /* Redirect to Admin Page */
                                 //out.println("Admin Login Verified");
-                                rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Admin.jsp");
+
+                                //rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Admin.jsp");
+
+                                req.getRequestDispatcher("Admin.jsp").forward(req,rep);
                                 break;
                             case "Receptionist":
+
                                 /* Redirect to Receptionist Page */
                                 //out.println("Receptionist Login Verified");
-                                rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.html");
+                                //rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Reception.jsp");
+                                
+                                req.getRequestDispatcher("Reception.jsp").forward(req,rep);
                                 break;
                             case "Doctor":
+
                                 /* Redirect to Doctor Page */
                                 //out.println("Doctor Login Verified");
-                                rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Doctor.jsp");
+                                //rep.sendRedirect("http://localhost:8080/ElectronicHealthRecord/Doctor.jsp");
+                                
+                                req.getRequestDispatcher("Doctor.jsp").forward(req,rep);
                                 break;
                             default:
                                 break;
@@ -75,12 +105,16 @@ public class LoginServlet extends HttpServlet
                 }
                 if(flag==1)
                 {
-                    //out.println("User! Not Found");
+                    
+                   req.getRequestDispatcher("index.html").forward(req,rep);  
+
                 }
+                st.close();
+                con.close();
             }
             catch (SQLException ex) 
                 {
-                    Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex);
                 }
     }
 }

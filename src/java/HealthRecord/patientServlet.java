@@ -32,8 +32,8 @@ public class patientServlet extends HttpServlet
         String pbg = req.getParameter("pbg");
         String pad = req.getParameter("pad");
         
-        patient p = new patient();
-        p.setValue(pname,pid,pdob,pbg,pad,pno,pms);
+        Patient p = new Patient();
+        //p.setValue(pname,pid,pdob,pbg,pad,pno,pms);
                 
         /* Servlet is Working */
         PrintWriter out = rep.getWriter();

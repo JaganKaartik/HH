@@ -15,6 +15,7 @@ import javax.servlet.http.*;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.ServletContext;
 
 /**
  *
@@ -28,6 +29,7 @@ public class RegisterPatientServlet extends HttpServlet
         PrintWriter out = rep.getWriter();
    
         try {
+            
             //Form object to RegisterPatient Servelt --> JDBC
             
             String pid 			= req.getParameter("pid"); 			  //Patient ID
@@ -56,20 +58,26 @@ public class RegisterPatientServlet extends HttpServlet
 
             /* JDBC Steps */
             
-            try {
-                Class.forName("org.postgresql.Driver");
-            }
-            catch(ClassNotFoundException ex) {
-                System.out.println(ex);
-            }
+           //  try {
+           //      Class.forName("org.postgresql.Driver");
+           //  }
+           //  catch(ClassNotFoundException ex) {
+           //      System.out.println(ex);
+           //  }
             
-            String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
-            String db_username = "postgres";
+           //  String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+           //  String db_username = "postgres";
             
-            String sql = "select * from public.\"User\" ";
+           // // String sql = "select * from public.\"User\" ";
             
-            Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
-            PreparedStatement ps = conn.prepareStatement("insert into public.\"PatientInformation\" values (?,?,?,?,?,?,?,?,?,?,?);");
+            // Connection conn = DriverManager.getConnection(db_url,db_username,"qpalzmwer");
+
+            /* Using DB Listerner instead of writing all JDBC Steps */
+
+            ServletContext ctx=getServletContext();  
+            Connection con=(Connection)ctx.getAttribute("mycon");  
+
+            PreparedStatement ps = con.prepareStatement("insert into public.\"PatientInformation\" values (?,?,?,?,?,?,?,?,?,?,?);");
             
             /* Setting the PreparedStatements */
             
@@ -85,7 +93,10 @@ public class RegisterPatientServlet extends HttpServlet
             ps.setString(10,age);
             ps.setString(11,sex);
 
+            out.println(ps);
+
             int val = ps.executeUpdate();
+
 
             if(val>0)
             {
@@ -98,10 +109,12 @@ public class RegisterPatientServlet extends HttpServlet
                 //fail
             }
 
+            req.getRequestDispatcher("Reception.jsp").forward(req,rep);
+
             /* Close Statement and Connection in JDBC */
                 
             ps.close();
-            conn.close();
+            con.close();
         }
         catch(SQLException ex) {
                 System.out.println(ex);

@@ -52,15 +52,8 @@
 			<h6 class="brand-logo center">Patient Information</h6>
 
                  <!-- Nav Bar (View Patient) -->
-
-			<ul id="nav-mobile" class="left hide-on-med-and-down">
-		        <li><a href="#">1</a></li>
-		        <li><a href="#">2</a></li>
-		        <li><a href="#">3</a></li>
-		        <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-		     </ul>
 		    </div>
+        </nav>
 
             <!-- Need to implement SERVLET -- SERVLET Connection  -->
 
@@ -84,9 +77,9 @@
 
                             <!-- Patient Info Controller -->
 
-                          <form method="post" method="patinfocontrol">
+                          <form method="get" action="patinfocontrol">
                             <div class="input-field">
-                              <input name="search" type="search" placeholder="Patient ID" required>
+                              <input name="ser" type="search" placeholder="Patient ID" required>
                               <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                               <i class="material-icons">close</i>
                             </div>
@@ -94,6 +87,10 @@
 
                         </div>
                       </nav>
+
+                    <br>
+                    <br>
+                
                  </div>               
 
                 <!-- UI/UX  -->
@@ -131,6 +128,5 @@
 
             </div> -->
 
-  		</nav>
     </body>
 </html>
