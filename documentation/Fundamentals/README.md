@@ -246,14 +246,18 @@ public class DBListener implements ServletContextListener
 ```
 Now, while using Servlet Context Listener, we can write the connection code in one file and use 
 
-```
-java
+```java
  ServletContext ctx=getServletContext();  
  Connection con=(Connection)ctx.getAttribute("mycon");
 ```
 to access the database connection object in any file.
 
-
-Cheers!
+Sources Files : https://github.com/JaganKaartik/Hygea-Health/tree/master/src/java/HealthRecord
 
 ##### To contribute! 
+
+
+* Fork this repository to your local repository using ![](https://img.icons8.com/small/16/000000/code-fork.png) ```Fork command``` 
+* Start by fixing Issues! Submitting ![](https://img.icons8.com/windows/16/000000/pull-request.png) ```Pull Requests``` 
+
+Cheers!! :sunglasses:
