@@ -211,7 +211,7 @@ conn.close();
 
 ```Code Snippet from the source code of Hygea Health```
 
-Using a servlet context listener, we can avoid redundant JDBC connection statements in each and every file that needs to access a database. The below is the syntax of Servlet Context Listener.
+Using a servlet context listener, we can avoid redundant JDBC connection statements in each and every file that needs to access a database. The below is the syntax of the Servlet Context Listener implemented in this project.
 
 ```java
 package HealthRecord;
@@ -227,9 +227,9 @@ public class DBListener implements ServletContextListener
 		try{  	
 			Class.forName("org.postgresql.Driver");
 			String db_url = "jdbc:postgresql://localhost:xxxx/";
-	        String db_username = "*username*";
+	        	String db_username = "*username*";
 			String db_password = "*password*";
-            Connection con = DriverManager.getConnection(db_url,db_username,db_password);  
+            		Connection con = DriverManager.getConnection(db_url,db_username,db_password);  
 
 			//storing connection object as an attribute in ServletContext  
 				
@@ -244,3 +244,16 @@ public class DBListener implements ServletContextListener
 	public void contextDestroyed(ServletContextEvent arg0){}  
 }
 ```
+Now, while using Servlet Context Listener, we can write the connection code in one file and use 
+
+```
+java
+ ServletContext ctx=getServletContext();  
+ Connection con=(Connection)ctx.getAttribute("mycon");
+```
+to access the database connection object in any file.
+
+
+Cheers!
+
+##### To contribute! 
