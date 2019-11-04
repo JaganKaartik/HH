@@ -252,7 +252,7 @@ Now, while using Servlet Context Listener, we can write the connection code in o
 ```
 to access the database connection object in any file.
 
-![Sources Files](https://github.com/JaganKaartik/Hygea-Health/tree/master/src/java/HealthRecord)
+[Click to access source files](https://github.com/JaganKaartik/Hygea-Health/tree/master/src/java/HealthRecord)
 
 ##### To contribute! 
 
