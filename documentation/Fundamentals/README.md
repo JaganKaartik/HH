@@ -181,6 +181,26 @@ else
 
 The ResultSet object is similar to Java collection framework. It has an Iterator, which iterates through the records one by one, or fetch the first record, or fetch the last record.
 
+```java
+
+ResultSet rs = st.executeQuery(sql);
+
+List<Patient> patients = new ArrayList<Patient>();
+
+while(rs.next())
+{
+     Patient patient_obj = new Patient();
+     
+     PatientID = rs.getString(1);
+     patient_obj.setPatientID(PatientID);
+     
+     First_name = rs.getString(2);
+     patient_obj.setFirst_name(First_name);
+}
+```
+*  To iterate through every row : ```while(rs.next()) //  is used ```
+*  To iterate through every ith column in a row ```getString(i) // takes that value of the ith column ```
+
 ### Close the connection
 
 ```java
