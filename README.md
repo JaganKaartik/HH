@@ -18,6 +18,11 @@ This project is done as part of the (15CSE376) Net Centric Programming course.
 * PostgreSQL Core 10
 * PGAdmin 4
 
+## Documentation
+
+* In order to refer basic documentation go to  ```/documentation/Fundamentals```
+* Link: https://github.com/JaganKaartik/Hygea-Health/tree/master/documentation/Fundamentals to access documentation.
+
 ## Testing
 
 Based on the assumption that the software will be running a PostgreSQL database. For this software to work according to its design. Initialise a local PostgreSQL Database instance, in the system that intends to run this program. 
