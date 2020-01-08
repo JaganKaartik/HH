@@ -9,7 +9,7 @@ package HealthRecord;
  *
  * @author jagankaartik58
  */
-public class UserModel 
+public class User 
 {
     private String id;
     private String name;
