@@ -39,6 +39,10 @@ In order to use any other database instances, add the nessesary jar files in the
 ```project-root/web/WEB-INF/lib/```
 folder and change the JDBC fields accordingly.
 
+**Note**
+
+Before running this project, extract ```web.zip``` file. This folder contains all the HTML, CSS, JS files required by the software.
+
 ## UML Diagrams
 
 
