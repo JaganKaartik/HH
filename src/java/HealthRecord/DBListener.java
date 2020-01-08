@@ -19,10 +19,17 @@ public class DBListener implements ServletContextListener
     {            
 		try{  
 				
+<<<<<<< HEAD
 			Class.forName("");
 			String db_url = "";
 	        String db_username = ""; 
 			String db_password = "";
+=======
+			Class.forName("org.postgresql.Driver");
+			String db_url = "jdbc:postgresql://localhost:5432/Electronic_Health_Record";
+	        String db_username = "postgres";
+			String db_password = "qpalzmwer";
+>>>>>>> 10faebbe3093be6076162497769d6ec7af271e02
             Connection con = DriverManager.getConnection(db_url,db_username,db_password);  
 
 			//storing connection object as an attribute in ServletContext  
