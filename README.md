@@ -61,13 +61,27 @@ Before running this project, extract ```web.zip``` file. This folder contains al
 ![HomePage](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/1.%20Homepage.png)
 ### Admin Dashboard
 ![AdminDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/2.%20Admin%20Dashboard.png)
+
+### Admin-Views
+
+![Admin-Views](https://github.com/JaganKaartik/Hygea-Health/blob/master/UI%20Screen%20Shots/3.%20Admin%20(View%20All%20Doctors).png)
+![](https://github.com/JaganKaartik/Hygea-Health/blob/master/UI%20Screen%20Shots/3.%20Admin%20(View%20All%20Patients).png)
+![](https://github.com/JaganKaartik/Hygea-Health/blob/master/UI%20Screen%20Shots/3.%20Admin%20(View%20Users).png)
+
 ### Receptionist Dashboard
 ![RecepDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/4.%20Receptionist%20Dashboard.png)
+
+### Receptionist-Views
+![](https://github.com/JaganKaartik/Hygea-Health/blob/master/UI%20Screen%20Shots/4.%20View%20Doctor%20Details.png)
+![](https://github.com/JaganKaartik/Hygea-Health/blob/master/UI%20Screen%20Shots/4.%20View%20Medical%20Record.png)
+
 ### Receptionist (Patient Registration)
 ![RecepReg](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/4.%20Add%20Patient%20Demographics.png)
 ![RecepReg2](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/4.%20Add%20Medical%20Records.png)
+
 ### Doctor Dashboard
 ![DocDB](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/5.%20Doctor%20Dashboard.png)
+
 ### Searching Patient Records via Doctor Dashboard
 ![DocSP](https://github.com/JaganKaartik/Electronic-Health-Record/blob/master/UI%20Screen%20Shots/5.%20Doctor%20(Search%20Records).png)
 
