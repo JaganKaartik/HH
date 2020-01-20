@@ -6,7 +6,7 @@ An Electronic Health Record (EHR) is an electronic version of a patients medical
 provider over time, and may include all of the key administrative clinical data relevant to that persons care under
 a particular provider, including demographics, progress notes, problems, medications, vital signs, past medical history, immunizations, laboratory data and radiology reports.
 
-A basic electronic health record application built on the Java EE Architecture which uses JSP, Servlets and PostGreSQL.
+A basic electronic health record application built on the Java EE Architecture which uses JSP, Servlets and PostGreSQL. This software contains a very basic and mininal UI, build using Materialize CSS.
 
 This project is done as part of the (15CSE376) Net Centric Programming course.
 
